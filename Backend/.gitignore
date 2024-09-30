@@ -1,4 +1,4 @@
 node_modules
-.env
-init
 cloudConfig.js
+init
+.env
