@@ -1,7 +1,4 @@
-<!-- Banner Section -->
-<div align="center">
-  <img src="https://res.cloudinary.com/dh7fvtv7e/image/upload/v1724785048/zakatcare_banner.jpg" alt="ZakatCare Banner" style="width: 100%; height: auto; max-width: 1200px;" />
-</div>
+
 
 <h1 align="center">ZakatCare: Connection & Distribution System</h1>
 <h3 align="center">A platform facilitating Zakat donations and connecting donors with meaningful causes.</h3>
@@ -48,3 +45,7 @@ cd zakatcare
 npm install
 cd client && npm install
 npm run dev
+
+
+🌍 Connect with Us
+<p align="center"> <a href="https://x.com/ZakatCare" target="_blank"> <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="Twitter" height="30" width="40" /> </a> <a href="https://www.linkedin.com/in/zakatcare/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" height="30" width="40" /> </a> </p>
