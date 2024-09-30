@@ -1,0 +1,167 @@
+.programMain {
+    height: 76rem;
+}
+
+.ourprogram {
+    height: 11rem;
+}
+
+.separators {
+    width: 10rem;
+    background: rgb(34, 34, 34);
+    margin-left: -20px;
+    height: 9px;
+}
+
+.comp {
+    border: solid 4px #F4B03E;
+    border-radius: 25px;
+    padding: 12px;
+    margin: 10px;
+    height: 24rem;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.comp:hover {
+    background-color: #F4B03E;
+    color: white;
+    transform: scale(1);
+    /* Slight zoom on hover */
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
+}
+
+.compHead h3 {
+    color: #F4B03E;
+}
+
+.compHead span {
+    cursor: pointer;
+}
+
+
+.compImgg {
+    background-color: #F4B03E;
+    padding: 25px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.comp:hover .compImgg {
+    background-color: white;
+}
+
+.comp:hover .compHead h3 {
+    color: white;
+}
+
+.compImgg img {
+    height: 82px;
+}
+
+
+/* Programs Finish */
+
+
+
+.bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(73, 11, 11, 0.64);
+}
+
+.bgImage {
+    height: 29rem;
+}
+
+.volunteer {
+    text-align: center;
+    height: 13.5rem;
+}
+
+.volImgg img {
+    height: 64px;
+    color: #F4B03E !important;
+}
+
+.childDesc {
+    color: #F4B03E;
+}
+
+.volHead {
+    color: #444;
+
+}
+
+.volHead h3 {
+    font-size: -webkit-xxx-large;
+
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+}
+
+.p {
+    font-family: monospace !important;
+}
+
+.donateBtn {
+    width: 9rem;
+    background-color: rgba(207, 23, 23, 1);
+    color: white;
+    border: 2px solid rgba(207, 23, 23, 1);
+    transition: all 0.3s ease;
+    padding-right: 3px;
+}
+
+
+.donateBtn span {
+    opacity: 0;
+    display: inline-block;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+
+}
+
+.donateBtn:hover {
+    /* padding-right: 0; */
+    padding-left: 3px;
+    background-color: transparent;
+    color: white(207, 23, 23, 1);
+    border: 2px solid white;
+}
+
+.donateBtn:hover span {
+    opacity: 1;
+    transform: translateX(5px);
+}
+.donateBtn span i{
+    font-size: larger;
+}
+
+
+/* Transparency */
+.transcomps{
+    text-align: center;
+    line-height: 3rem;
+}
+.transComps{
+    height: 11rem;
+}
+.transMain{
+    height: 44rem;
+}
+.transCompsHead p{
+    font-size: xx-large;
+    color: #F4B03E;
+}
+.transTitle p{
+    font-size: larger;
+}
