@@ -10,7 +10,7 @@ import "./zakat.css"
 function saveChildren() {
     return (<>
         <div className="childrens">
-            
+
             <div className="saveChilds h-full">
                 <div className="bgImage relative">
                     <div
@@ -20,10 +20,13 @@ function saveChildren() {
                             backgroundPosition: 'center top',  /* Centers the image */
                             backgroundRepeat: 'no-repeat',  /* Prevents the image from repeating */
                             padding: '20px',  /* Add some padding if needed */
-                            borderRadius: '15px'  /* Optional: round corners */
+                            borderRadius: '15px',  /* Optional: round corners */
+                            backgroundAttachment: 'fixed', 
                         }}
                         className="bgImage flex items-center justify-center relative"
                     >
+
+                        
                         {/* Semi-transparent overlay */}
                         <div
                             style={{
@@ -39,8 +42,8 @@ function saveChildren() {
                         ></div>
 
                         {/* Content on top of the background and overlay */}
-                        <div style={{ marginLeft:'143px'}} className="container childDesc flex flex-column items-start justify-center relative z-10">
-                            <h4 style={{color:""}} className="font-bold text-5xl">Save a child by contributing monthly</h4>
+                        <div style={{ marginLeft: '143px' }} className="container childDesc flex flex-column items-start justify-center relative z-10">
+                            <h4 style={{ color: "" }} className="font-bold text-5xl">Save a child by contributing monthly</h4>
                             <p className="w-1/2 font-semibold text-lg ">
                                 Giving a monthly donation is the best way to help vulnerable children all over the world. A monthly donation helps us save children's lives. It helps us protect them.
                             </p>
