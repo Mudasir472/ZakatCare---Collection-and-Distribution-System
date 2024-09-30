@@ -1,6 +1,6 @@
 # Logs
-env.js
-vite.config.js
+# env.js
+# vite.config.js
 logs
 *.log
 npm-debug.log*
