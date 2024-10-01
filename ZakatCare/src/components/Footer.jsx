@@ -1,5 +1,5 @@
-export default function Donate() {
+export default function Footer() {
     return (<>
-        <p>Footer</p>
+
     </>)
 }

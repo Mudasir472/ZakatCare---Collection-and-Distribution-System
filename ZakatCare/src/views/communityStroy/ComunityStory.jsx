@@ -2,6 +2,7 @@ import "./community.css"
 import axios from "axios";
 import URL from "../../../env"
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function ComunityStory() {
     const [data, setData] = useState([]);
@@ -44,7 +45,7 @@ function ComunityStory() {
                                         <div style={{ width: "25rem" }} className="card justify-between rem-border">
                                             <img style={{ height: '18rem' }} src={item.imgLink} className="card-img-top" alt="..." />
                                             <div className="card-body p-0">
-                                                <p style={{ color: '#F4B03E' }} className="font-bold text-xl my-4">{item.heading.toUpperCase()}</p>
+                                                <Link to={`/zakatcare/${item._id}`}><p style={{ color: '#F4B03E' }} className="font-bold text-xl my-4">{item.heading.toUpperCase()}</p></Link>
                                                 <p className="card-text">{item.desc}</p>
                                             </div>
                                         </div>

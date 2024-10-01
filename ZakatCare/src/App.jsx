@@ -12,6 +12,8 @@ import Donate from "./views/Donate";
 import Login from "./components/user/Login";
 import Logout from "./components/user/Logout";
 import Signup from "./components/user/Signup";
+import Footer from "./components/Footer";
+import CommunityDtails from "./views/communityStroy/CommunityDetails";
 function App() {
 
   return (
@@ -34,9 +36,12 @@ function App() {
               <Route path="/zakatcare/logout" element={<Logout />} />
               <Route path="/zakatcare/signup" element={<Signup />} />
 
+
+              <Route path="/zakatcare/:id" element={<CommunityDtails />} />
+
             </Routes>
           </div>
-          {/* <Footer /> */}
+          <Footer/>
         </div>
       </Router>
     </>
