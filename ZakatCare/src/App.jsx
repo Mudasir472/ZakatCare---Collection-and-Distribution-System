@@ -12,6 +12,7 @@ import Donate from "./views/Donate";
 import Login from "./components/user/Login";
 import Logout from "./components/user/Logout";
 import Signup from "./components/user/Signup";
+import Footer from "./components/Footer";
 function App() {
 
   return (
@@ -36,7 +37,7 @@ function App() {
 
             </Routes>
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
     </>
