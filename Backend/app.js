@@ -14,6 +14,7 @@ require('dotenv').config();
 
 // Routers 
 const userRouter = require("./routes/user.router")
+const commRouter = require("./routes/community.router")
 // const listingRouter = require('./routes/listing.router');
 
 // Middleware setup
@@ -69,8 +70,13 @@ passport.deserializeUser(User.deserializeUser());
 
 
 // Routes
+app.get("/",(req,res)=>{
+    res.send("i am at root")
+})
 // app.use("/", listingRouter)
 app.use("/", userRouter)
+app.use("/", commRouter)
+
 
 
 const port = process.env.PORT

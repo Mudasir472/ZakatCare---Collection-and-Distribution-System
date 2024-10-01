@@ -1,4 +1,5 @@
 
+import ComunityStory from "./views/communityStroy/comunityStory";
 import MainSlider from "./views/MainSlider";
 import Programs from "./views/Zakat/Programs";
 import SaveChildren from "./views/Zakat/SaveChildren";
@@ -10,6 +11,7 @@ function Home() {
         <Programs/>
         <SaveChildren/>
         <Transparency/>
+        <ComunityStory/>
         
     </>);
 }

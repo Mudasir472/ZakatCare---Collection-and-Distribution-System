@@ -1,0 +1,36 @@
+.communityHead {
+    height: 12rem;
+    margin-bottom: 34px;
+}
+
+.rem-border {
+    border: none !important;
+}
+
+.moreBtn button {
+    height: 3rem;
+    padding-left: 4px;
+    width: 8rem;
+    border: solid grey 2px;
+}
+
+.moreBtn button span {
+    opacity: 0;
+    display: inline-block;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+}
+
+.moreBtn button:hover {
+    padding-left: 3px;
+    border: solid black 2px;
+}
+
+.moreBtn button:hover span {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.moreBtn button span i {
+    font-size: larger;
+}
