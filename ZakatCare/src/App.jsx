@@ -14,6 +14,7 @@ import Logout from "./components/user/Logout";
 import Signup from "./components/user/Signup";
 import Footer from "./components/Footer";
 import CommunityDtails from "./views/communityStroy/CommunityDetails";
+import Footer from "./components/Footer";
 function App() {
 
   return (
@@ -41,7 +42,7 @@ function App() {
 
             </Routes>
           </div>
-          <Footer/>
+          {/* <Footer /> */}
         </div>
       </Router>
     </>
