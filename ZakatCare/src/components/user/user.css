@@ -1,6 +1,6 @@
 .row {
     margin-right: 0 !important;
-    
+
 }
 
 h4 {
@@ -13,5 +13,20 @@ h4 {
 
 .social i {
     color: white;
-    
+
+}
+.footerMain{
+    flex-direction: row;
+}
+
+/* Footer Responsive */
+@media only Screen and(max-width: 660px) {
+    .footerMain {
+        display: flex;
+        flex-direction: column ;
+    }
+
+    .title {
+        width: 100%;
+    }
 }
