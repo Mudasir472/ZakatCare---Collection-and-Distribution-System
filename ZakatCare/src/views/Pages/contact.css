@@ -1,0 +1,43 @@
+.section_clear {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.vc_col-sm-6 {
+    width: 50%;
+}
+
+input,
+textarea {
+    border: solid black 1px;
+}
+
+.btnn {
+    border: solid;
+    padding: 10px;
+    width: 100px;
+    border-radius: 10%;
+    font-weight: 500;
+}
+
+.wpcf7-form {
+    float: left;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap textarea {
+    width: 100%;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    background: #fff;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+a i {
+    height: 5rem;
+    /* left: 0; */
+    right: 0;
+}
