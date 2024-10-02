@@ -97,13 +97,13 @@ function CommunityDtails() {
         <>
             <div className="container">
                 <div className='d-flex flex-column justify-content-center align-items-center'>
-                    <div className="card  listInd border-0 mb-3">
+                    <div className="card  listInd border-0 mb-3 ms-4">
                         <h3 className='h-20 d-flex headding align-items-center font-sans text-2xl font-bold'>
                             {Community.heading}
                         </h3>
 
                         <img
-                            style={{ width: '67rem' }}
+                            style={{ width: '74rem',height:"30rem" }}
                             className='h-96 w-full mb-4 card-img-top'
                             src={Community.imgLink}
                             alt={Community.heading}
@@ -120,10 +120,11 @@ function CommunityDtails() {
                                 </p>
                                 <p className="card-text">{Community.desc}</p>
                             </div>
+                            <hr />
                             {
                                 reviews.length > 0 ? (
                                     <>
-                                        <h3 className='mb-3 d-flex align-items-center font-sans text-2xl font-bold'>
+                                        <h3 className='my-3 d-flex align-items-center font-sans text-2xl font-bold'>
                                             Reviews Section
                                         </h3>
                                         <p className='font-bold my-3'>{reviews.length > 1 ? (reviews.length + "  Reviews") : (reviews.length + "  Review")}</p>

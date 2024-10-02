@@ -1,4 +1,4 @@
-
+import "./header.css"
 import logo from "/Logo.png"
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -42,7 +42,7 @@ export default function Navbar() {
     }, []);
     // console.log(user);
     return (
-        <Disclosure style={{ backgroundColor: '#0E3A62' }} as="nav">
+        <Disclosure style={{ backgroundColor: 'rgb(254, 247, 236)' }} as="nav">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -64,14 +64,14 @@ export default function Navbar() {
                             /></Link>
                         </div>
                         <div className="hidden ms-5 sm:ml-6 sm:block">
-                            <div className="flex space-x-4">
+                            <div className="flex space-x-4 navlists">
                                 {navigation.map((item) => (
                                     <Link
                                         key={item.name}
                                         to={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                            item.current ? 'bg-orange text-white' : 'bg-hover-orange  hover:text-white',
                                             'rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >
@@ -83,13 +83,13 @@ export default function Navbar() {
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-                        <Link to={'/zakatcare/donate'}><button style={{ backgroundColor: "#F4B03E", color: "white" }} className='btn'>Donate</button></Link>
+                        <Link to={'/zakatcare/donate'}><button style={{ backgroundColor: "red", color: "white" }} className='btn'>Donate</button></Link>
 
                         {/* Profile dropdown */}
-                        <Menu as="div" className="relative ml-3">
+                        <Menu  as="div" className="user relative ml-3">
                             {isLoggedIn && user ? (
                                 <>
-                                    <MenuButton className="flex items-center rounded-full  text-sm focus:outline-none focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                    <MenuButton  className="flex items-center rounded-full  text-sm focus:outline-none focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                         <img alt={user?.name} src={user?.image?.url} className="h-8 w-8 rounded-full" />
                                         <span className="text-white ml-3">{user?.username}</span>
                                     </MenuButton>

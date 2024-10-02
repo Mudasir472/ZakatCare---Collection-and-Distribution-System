@@ -1,0 +1,21 @@
+.bg-orange {
+    background-color: #F4B03E;
+}
+
+.bg-hover-orange:hover {
+    background-color: #F4B03E;
+}
+
+.navlists a {
+    color: #f9a922;
+}
+
+.user {
+    background-color: #F4B03E;
+    height: 38px;
+    width: 143px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
