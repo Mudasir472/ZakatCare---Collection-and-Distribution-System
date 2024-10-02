@@ -17,17 +17,24 @@ const communitySchema = new Schema({
                 v,
     }
     ,
+    commreview:
+        [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "CommReview"
+            }
+        ],
     owner: {
         type: Schema.Types.ObjectId,
         ref: "User"
     }
 });
-// // delete middleware => when listing delete , all reviews should be deleted
+// delete middleware => when listing delete , all reviews should be deleted
 
-// listingSchema.post("findOneAndDelete", async (listing) => {
-//     if (listing) {
-//         await Review.deleteMany({ _id: { $in: listing.review } })
-//     }
-// })
+communitySchema.post("findOneAndDelete", async (community) => {
+    if (community) {
+        await CommReview.deleteMany({ _id: { $in: community.commreview } })
+    }
+})
 const Community = mongoose.model("Community", communitySchema);
 module.exports = Community;
