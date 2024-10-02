@@ -1,5 +1,5 @@
 
-
+import logo from "/Logo.png"
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -56,13 +56,14 @@ export default function Navbar() {
                     </div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex flex-shrink-0 items-center">
-                            <img
-                                alt="Your Company"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                            <Link to={"/"}><img
+                                style={{ height: "39px" }}
+                                alt="Zakatcare"
+                                src={logo}
                                 className="h-8 w-auto"
-                            />
+                            /></Link>
                         </div>
-                        <div className="hidden sm:ml-6 sm:block">
+                        <div className="hidden ms-5 sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
                                     <Link
@@ -82,7 +83,7 @@ export default function Navbar() {
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-                        <Link to={'/zakatcare/donate'}><button style={{ backgroundColor:"#F4B03E",color:"white"}} className='btn'>Donate</button></Link>
+                        <Link to={'/zakatcare/donate'}><button style={{ backgroundColor: "#F4B03E", color: "white" }} className='btn'>Donate</button></Link>
 
                         {/* Profile dropdown */}
                         <Menu as="div" className="relative ml-3">

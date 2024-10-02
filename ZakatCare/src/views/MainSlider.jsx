@@ -1,5 +1,5 @@
-import slider1 from "../../src/Images/slide-poor-1.jpg";
-import slider2 from "../../src/Images/slide-poor-2.jpg";
+import slider2 from "../../src/Images/slide-poor-1.jpg";
+import slider1 from "../../src/Images/slide-poor-2.jpg";
 import slider3 from "../../src/Images/slide-poor-3.jpg";
 import React, { useEffect } from 'react';
 import "./views.css"
