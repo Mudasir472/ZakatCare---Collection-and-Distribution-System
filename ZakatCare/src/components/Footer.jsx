@@ -4,13 +4,13 @@ export default function footer() {
         <>
             <div className=" mt-10" style={{ backgroundColor: '#1c1c1c' }} >
                 <footer class="container py-3">
-                    <div class="row text-white text-left">
-                        <div class="col-6 col-md-3 mb-3 ">
+                    <div class="row text-white text-left footerMain">
+                        <div class="col-6 col-md-3 mb-3 title">
                             <h4>About Us</h4>
                             <p> At ZakatCare:-Collection and Distribution System,connects zakat donations to those in need, ensuring transparency and impact. Join us in making a difference in our community.</p>
                         </div>
 
-                        <div class="col-6 col-md-3 mb-3 ">
+                        <div class="col-6 col-md-3 mb-3 title">
                             <h4>Recent Posts</h4>
                             <ul class="nav flex-column">
                                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">
@@ -23,7 +23,7 @@ export default function footer() {
                             </ul>
                         </div>
 
-                        <div class="col-6 col-md-3 mb-3">
+                        <div class="col-6 col-md-3 mb-3 title">
                             <h4>Donation</h4>
                             <ul class="nav flex-column">
                                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">You can also donate in the:</a></li>
@@ -34,7 +34,7 @@ export default function footer() {
                             </ul>
                         </div>
 
-                        <div class="col-md-3 mb-3">
+                        <div class="col-md-3 mb-3 title">
                             <form>
                                 <h4>Contact Us</h4>
                                 <p>Email: abc@gmail.com</p>
