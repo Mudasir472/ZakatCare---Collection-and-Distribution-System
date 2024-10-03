@@ -23,7 +23,7 @@ export default function Contact() {
                     <div className="container flex justify-between">
                         <div className="section_clear">
                             <div className="vc_col-sm-6 wbp_column column_container">
-                                <form className="container" action="">
+                                <form className="" action="">
                                     <div className="wpb_wrapper inputFormContact flex flex-column">
                                         <div className="wpb_content_element block_title column_title inner-simple sub-title ">
                                             <h2 className="h1">Drop us a line</h2>
@@ -128,11 +128,12 @@ export default function Contact() {
                 </div>
             </div>
             <section />
-            <a href="#" className="scrollup">
-                <i className="bi bi-caret-up-square-fill">
-                </i>
-            </a>
-
+            <div className="scrollp">
+                <a href="#" >
+                    <i className="bi bi-caret-up-square-fill">
+                    </i>
+                </a>
+            </div>
         </>
     );
 }
