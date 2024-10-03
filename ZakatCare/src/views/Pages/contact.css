@@ -30,6 +30,10 @@
     width: 70%;
 }
 
+.section_clear {
+    width: 50%;
+}
+
 .inputFormContact input,
 textarea {
     width: 100%;
