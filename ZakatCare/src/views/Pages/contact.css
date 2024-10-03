@@ -122,3 +122,14 @@ textarea {
 .programBG h3{
     opacity: 1;
 }
+
+
+/* About Us */
+.ourWork{
+    border: 1px solid #e2e2e2;
+    width: 48%;
+    
+}
+.workMain img{
+    height: 15rem;
+}

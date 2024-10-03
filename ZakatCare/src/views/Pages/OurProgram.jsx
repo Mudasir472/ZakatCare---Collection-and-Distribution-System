@@ -61,7 +61,7 @@ export default function OurProgram() {
                 <div className="h-80 programHead container flex flex-column items-start justify-evenly">
                     <h3 className="font-extrabold text-4xl	">ZaakatCare - Collection and Distribution System</h3>
                     <p>At Hyderabad Zakat & Charitable Trust (HZCT), we are committed to serving the underprivileged communities and making a positive impact on their lives. Through our various programs, we address critical areas such as education, healthcare, relief, and empowerment.</p>
-                    
+
                     <p className="font-bold">Choose a program that resonates with you and donate today. Your support is invaluable in helping us continue our mission of transforming lives and building a better future for all.</p>
                 </div>
 
@@ -90,7 +90,6 @@ export default function OurProgram() {
                         ))}
                     </div>
                 </div>
-
             </div>
         </div>
     </>)
