@@ -23,22 +23,43 @@
 }
 
 .section_clear {
+    width: 50%;
     margin-left: -15px;
     margin-right: -15px;
 }
 
+.address {
+    width: 50%;
+}
+
+.inputFormContact p {
+    width: 70%;
+}
 
 input,
 textarea {
+    width: 100%;
     border: solid black 1px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+label {
+    color: #888;
+    ;
 }
 
 .btnn {
     border: solid;
-    padding: 10px;
-    width: 100px;
     border-radius: 10%;
-    font-weight: 500;
+    color: #222;
+    background: rgba(255, 255, 255, 0.00);
+    border-color: rgba(68, 68, 68, 0.20);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 8px;
 }
 
 .wpcf7-form {
@@ -119,6 +140,7 @@ textarea {
     height: 20rem;
     /* transition: background 0.3s, border-radius 0.3s, opacity 0.3s; */
 }
-.programBG h3{
+
+.programBG h3 {
     opacity: 1;
 }

@@ -11,11 +11,16 @@ h4 {
     color: white;
 }
 
+.btn {
+    height: 35px;
+}
+
 .social i {
     color: white;
 
 }
-.footerMain{
+
+.footerMain {
     flex-direction: row;
 }
 
@@ -23,7 +28,7 @@ h4 {
 @media only Screen and(max-width: 660px) {
     .footerMain {
         display: flex;
-        flex-direction: column ;
+        flex-direction: column;
     }
 
     .title {

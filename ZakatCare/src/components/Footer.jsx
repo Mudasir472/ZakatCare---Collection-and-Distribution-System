@@ -52,7 +52,7 @@ export default function footer() {
                         <ul class="list-unstyled d-flex  social">
                             <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter-x"></i></a></li>
                             <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i></a></li>
-                            <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook"></i></a></li>
+                            <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook "></i></a></li>
                         </ul>
                     </div>
                 </footer>
