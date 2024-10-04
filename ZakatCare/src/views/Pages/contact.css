@@ -155,7 +155,6 @@ label {
         text-decoration: underline;
         font-weight: 650;
         font-size: 23px;
-        text-align: start;
     }
 
     .progHeading p {
@@ -201,4 +200,56 @@ label {
 
 .workMain img {
     height: 13rem;
+}
+.our-height{
+    height: 61rem;
+}
+.teamDesc p{
+    width: 61%;
+}
+
+/* Responsive: About Pages */
+@media only screen and (max-width:600px) {
+    .programBG {
+        height: 300px;
+    }
+
+    .programBG h4 {
+        font-size: 3rem;
+        font-weight: 450;
+    }
+
+    .aboutdesc h3 {
+        text-decoration: underline;
+        font-weight: 650;
+        font-size: 17.5px;
+    }
+
+    .aboutdesc p {
+        font-size: 15.5px;
+    }
+
+    .ourWork {
+        width: 100%;
+        /* height: 20%; */
+    }
+
+    .ourWork .workMain {
+        /* height: 25%; */
+    }
+
+    .ourWork desc {
+        font-size: 18px;
+    }
+
+    .aboutUsWork {
+        display: flex;
+        flex-direction: column;
+    }
+    .our-height{
+        height: 120rem;
+    }
+    .teamDesc p{
+        width: 100%;
+    }
 }
