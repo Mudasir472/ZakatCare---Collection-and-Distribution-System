@@ -17,6 +17,7 @@ export default function About() {
             try {
                 const response = await axios.get(`${URL}/zakatcare/teammembers`);
                 setData(response.data);
+                console.log(response.data)
                 setLoader(false); // Stop loading after fetching data
             } catch (error) {
                 console.error("Error fetching listing data:", error);
