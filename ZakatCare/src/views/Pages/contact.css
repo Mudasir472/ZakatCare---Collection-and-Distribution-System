@@ -151,9 +151,78 @@ label {
 .ourWork:hover {
     box-shadow: 0 0 10px #00000026;
 }
-.workMain{
+
+.workMain {
     height: 24rem;
 }
+
 .workMain img {
     height: 13rem;
+}
+
+/* Team mems */
+.img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-img {
+    transition: opacity 0.3s ease;
+}
+
+.hover-img:hover {
+    opacity: 0.8;
+    /* Dims the image */
+}
+
+/* Social Icons Styling */
+.img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-img {
+    transition: opacity 0.3s ease;
+}
+
+.hover-img:hover {
+    opacity: 0.8;
+    /* Dim the image */
+}
+
+/* Social Icons Styling */
+.social-icons {
+    position: absolute;
+    bottom: 0px;
+    /* Start hidden below the image */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    /* Animate icons */
+}
+
+.social-icons a {
+    color: black;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    /* Smooth hover scaling */
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    /* Slightly enlarge icons on hover */
+}
+
+/* Show the icons when hovering over the image */
+.img-container:hover .social-icons {
+    bottom: 4rem;
+    /* Move up */
+    opacity: 1;
+    /* Become visible */
 }

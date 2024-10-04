@@ -47,7 +47,7 @@ function saveChildren() {
                             <p className="w-1/2 font-semibold text-lg ">
                                 Giving a monthly donation is the best way to help vulnerable children all over the world. A monthly donation helps us save children's lives. It helps us protect them.
                             </p>
-                            <button className="btn btn-danger donateBtn">Donate Now < span className="flex items-center justify-center "><i class="bi bi-arrow-right-short"></i></span></button>
+                            <button style={{ height:'44px'}} className="btn btn-danger donateBtn">Donate Now < span className="flex items-center justify-center "><i class="bi bi-arrow-right-short"></i></span></button>
                         </div>
                     </div>
                 </div>
