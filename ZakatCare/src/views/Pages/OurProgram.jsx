@@ -54,7 +54,7 @@ export default function OurProgram() {
                     className="programBG">
 
                     <div style={{ height: "100%" }} className="container childDesc flex flex-column items-center justify-center relative z-10">
-                        <h4 style={{ color: "#002866" }} className="font-bold text-5xl">Our Programs</h4>
+                        <h4 style={{ color: "#F4B03E" }} className="font-bold text-5xl">Our Programs</h4>
                     </div>
                 </div>
 

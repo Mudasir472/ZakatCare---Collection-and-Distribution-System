@@ -1,15 +1,17 @@
 import "./contact.css"
 
 import help from "../../Images/help.png"
-function OurWork() {
+function OurWork({ img, head, desc }) {
     return (<>
         <div className="ourWork mb-6">
-            <div className="workMain flex flex-column items-center justify-content">
+            <div className="workMain flex flex-column items-center justify-evenly">
 
-                <img src={help} alt="" />
+                <img src={img} alt="" />
 
-                <h4>Our Mission</h4>
-                <p>Creating Opportunities for a Brighter Future</p>
+                <div className="flex items-center justify-evenly h-32 flex-column">
+                    <h5 >{head}</h5>
+                    <p>{desc}</p>
+                </div>
             </div>
         </div>
     </>);

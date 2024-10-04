@@ -7,6 +7,7 @@ const { isAuthenticated } = require("../Middlewares")
 
 const { storage } = require("../cloudConfig");
 const multer = require('multer');
+const Team = require("../modals/team.modal");
 // const Listing = require("../modals/data.modal");
 const upload = multer({ storage });
 
@@ -82,6 +83,11 @@ router.post("/zakatcare/changeprofile", isAuthenticated, upload.single("profileP
         res.status(500).json({ message: "Failed to update profile picture", error: error.message });
     }
 });
+
+router.get("/zakatcare/teammembers",async(req,res)=>{
+    const indexData = await Team.find({});
+    res.send(indexData);
+})
 
 router.get("/zakatcare/getuser",(req,res)=>{
     res.status(200).json({ message: "user", user: req.user })

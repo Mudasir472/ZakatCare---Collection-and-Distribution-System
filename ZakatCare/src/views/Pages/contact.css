@@ -142,11 +142,18 @@ label {
 
 
 /* About Us */
-.ourWork{
+.ourWork {
     border: 1px solid #e2e2e2;
     width: 48%;
-    
+
 }
-.workMain img{
-    height: 15rem;
+
+.ourWork:hover {
+    box-shadow: 0 0 10px #00000026;
+}
+.workMain{
+    height: 24rem;
+}
+.workMain img {
+    height: 13rem;
 }
