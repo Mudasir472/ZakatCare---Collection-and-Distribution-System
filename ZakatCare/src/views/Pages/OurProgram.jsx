@@ -13,7 +13,7 @@ export default function OurProgram() {
             id: 1,
             title: "Scholarship/Education",
             description: "Our scholarship program aims to provide financial assistance to underprivileged students who aspire to achieve their educational goals. By removing financial barriers, we enable deserving individuals to pursue their studies, gain knowledge, and build a brighter future for themselves and their communities.",
-            img: others
+            img: marry
         },
         {
             id: 4,
@@ -58,7 +58,7 @@ export default function OurProgram() {
                     </div>
                 </div>
 
-                <div className="h-80 programHead container flex flex-column items-start justify-evenly">
+                <div className="h-80 programHead container flex flex-column items-start justify-evenly progHeading">
                     <h3 className="font-extrabold text-4xl	">ZaakatCare - Collection and Distribution System</h3>
                     <p>At Hyderabad Zakat & Charitable Trust (HZCT), we are committed to serving the underprivileged communities and making a positive impact on their lives. Through our various programs, we address critical areas such as education, healthcare, relief, and empowerment.</p>
 

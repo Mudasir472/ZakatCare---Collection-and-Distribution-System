@@ -140,6 +140,49 @@ label {
     opacity: 1;
 }
 
+/* Responsive of Our Program Pages */
+@media only screen and (max-width:600px) {
+    .programBG {
+        height: 300px;
+    }
+
+    .programBG h4 {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+
+    .progHeading h3 {
+        text-decoration: underline;
+        font-weight: 650;
+        font-size: 23px;
+        text-align: start;
+    }
+
+    .progHeading p {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .programs {
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .programs .compHead {
+        height: 50%;
+    }
+
+    .programs p {
+        font-size: 15px;
+    }
+
+    .compHead h3 {
+        text-transform: uppercase;
+        text-decoration: underline;
+        font-size: 20px;
+    }
+}
 
 /* About Us */
 .ourWork {
