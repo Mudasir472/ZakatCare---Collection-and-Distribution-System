@@ -54,7 +54,7 @@ function saveChildren() {
 
             </div>
             <div style={{ backgroundColor: "rgb(245, 245, 245)" }} className="next">
-                <div style={{ height: "19rem" }} className="volunteers container flex items-center justify-evenly">
+                <div  className="volunteers container flex items-center justify-evenly">
                     <Volunteer title="102" desc="Volunteers" img={people} />
                     <Volunteer title="11" desc="Donations in Million $" img={heart} />
                     <Volunteer title="21" desc="Contributors" img={happyface} />

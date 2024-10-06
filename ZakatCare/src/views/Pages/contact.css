@@ -185,6 +185,12 @@ label {
 }
 
 /* About Us */
+.about {
+    height: 61rem;
+}
+.teamDesc p {
+    width: 61%;
+}
 .ourWork {
     border: 1px solid #e2e2e2;
     width: 48%;
@@ -268,4 +274,51 @@ label {
     /* Move up */
     opacity: 1;
     /* Become visible */
+}
+@media only screen and (max-width:600px) {
+    .programBG {
+        height: 300px;
+    }
+
+    .programBG h4 {
+        font-size: 3rem;
+        font-weight: 450;
+    }
+
+    .aboutdesc h3 {
+        text-decoration: underline;
+        font-weight: 650;
+        font-size: 17.5px;
+    }
+
+    .aboutdesc p {
+        font-size: 15.5px;
+    }
+
+    .ourWork {
+        width: 100%;
+        /* height: 20%; */
+    }
+
+
+
+    .ourWork desc {
+        font-size: 18px;
+    }
+
+    .aboutUsWork {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .our-height {
+        height: 120rem;
+    }
+    .about{
+        height: 100%;
+    }
+
+    .teamDesc p {
+        width: 100%;
+    }
 }

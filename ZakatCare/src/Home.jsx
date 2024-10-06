@@ -10,7 +10,7 @@ function Home() {
         <MainSlider/>
         <Programs/>
         {/* <SaveChildren/> */}
-        {/* <Transparency/> */}
+        <Transparency/>
         <ComunityStory/>
         
     </>);

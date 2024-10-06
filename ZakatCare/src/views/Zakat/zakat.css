@@ -85,6 +85,10 @@
     height: 13.5rem;
 }
 
+.volunteers {
+    height: 19rem;
+}
+
 .volImgg img {
     height: 64px;
     color: #F4B03E !important;
@@ -92,7 +96,7 @@
 
 .childDesc {
     color: #F4B03E;
-    margin-left: 143px;
+    margin-left: 0;
 }
 
 
@@ -202,11 +206,12 @@
         font-size: 2rem;
         line-height: 1;
     }
-    .childDesc p{
+
+    .childDesc p {
         width: 100%;
     }
-}
 
-.container{
-    max-width: 1304px!important;
+    .volunteers {
+        height: 51rem;
+    }
 }
