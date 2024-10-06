@@ -92,7 +92,7 @@
 
 .childDesc {
     color: #F4B03E;
-    margin-left: 143px;
+    /* margin-left: 143px; */
 }
 
 
@@ -202,11 +202,8 @@
         font-size: 2rem;
         line-height: 1;
     }
-    .childDesc p{
+
+    .childDesc p {
         width: 100%;
     }
-}
-
-.container{
-    max-width: 1304px!important;
 }
