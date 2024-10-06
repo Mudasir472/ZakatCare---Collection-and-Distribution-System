@@ -75,12 +75,12 @@ export default function About() {
                             <h4 style={{ color: "#F4B03E" }} className="font-bold text-5xl">About Us</h4>
                         </div>
                     </div>
-                    <div  className="flex about flex-column items-center justify-evenly">
+                    <div className="our-height flex flex-column items-center justify-evenly">
                         <div className="aboutdesc container">
-                            <h3 className="mb-4">Zakatcare - Collection and Distribution System</h3>
+                            <h3 className="my-4">Zakatcare - Collection and Distribution System</h3>
                             <p>ZakatCare is a platform dedicated to connecting donors with impactful causes. We focus on key programs like education scholarships, feeding the poor, relief and rehabilitation, and marriage assistance. Our mission is to ensure every Zakat donation makes a meaningful difference, helping communities thrive through trusted and transparent distribution.</p>
                         </div>
-                        <div className="container aboutUsWork flex flex-wrap items-center justify-between">
+                        <div className="container aboutUsWork flex flex-wrap items-center flex-row justify-between">
                             {abouts.map(about => (
                                 <OurWork
                                     head={about.head}

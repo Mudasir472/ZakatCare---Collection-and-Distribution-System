@@ -96,7 +96,7 @@
 
 .childDesc {
     color: #F4B03E;
-    margin-left: 0;
+    /* margin-left: 143px; */
 }
 
 
@@ -209,9 +209,5 @@
 
     .childDesc p {
         width: 100%;
-    }
-
-    .volunteers {
-        height: 51rem;
     }
 }
