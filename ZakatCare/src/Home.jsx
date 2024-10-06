@@ -9,8 +9,8 @@ function Home() {
     return (<>
         <MainSlider/>
         <Programs/>
-        {/* <SaveChildren/> */}
-        {/* <Transparency/> */}
+        <SaveChildren/>
+        <Transparency/>
         <ComunityStory/>
         
     </>);

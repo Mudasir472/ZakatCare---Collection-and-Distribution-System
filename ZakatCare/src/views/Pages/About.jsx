@@ -75,7 +75,7 @@ export default function About() {
                             <h4 style={{ color: "#F4B03E" }} className="font-bold text-5xl">About Us</h4>
                         </div>
                     </div>
-                    <div  className="our-height flex flex-column items-center justify-evenly">
+                    <div className="our-height flex flex-column items-center justify-evenly">
                         <div className="aboutdesc container">
                             <h3 className="my-4">Zakatcare - Collection and Distribution System</h3>
                             <p>ZakatCare is a platform dedicated to connecting donors with impactful causes. We focus on key programs like education scholarships, feeding the poor, relief and rehabilitation, and marriage assistance. Our mission is to ensure every Zakat donation makes a meaningful difference, helping communities thrive through trusted and transparent distribution.</p>
@@ -98,7 +98,7 @@ export default function About() {
                                     <h4>Our Team</h4>
                                 </div>
                                 <div className="teamDesc mb-4 col-111 flex items-center justify-center">
-                                    <p style={{  textAlign: "center" }}>ZakatCare is powered by a dedicated team of professionals who share a passion for helping those in need. Each member brings unique skills and expertise, working together to deliver the best possible impact for our communities.</p>
+                                    <p style={{ textAlign: "center" }}>ZakatCare is powered by a dedicated team of professionals who share a passion for helping those in need. Each member brings unique skills and expertise, working together to deliver the best possible impact for our communities.</p>
                                 </div>
                             </div>
                             <div className="teamMems d-flex flex-wrap justify-content-between">

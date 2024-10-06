@@ -85,6 +85,10 @@
     height: 13.5rem;
 }
 
+.volunteers {
+    height: 19rem;
+}
+
 .volImgg img {
     height: 64px;
     color: #F4B03E !important;
@@ -165,6 +169,7 @@
 
 .transComps {
     height: 11rem;
+
 }
 
 .transMain {
@@ -179,10 +184,17 @@
 .transTitle p {
     font-size: larger;
 }
+.transHead{
+    height: 100%;
+}
+
 
 @media only screen and (max-width: 600px) {
     .ourprogram {
         height: 14rem;
+    }
+    .volunteers{
+        height: 100%;
     }
 
     .programMain {
@@ -205,5 +217,17 @@
 
     .childDesc p {
         width: 100%;
+    }
+
+    .transMain {
+        height: 100%;
+    }
+
+    .transComps {
+        height: 100%;
+        flex-direction: column;
+    }
+    .transHead{
+        height: 12rem;
     }
 }

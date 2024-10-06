@@ -184,6 +184,12 @@ label {
 }
 
 /* About Us */
+
+
+.teamDesc p {
+    width: 61%;
+}
+
 .ourWork {
     border: 1px solid #e2e2e2;
     width: 48%;
@@ -202,6 +208,10 @@ label {
     height: 13rem;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3d334ee0e27716cd0fb90d0abd0682678b327cde
 
 .teamDesc p {
     width: 61%;
@@ -230,7 +240,10 @@ label {
 
     .ourWork {
         width: 100%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3d334ee0e27716cd0fb90d0abd0682678b327cde
     }
 
     .ourWork desc {
@@ -238,6 +251,7 @@ label {
     }
 
     .aboutUsWork {
+        
         display: flex;
         flex-direction: column;
     }
