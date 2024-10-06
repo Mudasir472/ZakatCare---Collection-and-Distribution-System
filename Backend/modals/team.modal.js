@@ -6,6 +6,7 @@ const teamSchema = new Schema({
     imgLink: String,
     speciality: String,
     desc: String,
+    links: { type: [String], required: true }
 })
 
 const Team = mongoose.model("Team", teamSchema)

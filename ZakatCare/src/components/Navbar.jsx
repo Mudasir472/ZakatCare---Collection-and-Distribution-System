@@ -9,7 +9,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-    { name: 'Home', href: '', current: true },
+    { name: 'Home', href: '/', current: true },
     { name: 'Our Programs', href: '/zakatcare/ourprogram', current: false },
     { name: 'Zakat', href: '/zakatcare/zakat', current: false },
     { name: 'About', href: '/zakatcare/about', current: false },

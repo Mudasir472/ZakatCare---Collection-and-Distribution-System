@@ -1,6 +1,7 @@
 import axios from "axios";
 import URL from "../../../env";
 import { useEffect, useState } from "react";
+import "./contact.css"
 
 import programBG from "../../Images/ourProgramBG.webp";
 import OurWork from "./OurWork";
@@ -28,6 +29,7 @@ export default function About() {
         // Call the async function
         fetchTeamData();
     }, []);
+    console.log("Data", data)
 
     const abouts = [
         {
@@ -67,7 +69,7 @@ export default function About() {
                             backgroundRepeat: 'no-repeat',
                             backgroundAttachment: 'fixed',
                         }}
-                        className="programBG"
+                        className="programBG mb-4"
                     >
                         <div style={{ height: "100%" }} className="container childDesc flex flex-column items-center justify-center relative z-10">
                             <h4 style={{ color: "#F4B03E" }} className="font-bold text-5xl">About Us</h4>
@@ -122,8 +124,25 @@ export default function About() {
                                     ))
                                 ) : (
                                     data.map((item) => (
+
                                         <div key={item.name} className="card teamImg" style={{ width: "23rem" }}>
-                                            <img style={{ height: '24rem' }} src={item.imgLink} className="card-img-top" alt={item.name} />
+
+                                            <div className="MemImg img-container">
+                                                <img style={{ height: '24rem' }} src={item.imgLink} className="card-img-top hover-img" alt={item.name} />
+
+                                                {/* Icons Container */}
+                                                <div className="social-icons">
+                                                    <a style={{ color: "rgb(59, 89, 152)" }} href={item.links[0]} target="_blank" rel="noopener noreferrer">
+                                                        <i class="bi bi-facebook"></i>
+                                                    </a>
+                                                    <a style={{ color: 'rgb(193, 53, 132)' }} href={item.links[1]} target="_blank" rel="noopener noreferrer">
+                                                        <i class="bi bi-instagram"></i>
+                                                    </a>
+                                                    <a style={{ color: 'rgb(0, 119, 181)' }} href={item.links[2]} target="_blank" rel="noopener noreferrer">
+                                                        <i class="bi bi-linkedin"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
                                             <div className="card-body">
                                                 <p><b>{item.name}</b></p>
                                                 <p style={{ color: "#254370" }}>{item.speciality}</p>
@@ -131,6 +150,9 @@ export default function About() {
                                             </div>
                                         </div>
                                     ))
+
+
+
                                 )}
                             </div>
                         </div>
