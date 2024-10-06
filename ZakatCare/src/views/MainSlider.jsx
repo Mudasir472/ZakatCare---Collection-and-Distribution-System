@@ -46,7 +46,7 @@ const MainSlider = () => {
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             height: '100%',
-                            filter: 'brightness(0.9)'  
+                            filter: 'brightness(0.9)'
                         }}
                     ></div>
                     <div className="slider-img overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
