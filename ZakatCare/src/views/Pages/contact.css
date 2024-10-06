@@ -202,9 +202,6 @@ label {
     height: 13rem;
 }
 
-.our-height {
-    height: 61rem;
-}
 
 .teamDesc p {
     width: 61%;
@@ -233,10 +230,8 @@ label {
 
     .ourWork {
         width: 100%;
-        /* height: 20%; */
+
     }
-
-
 
     .ourWork desc {
         font-size: 18px;

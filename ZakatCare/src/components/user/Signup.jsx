@@ -3,7 +3,8 @@ import axios from 'axios';
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import URL from "../../../env"
-import logo from "/Logo.png"
+import logo from "/Logo.png";
+import "./user.css"
 
 export default function Signup() {
     const [formData, setFormData] = useState({
@@ -57,7 +58,7 @@ export default function Signup() {
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm comImg">
                     <img
                         alt="Your Company"
                         src={logo}

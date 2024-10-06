@@ -23,8 +23,9 @@ h4 {
 .footerMain {
     flex-direction: row;
 }
+
 .title li {
-    color: white!important;
+    color: white !important;
 }
 
 
@@ -36,5 +37,17 @@ h4 {
 
     .title {
         width: 100%;
+    }
+}
+
+/* LogIn/SignUp */
+.comImg img {
+    height: 8rem;
+}
+
+/* Resposnive: LogIn/SignUp */
+@media only screen and (max-width:600px) {
+    .comImg img {
+        height: 8rem;
     }
 }
