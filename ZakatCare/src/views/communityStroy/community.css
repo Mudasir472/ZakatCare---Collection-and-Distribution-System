@@ -3,8 +3,17 @@
     margin-bottom: 34px;
 }
 
+.communityHead p {
+    width: 66.666667%;
+}
+
+.w-change {
+    width: 100%;
+}
+
 .rem-border {
     border: none !important;
+    width: 25rem;
 }
 
 .moreBtn button {
@@ -40,4 +49,33 @@
 .image img {
     height: 27rem;
     width: 57rem;
+}
+
+.comComponents img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .communityHead {
+        height: 17rem;
+        width: 100%;
+    }
+
+    .communityHead p {
+        width: 100%;
+    }
+
+    .comComponents img {
+        height: 18rem;
+        width: 22rem;
+    }
+
+    .w-change {
+        width: 100%;
+    }
+
+    .rem-border {
+        width: 100%;
+    }
 }

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import URL from "../../../env"
+import logo from "/Logo.png"
 
 export default function Login() {
     const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ export default function Login() {
                 console.log("wrong details")
             }
             if (error.response && error.response.data) {
-                navigate(error.response.data.redirectUrl || '/login');
+                navigate(error.response.data.redirectUrl || '/zakatcare/login');
             } else {
                 toast.error('An unexpected error occurred');
             }
@@ -59,18 +60,23 @@ export default function Login() {
     // const loginGoogle = () => {
     //     window.open('http://localhost:8090/auth/google/callback', "_self")
     // }
-
-
-
     return (
         <>
-            <div className="login my-4 ">
-                <form className="flex flex-column items-center justify-center" style={{ marginBottom: "6rem" }} onSubmit={handleSubmit}>
-                    <div className="mainLogin flex flex-column items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500		">
-                        <div className="mt-4 DOresponsive">
-                            <h3 className="text-2xl font-bold mb-3">Login to Muddu-Electronics</h3>
-                        </div>
-                        <div className="mb-3 mt-4 DOresponsive">
+            <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                    <img
+                        alt="Your Company"
+                        src={logo}
+                        className="mx-auto h-10 w-auto"
+                    />
+                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                        Log in to your account
+                    </h2>
+                </div>
+
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        <div>
                             <label htmlFor="username" className="form-label">Username</label>
                             <input
                                 type="text"
@@ -83,25 +89,43 @@ export default function Login() {
                                 required
                             />
                         </div>
-                        <div className="mb-3 DOresponsive">
-                            <label htmlFor="password" className="form-label">Password</label>
-                            <input
-                                type="password"
-                                name="password"
-                                value={formData.password}
-                                onChange={handleInputChange}
-                                className="form-control"
-                                placeholder="password"
-                                id="password"
-                                required
-                            />
+
+                        <div>
+                            <div className="flex items-center justify-between">
+                                <label htmlFor="password" className="form-label">Password</label>
+                            </div>
+                            <div className="mt-2">
+                                <input
+                                    type="password"
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    className="form-control"
+                                    placeholder="password"
+                                    id="password"
+                                    required
+                                />
+                            </div>
                         </div>
-                        <button type="submit" className="btn btn-primary mb-3">Login</button>
-                    </div>
-                </form>
-                {/* <button onClick={loginGoogle} className="btn btn-primary mb-3 col-3 offset-5">Login with Google</button> */}
+
+                        <div>
+                            <button
+                                type="submit"
+                                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            >
+                                Sign in
+                            </button>
+                        </div>
+                    </form>
+
+                    <p className="mt-10 text-center text-sm text-gray-500">
+                        Not a member?{' '}
+                        <Link to={"/zakatcare/signup"} className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                            Sign Up
+                        </Link>
+                    </p>
+                </div>
             </div>
         </>
-    );
+    )
 }
-
