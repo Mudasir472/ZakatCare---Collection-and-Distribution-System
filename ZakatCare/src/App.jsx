@@ -15,6 +15,7 @@ import Signup from "./components/user/Signup";
 
 import CommunityDtails from "./views/communityStroy/CommunityDetails";
 import Footer from "./components/Footer";
+import PageNotFound from "./components/PageNotFound";
 function App() {
 
   return (
@@ -39,6 +40,9 @@ function App() {
 
 
               <Route path="/zakatcare/:id" element={<CommunityDtails />} />
+
+              {/* Page not found */}
+              <Route path="*" element={<PageNotFound />} />
 
             </Routes>
           </div>

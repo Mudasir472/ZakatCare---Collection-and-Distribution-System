@@ -1,11 +1,11 @@
 import { useState } from "react";
 import axios from 'axios';
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import URL from "../../../env"
+import logo from "/Logo.png"
 
 export default function Signup() {
-
     const [formData, setFormData] = useState({
         name: "",
         username: "",
@@ -54,73 +54,97 @@ export default function Signup() {
             password: ""
         });
     };
-
     return (
         <>
-            <form style={{ marginBottom: "6rem" }} onSubmit={handleSubmit}>
-                <div className="container row">
-                    <div className="mt-4 DOresponsive">
-                        <h3 className="text-xl font-bold mb-3">Signup to Muddu-electronics</h3>
-                    </div>
-                    <div className="mb-3 mt-4 DOresponsive">
-                        <label htmlFor="name" className="form-label">Name</label>
-                        <input
-                            type="text"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            className="form-control"
-                            id="name"
-                            name="name"
-                            placeholder="Enter Name"
-                            required
-                        />
-                    </div>
-                    <div className="mb-3 mt-4 DOresponsive">
-                        <label htmlFor="username" className="form-label">Username</label>
-                        <input
-                            type="text"
-                            value={formData.username}
-                            onChange={handleInputChange}
-                            className="form-control"
-                            id="username"
-                            name="username"
-                            placeholder="Enter username"
-                            required
-                        />
-                    </div>
-                    <div className="mb-3 mt-4 DOresponsive">
-                        <label htmlFor="email" className="form-label">Email address</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            className="form-control"
-                            id="email"
-                            placeholder="example@gmail.com"
-                            aria-describedby="emailHelp"
-                            required
-                        />
-                        <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div className="mb-3 DOresponsive">
-                        <label htmlFor="password" className="form-label">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleInputChange}
-                            className="form-control"
-                            placeholder="password"
-                            id="password"
-                            required
-                        />
-                    </div>
-                    <button type="submit" className="btn btn-primary mb-3 col-3 offset-5">Submit</button>
-                    <hr />
-                    {/* Additional buttons or links */}
+            <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                    <img
+                        alt="Your Company"
+                        src={logo}
+                        className="mx-auto h-10 w-auto"
+                    />
+                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                        Sign Up to ZakatCare
+                    </h2>
                 </div>
-            </form>
+
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        <div>
+                            <label htmlFor="name" className="form-label">Name</label>
+                            <input
+                                type="text"
+                                value={formData.name}
+                                onChange={handleInputChange}
+                                className="form-control"
+                                id="name"
+                                name="name"
+                                placeholder="Enter Name"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <div className="mt-2">
+                                <label htmlFor="username" className="form-label">Username</label>
+                                <input
+                                    type="text"
+                                    value={formData.username}
+                                    onChange={handleInputChange}
+                                    className="form-control"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Enter username"
+                                    required
+                                />
+                            </div>
+                            <div className="mt-2">
+                                <label htmlFor="email" className="form-label">Email address</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    className="form-control"
+                                    id="email"
+                                    placeholder="example@gmail.com"
+                                    aria-describedby="emailHelp"
+                                    required
+                                />
+                            </div>
+                            <div className="mt-2">
+                                <label htmlFor="password" className="form-label">Password</label>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    className="form-control"
+                                    placeholder="password"
+                                    id="password"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <button
+                                type="submit"
+                                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            >
+                                Sign Up
+                            </button>
+                        </div>
+                    </form>
+
+                    <p className="mt-10 text-center text-sm text-gray-500">
+                        Already a member?{' '}
+                        <Link to={"/zakatcare/login"} className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                            Sign In
+                        </Link>
+                    </p>
+                </div>
+            </div>
         </>
     )
 }

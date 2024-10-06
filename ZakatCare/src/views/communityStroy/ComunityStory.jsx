@@ -34,19 +34,19 @@ function ComunityStory() {
                 <div className="commMain container">
                     <div className="communityHead flex flex-column items-center justify-evenly">
                         <h3 style={{ color: '#F4B03E' }}>Transforming Communities. One Story at a Time.</h3>
-                        <p className="w-8/12 text-center">We believe in the power of every donation to make a lasting impact. Through targeted programs and heartfelt stories, we transform lives, one community at a time, fostering hope and change for those in need.</p>
+                        <p className=" text-center">We believe in the power of every donation to make a lasting impact. Through targeted programs and heartfelt stories, we transform lives, one community at a time, fostering hope and change for those in need.</p>
                         <span className="separators"></span>
                     </div>
                     <div className="commComponents flex flex-wrap items-center justify-evenly">
                         {
                             data.slice(0, visibleItems).map((item) => (
-                                <div key={item._id} className="comComponents my-3">
+                                <div key={item._id} className="comComponents ">
                                     <div style={{ height: "30rem" }} className="comCompsMain">
-                                        <div style={{ width: "25rem" }} className="card justify-between rem-border">
+                                        <div  className="card  justify-between rem-border">
                                             <img style={{ height: '18rem' }} src={item.imgLink} className="card-img-top" alt="..." />
                                             <div className="card-body p-0">
                                                 <Link to={`/zakatcare/${item._id}`}><p style={{ color: '#F4B03E' }} className="font-bold text-xl my-4">{item.heading.toUpperCase()}</p></Link>
-                                                <p className="card-text">{item.desc}</p>
+                                                <p className="w-change card-text">{item.desc}</p>
                                             </div>
                                         </div>
                                     </div>

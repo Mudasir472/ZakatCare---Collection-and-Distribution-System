@@ -1,5 +1,6 @@
 .programMain {
     height: 76rem;
+
 }
 
 .ourprogram {
@@ -91,6 +92,14 @@
 
 .childDesc {
     color: #F4B03E;
+    margin-left: 143px;
+}
+
+
+.childDesc h4 {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1;
 }
 
 .volHead {
@@ -142,26 +151,58 @@
     opacity: 1;
     transform: translateX(5px);
 }
-.donateBtn span i{
+
+.donateBtn span i {
     font-size: larger;
 }
 
 
 /* Transparency */
-.transcomps{
+.transcomps {
     text-align: center;
     line-height: 3rem;
 }
-.transComps{
+
+.transComps {
     height: 11rem;
 }
-.transMain{
+
+.transMain {
     height: 44rem;
 }
-.transCompsHead p{
+
+.transCompsHead p {
     font-size: xx-large;
     color: #F4B03E;
 }
-.transTitle p{
+
+.transTitle p {
     font-size: larger;
+}
+
+@media only screen and (max-width: 600px) {
+    .ourprogram {
+        height: 14rem;
+    }
+
+    .programMain {
+        height: 100%;
+    }
+
+    .actualPrograms {
+        height: 100%;
+    }
+
+    .childDesc {
+        margin-left: 0;
+    }
+
+    .childDesc h4 {
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 1;
+    }
+    .childDesc p{
+        width: 100%;
+    }
 }

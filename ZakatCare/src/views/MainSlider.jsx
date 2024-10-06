@@ -39,17 +39,17 @@ const MainSlider = () => {
             </div>
             <div className="carousel-inner">
                 {/* Slide 1 */}
-                <div className="carousel-item active" style={{ position: 'relative', height: '500px' }}>
+                <div className="carousel-item slider-img active" style={{ position: 'relative', height: '500px' }}>
                     <div
                         style={{
                             backgroundImage: `url(${slider1})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             height: '100%',
-                            filter: 'brightness(0.9)'  // Dim the background for better text visibility
+                            filter: 'brightness(0.9)'  
                         }}
                     ></div>
-                    <div className="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div className="slider-img overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                         <p className="text-5xl font-bold  text-center">Together, We Can Build a Brighter Future</p>
                     </div>
                 </div>

@@ -42,8 +42,8 @@ function saveChildren() {
                         ></div>
 
                         {/* Content on top of the background and overlay */}
-                        <div style={{ marginLeft: '143px' }} className="container childDesc flex flex-column items-start justify-center relative z-10">
-                            <h4 style={{ color: "" }} className="font-bold text-5xl">Save a child by contributing monthly</h4>
+                        <div  className="container childDesc flex flex-column items-start justify-center relative z-10">
+                            <h4  className=" text-5xl">Save a child by contributing monthly</h4>
                             <p className="w-1/2 font-semibold text-lg ">
                                 Giving a monthly donation is the best way to help vulnerable children all over the world. A monthly donation helps us save children's lives. It helps us protect them.
                             </p>
