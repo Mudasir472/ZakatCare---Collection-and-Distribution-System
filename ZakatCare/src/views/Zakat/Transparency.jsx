@@ -5,9 +5,10 @@ import logo3 from "../../Images/logo-3.png"
 import logo4 from "../../Images/logo-4.png"
 import logo5 from "../../Images/logo-5.png"
 import logo6 from "../../Images/logo-6.png"
+import "./zakat.css"
 function Transparency() {
     return (<>
-        <div className="transparency">
+        <div className="transparency container">
             <div className="transMain flex flex-column items-center justify-evenly">
                 <div className="transHead flex flex-column items-center justify-evenly">
                     <p style={{ fontFamily: "cursive" }} className="font-medium text-2xl	">Transparency, Accountability, Effectiveness.</p>

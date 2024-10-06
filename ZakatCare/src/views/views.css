@@ -1,9 +1,21 @@
-.overlay{
+.overlay {
     color: #F4B03E;
 }
-.overlay p{
+
+.overlay p {
     width: 50%;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1;
 }
-.slider-img{
-    
+
+.slider-img {}
+
+@media only screen and (max-width: 600px) {
+    .overlay p {
+        width: 100%;
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 1;
+    }
 }

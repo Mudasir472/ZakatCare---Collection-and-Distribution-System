@@ -50,7 +50,7 @@ const MainSlider = () => {
                         }}
                     ></div>
                     <div className="slider-img overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                        <p className="text-5xl font-bold  text-center">Together, We Can Build a Brighter Future</p>
+                        <p className="text-5xl   text-center">Together, We Can Build a Brighter Future</p>
                     </div>
                 </div>
                 {/* Slide 2 */}

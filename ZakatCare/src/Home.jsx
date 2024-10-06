@@ -9,7 +9,7 @@ function Home() {
     return (<>
         <MainSlider/>
         <Programs/>
-        {/* <SaveChildren/> */}
+        <SaveChildren/>
         <Transparency/>
         <ComunityStory/>
         
