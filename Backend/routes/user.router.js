@@ -8,7 +8,7 @@ const { isAuthenticated } = require("../Middlewares")
 const { storage } = require("../cloudConfig");
 const multer = require('multer');
 const Team = require("../modals/team.modal");
-// const Listing = require("../modals/data.modal");
+// const zakatcare = require("../modals/data.modal");
 const upload = multer({ storage });
 
 router.post("/zakatcare/login", passport.authenticate('local'), wrapAsync(async (req, res) => {
@@ -25,10 +25,38 @@ router.post("/zakatcare/login", passport.authenticate('local'), wrapAsync(async 
     }
 }));
 
+router.get('/auth/google',
+    passport.authenticate('google', {
+        scope:
+            ['email', 'profile']
+    },
+    ));
+router.get('/auth/google/callback',
+    passport.authenticate('google', {
+
+        successRedirect: 'http://localhost:5173/',
+        failureRedirect: 'http://localhost:5173/login'
+
+    }));
+router.get("/login/success", (req, res) => {
+    const sessionId = req.sessionID;
+    res.status(200).json({ message: "Login successful", redirectUrl: "/", user: req.user, sessionId })
+})
+
 router.post("/zakatcare/signup", async (req, res) => {
     try {
 
         const { name, email, username, password } = req.body;
+        // Define a regex pattern to ensure the password contains at least one special character, one letter, and one number
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+        // Validate the password
+        if (!passwordPattern.test(password)) {
+            return res.status(400).json({
+                message: "Password must contain at least one letter, one number, and one special character (@, $, !, %, *, #, ?, &).",
+                redirectUrl: "/zakatcare/signup"
+            });
+        }
         const newUser = new User({ name, username, email });
         const registeredUser = await User.register(newUser, password);
         req.login(registeredUser, (err) => {
@@ -59,6 +87,15 @@ router.post("/zakatcare/logout", (req, res) => {
 
 router.get("/zakatcare/profile", isAuthenticated, (req, res) => {
     res.status(200).json({ message: "user profile", user: req.user })
+})
+router.get("/zakatcare/detail", (req, res) => {
+    res.status(200).json({ message: "user detail", user: req.user })
+})
+router.put("/zakatcare/updateuser/:id", isAuthenticated, async (req, res) => {
+    // const {name,username,body}=req.body;
+    const { id } = req.params;
+    await User.findByIdAndUpdate(id, { ...req.body })
+    res.status(200).json({ msg: "user update success" });
 })
 router.post("/zakatcare/changeprofile", isAuthenticated, upload.single("profilePic"), async (req, res) => {
     try {

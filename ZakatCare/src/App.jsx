@@ -16,6 +16,10 @@ import Signup from "./components/user/Signup";
 import CommunityDtails from "./views/communityStroy/CommunityDetails";
 import Footer from "./components/Footer";
 import PageNotFound from "./components/PageNotFound";
+import ForgotPassword from "./components/user/HandlePassword/ForgotPassword";
+import ResetPassword from "./components/user/HandlePassword/ResetPassword";
+import UserProfile from "./components/user/UserProfile";
+import UpdateProfile from "./components/user/UpdateProfile";
 function App() {
 
   return (
@@ -37,6 +41,12 @@ function App() {
               <Route path="/zakatcare/login" element={<Login />} />
               <Route path="/zakatcare/logout" element={<Logout />} />
               <Route path="/zakatcare/signup" element={<Signup />} />
+              <Route path="/zakatcare/userprofile" element={<UserProfile />} />
+              <Route path="/updateuser" element={<UpdateProfile />} />
+
+
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/reset-password/:token" element={<ResetPassword />} />
 
 
               <Route path="/zakatcare/:id" element={<CommunityDtails />} />
@@ -46,7 +56,7 @@ function App() {
 
             </Routes>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     </>

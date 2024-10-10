@@ -9,6 +9,7 @@ const { connectdb } = require("./config/MongoDB")
 
 const passport = require("passport")
 const LocalStrategy = require("passport-local");
+var GoogleStrategy = require('passport-google-oauth2').Strategy;
 const User = require("./modals/user.modal");
 require('dotenv').config();
 
@@ -16,6 +17,7 @@ require('dotenv').config();
 const userRouter = require("./routes/user.router")
 const commRouter = require("./routes/community.router")
 const reviewComunity = require("./routes/communityReview.router")
+const auth = require("./routes/auth.router")
 // const listingRouter = require('./routes/listing.router');
 
 // Middleware setup
@@ -32,6 +34,8 @@ app.use(cookieParser());
 
 // Mongo connection
 connectdb('mongodb://127.0.0.1:27017/ZakatCare');
+const clientId = "443817596577-amt6r0vtqrc6pl3umeegfu6ucj6o1gut.apps.googleusercontent.com";
+const clientSecret = "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"
 
 // Session setup
 const session = require("express-session");
@@ -65,9 +69,47 @@ app.use(passport.session());
 
 // Passport.js setup
 passport.use(new LocalStrategy(User.authenticate()));
+passport.use(new GoogleStrategy({
+    clientID: clientId,
+    clientSecret: clientSecret,
+    callbackURL: "http://localhost:8090/auth/google/callback",
+    // passReqToCallback: true
+    scope: ["profile", "email"]
+},
+    async function (request, accessToken, refreshToken, profile, done) {
+        // console.log("profile", profile);
+        try {
+            let user = await User.findOne({ googleId: profile.id });
+            if (!user) {
+                user = new User({
+                    googleId: profile.id,
+                    name: profile.displayName,
+                    username: profile.name.givenName,
+                    email: profile.emails[0].value,
+                    image: {
+                        url: profile.photos[0].value, // Set the image URL from Google profile
+                        imgName: 'google-profile-photo' // Optional, can be adjusted as needed
+                    }
+                })
+                await user.save();
+            }
+            return done(null, user)
+        } catch (error) {
+            return done(error, null)
+        }
+    }
+));
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
+passport.serializeUser((user, done) => {
+    done(null, user); // Save user ID to session
+});
+
+// Custom Deserialize User
+passport.deserializeUser((user, done) => {
+    done(null, user); // Save user ID to session
+});
 
 
 // Routes
@@ -78,6 +120,7 @@ app.get("/", (req, res) => {
 app.use("/", userRouter)
 app.use("/", commRouter)
 app.use("/", reviewComunity)
+app.use("/", auth)
 
 
 

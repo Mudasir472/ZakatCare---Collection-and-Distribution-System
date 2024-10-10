@@ -41,6 +41,31 @@ export default function Navbar() {
         fetchUser();
     }, []);
     // console.log(user);
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const loginData = await axios.get(`${URL}/login/success`, { withCredentials: true });
+
+                // Set user state
+                setUser(loginData.data.user);
+
+                // Check if user is not undefined
+                if (loginData.data.user !== undefined) {
+                    // If sessionId exists, set it in local storage
+                    if (loginData?.data?.sessionId) {
+                        localStorage.setItem('sessionID', loginData?.data?.sessionId);
+                    }
+
+                    // Update login status
+                    setIsLoggedIn(!!localStorage.getItem('sessionID'));
+                }
+            } catch (error) {
+                console.error('Error fetching login data:', error);
+            }
+        };
+
+        getData();
+    }, []);
     return (
         <Disclosure style={{ backgroundColor: 'rgb(254, 247, 236)' }} as="nav">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -98,7 +123,7 @@ export default function Navbar() {
                                         <MenuItem>
                                             {({ active }) => (
                                                 <Link
-                                                    to="/zakatcare/profile"
+                                                    to="/zakatcare/userprofile"
                                                     className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                 >
                                                     Your Profile
