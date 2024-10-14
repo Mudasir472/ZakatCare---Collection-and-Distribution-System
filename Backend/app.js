@@ -1,38 +1,41 @@
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const { connectdb } = require("./config/MongoDB");
-const passport = require("passport");
+// const Listing = require("./modals/data.modal");
+const { connectdb } = require("./config/MongoDB")
+
+const passport = require("passport")
 const LocalStrategy = require("passport-local");
-const GoogleStrategy = require('passport-google-oauth2').Strategy;
+var GoogleStrategy = require('passport-google-oauth2').Strategy;
 const User = require("./modals/user.modal");
 require('dotenv').config();
 
-// Routers
-const userRouter = require("./routes/user.router");
-const commRouter = require("./routes/community.router");
-const reviewComunity = require("./routes/communityReview.router");
-const auth = require("./routes/auth.router");
+// Routers 
+const userRouter = require("./routes/user.router")
+const commRouter = require("./routes/community.router")
+const reviewComunity = require("./routes/communityReview.router")
+const auth = require("./routes/auth.router")
+// const listingRouter = require('./routes/listing.router');
 
 // Middleware setup
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your React app's origin
+    origin: 'http://localhost:5173', // Replace with the origin of your React app
     credentials: true // Allow credentials (cookies)
 }));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
 // Mongo connection
-connectdb(process.env.MONGO_URI);
-
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.SECRET_KEY;
+connectdb('mongodb://127.0.0.1:27017/ZakatCare');
+const clientId = process.env.CLIENT_ID
+const clientSecret = process.env.SECRET_KEY
 
 // Session setup
 const session = require("express-session");
@@ -55,7 +58,7 @@ app.use(session({
         expires: Date.now() + 7 * 24 * 60 * 60 * 1000, // 7 days
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         httpOnly: true,
-        secure: false, // Set to true if using HTTPS
+        secure: false,
         signed: false
     }
 }));
@@ -70,9 +73,11 @@ passport.use(new GoogleStrategy({
     clientID: clientId,
     clientSecret: clientSecret,
     callbackURL: "http://localhost:8090/auth/google/callback",
+    // passReqToCallback: true
     scope: ["profile", "email"]
 },
-    async (request, accessToken, refreshToken, profile, done) => {
+    async function (request, accessToken, refreshToken, profile, done) {
+        // console.log("profile", profile);
         try {
             let user = await User.findOne({ googleId: profile.id });
             if (!user) {
@@ -82,39 +87,44 @@ passport.use(new GoogleStrategy({
                     username: profile.name.givenName,
                     email: profile.emails[0].value,
                     image: {
-                        url: profile.photos[0].value,
-                        imgName: 'google-profile-photo'
+                        url: profile.photos[0].value, // Set the image URL from Google profile
+                        imgName: 'google-profile-photo' // Optional, can be adjusted as needed
                     }
-                });
+                })
                 await user.save();
             }
-            return done(null, user);
+            return done(null, user)
         } catch (error) {
-            return done(error, null);
+            return done(error, null)
         }
     }
 ));
 
-// Custom Serialize and Deserialize User
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 passport.serializeUser((user, done) => {
-    done(null, user);
+    done(null, user); // Save user ID to session
 });
 
+// Custom Deserialize User
 passport.deserializeUser((user, done) => {
-    done(null, user);
+    done(null, user); // Save user ID to session
 });
+
 
 // Routes
 app.get("/", (req, res) => {
-    res.send("I am at root");
-});
-app.use("/", userRouter);
-app.use("/", commRouter);
-app.use("/", reviewComunity);
-app.use("/", auth);
+    res.send("i am at root")
+})
+// app.use("/", listingRouter)
+app.use("/", userRouter)
+app.use("/", commRouter)
+app.use("/", reviewComunity)
+app.use("/", auth)
 
-// Start server
-const port = process.env.PORT || 8090;
+
+
+const port = process.env.PORT
 app.listen(port, () => {
-    console.log(`Server listening at port ${port}`);
-});
+    console.log(`server listening at port ${port}`);
+})
