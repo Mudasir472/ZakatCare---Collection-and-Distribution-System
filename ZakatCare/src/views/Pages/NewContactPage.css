@@ -11,26 +11,26 @@
 /* Contact Form */
 
 .contactForm {
-    background: url("../../../public/formbg.png");
-    border-radius: 3rem;
+    background: url("../../../public/formBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 895.49px;
     margin-top: 7rem;
 }
 
-.contactHead h2 {
-    display: flex;
-    align-items: center;
+.contactHead {
     color: white;
-    /* text-align: center; */
-    width: 50%;
     padding-top: 3rem;
+    text-align: center;
 }
 
 .form {
-    border: 1px solid white;
+    height: 45rem;
+    border: 1px solid rgb(26, 26, 26);
     width: 35%;
     border-radius: 12px;
     background-color: white;
-    padding: 2rem;
+    padding: 3.5rem;
 }
 
 form {
@@ -46,5 +46,50 @@ form label {
 form input,
 textarea {
     /* width: 50%; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     border-radius: 12px !important;
+}
+
+
+
+/* Question */
+.question {
+    margin-top: 5rem;
+}
+
+.question_hero {
+    text-align: center;
+}
+
+.support {
+    background-color: #6059C9;
+    width: 359px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 380px;
+    border-radius: 16px;
+}
+
+.support_img {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.ques_content {
+    margin-top: 5rem;
+    color: white;
+}
+
+.support h2 {
+    font-weight: 500;
+}
+
+.support h2,
+p {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    margin: 2rem;
 }
