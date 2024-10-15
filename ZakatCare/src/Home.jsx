@@ -7,12 +7,12 @@ import Transparency from "./views/Zakat/Transparency";
 
 function Home() {
     return (<>
-        <MainSlider/>
-        <Programs/>
-        <SaveChildren/>
-        <Transparency/>
-        <ComunityStory/>
-        
+        <MainSlider />
+        <Programs />
+        <SaveChildren />
+        <Transparency />
+        <ComunityStory />
+
     </>);
 }
 
