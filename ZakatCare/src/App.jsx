@@ -20,6 +20,7 @@ import ForgotPassword from "./components/user/HandlePassword/ForgotPassword";
 import ResetPassword from "./components/user/HandlePassword/ResetPassword";
 import UserProfile from "./components/user/UserProfile";
 import UpdateProfile from "./components/user/UpdateProfile";
+import DashboardLayout from "./views/dashboard/dashboardLayout";
 function App() {
 
   return (
@@ -53,6 +54,8 @@ function App() {
 
               {/* Page not found */}
               <Route path="*" element={<PageNotFound />} />
+
+              <Route path='/dashboard/*' element={<DashboardLayout/>}/>
 
             </Routes>
           </div>

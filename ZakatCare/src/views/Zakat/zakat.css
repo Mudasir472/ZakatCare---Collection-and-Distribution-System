@@ -184,7 +184,8 @@
 .transTitle p {
     font-size: larger;
 }
-.transHead{
+
+.transHead {
     height: 100%;
 }
 
@@ -193,7 +194,8 @@
     .ourprogram {
         height: 14rem;
     }
-    .volunteers{
+
+    .volunteers {
         height: 100%;
     }
 
@@ -227,7 +229,194 @@
         height: 100%;
         flex-direction: column;
     }
-    .transHead{
+
+    .transHead {
         height: 12rem;
     }
+}
+
+
+
+/* Top pages */
+/* Rectangle 56 */
+p {
+    margin-bottom: 0 !important;
+    /* color: #5F5F75; */
+}
+
+h5 {
+    color: #2B2B39;
+}
+
+.top-main {
+    margin-top: 5rem;
+}
+
+.top-head h2 {
+    font-weight: 600;
+    font-size: 63px;
+}
+
+.top-head p {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.compaignMain {
+    margin-top: 8rem;
+    height: 40rem;
+}
+
+.compaign-body {
+    width: 100%;
+}
+
+.compaign-left {
+    height: 19rem;
+}
+
+.compaign-features .bdy {
+    /* width: 35rem; */
+    width: 80%;
+}
+
+.compaign-features .bdy p {
+    width: 27rem;
+}
+
+.img1 {
+    margin-top: 5rem;
+}
+
+.img1 img {
+    height: 412px;
+}
+
+.img2 {
+    position: absolute;
+    top: 354px;
+    z-index: -1;
+    width: 100%;
+    height: 451px;
+}
+
+.img2 img {
+    height: 100%;
+    width: 100%;
+}
+
+.compaignHead h3 {
+    font-size: 48px;
+}
+
+.compaignHead p {
+    font-size: 18px;
+}
+
+.bdy h5 {
+    font-size: 24px;
+}
+
+.bdy p {
+    font-size: 18px;
+}
+
+/* compaignMain */
+.compaign {
+    margin-top: 4.3rem;
+}
+
+.btn-light {
+    color: #6059C9 !important;
+    font-weight: 700;
+}
+
+.StartcompaignMain .compaign-l {
+    background-color: #6059C9;
+    color: white;
+}
+
+.StartcompaignMain .compaign-right {
+    background-color: #F5EFE0;
+}
+
+.compaign-bdy {
+    height: 30rem;
+}
+
+.compaign-bdy p {
+    width: 60%;
+    text-align: center;
+}
+
+.btn-sky {
+    background-color: #6059C9;
+    color: white;
+    font-weight: 700;
+}
+
+/* Trusted-bdy */
+.Trusted-bdy {
+    background-color: #F5EFE0;
+    border-radius: 16px;
+}
+
+.trustedMain {
+    height: 50rem;
+}
+
+.Trusted-bdyMain {
+    height: 27rem;
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.Trusted-bdyMain h3 {
+    width: 80%;
+    text-align: center;
+
+}
+
+.Trusted-bdyMain p {
+    width: 84%;
+    text-align: center;
+}
+
+.Trusted-bdy {
+    width: 100%;
+}
+
+.trustedHead {
+    text-align: center;
+}
+
+.trustedHead h3 {
+    font-weight: 700;
+    font-size: 41px;
+}
+
+.trustedHead p {
+    color: #5F5F75;
+    font-size: 18px;
+}
+
+.signatures {
+    background-color: #6059C9;
+    width: 100%;
+    height: 14rem;
+    color: white;
+}
+
+.signatureMain {
+    width: 74%;
+}
+
+.sign-1 h3 {
+    font-weight: 600;
+    font-size: 55px;
+}
+
+.sign-1 p {
+    font-weight: 400;
+    font-size: 23px;
 }
