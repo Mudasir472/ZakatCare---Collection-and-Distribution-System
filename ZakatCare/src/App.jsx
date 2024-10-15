@@ -7,7 +7,7 @@ import Home from "./Home";
 import OurProgram from "./views/Pages/OurProgram";
 import Zakat from "./views/Pages/Zakat";
 import About from "./views/Pages/About";
-import Contact from "./views/Pages/Contact";
+import NewContactPage from "./views/Pages/newContactpage";
 import Donate from "./views/Donate";
 import Login from "./components/user/Login";
 import Logout from "./components/user/Logout";
@@ -20,6 +20,7 @@ import ForgotPassword from "./components/user/HandlePassword/ForgotPassword";
 import ResetPassword from "./components/user/HandlePassword/ResetPassword";
 import UserProfile from "./components/user/UserProfile";
 import UpdateProfile from "./components/user/UpdateProfile";
+
 import DashboardLayout from "./views/dashboard/dashboardLayout";
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
               <Route path="/zakatcare/ourprogram" element={<OurProgram />} />
               <Route path="/zakatcare/zakat" element={<Zakat />} />
               <Route path="/zakatcare/about" element={<About />} />
-              <Route path="/zakatcare/contact" element={<Contact />} />
+              <Route path="/zakatcare/contact" element={<NewContactPage />} />
               <Route path="/zakatcare/donate" element={<Donate />} />
 
               <Route path="/zakatcare/login" element={<Login />} />
