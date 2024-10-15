@@ -98,9 +98,7 @@ function CommunityDtails() {
             <div className="container">
                 <div className='d-flex flex-column justify-content-center align-items-center'>
                     <div className="card  listInd border-0 mb-3 ms-4">
-                        <h3 className='h-20 d-flex headding align-items-center font-sans text-2xl font-bold'>
-                            {Community.heading}
-                        </h3>
+                        
 
                         <img
                             style={{ width: '74rem',height:"30rem" }}
@@ -115,7 +113,7 @@ function CommunityDtails() {
                                 <p>Owner details not available.</p>
                             )}
                             <div className="heading">
-                                <p style={{ color: '#F4B03E' }} className="font-bold text-xl my-4">
+                                <p style={{ color: '#6059C9' }} className="font-bold text-xl my-4">
                                     {Community.heading.toUpperCase()}
                                 </p>
                                 <p className="card-text">{Community.desc}</p>
