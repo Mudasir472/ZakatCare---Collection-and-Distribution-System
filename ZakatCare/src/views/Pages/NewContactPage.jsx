@@ -1,23 +1,23 @@
 import React from 'react'
-import Addlogo from "../../../public/Addimg.png";
-import Emaillogo from "../../../public/Emailimg.png";
-import ContactLogo from "../../../public/contactImg.png";
-import img from "../../../public/rightSectionImg.png";
+import Addlogo from "/Addimg.png";
+import Emaillogo from "/Emailimg.png";
+import ContactLogo from "/contactImg.png";
+import img from "/rightSectionImg.png";
 import "./NewContactPage.css";
 import Contactform from './Contactform';
 
 const NewContactPage = () => {
     return (
         <>
-            <div className='herosection_contact container d-flex justify-evenly items-center'>
+            <div className='herosection_contact  d-flex justify-evenly items-center'>
                 <div className="left_hero_section container">
                     <div className="hero_intro">
                         <h1>Hola,Whats Up?</h1>
                         <p>Conikal build the Powerful Platform base on WordPress with latest technology. We offers the fastest way for Webmaster start their Platforms.</p>
                     </div>
                     <br /><br /><br />
-                    <div className="getTouch">
-                        <div className="address d-flex">
+                    <div className="getTouch flex flex-column items-start justify-evenly">
+                        <div className="addresses d-flex items-center justify-center">
                             <div className="add_img">
                                 <img src={Addlogo} alt="Address" />
                             </div>
@@ -26,7 +26,7 @@ const NewContactPage = () => {
                                 <p>17224 S. Figueroa Street, Gardena, CA 90248, USA</p>
                             </div>
                         </div>
-                        <div className="email d-flex">
+                        <div className="email d-flex items-center justify-center">
                             <div className="email_img">
                                 <img src={Emaillogo} alt="Email" />
                             </div>
@@ -35,7 +35,7 @@ const NewContactPage = () => {
                                 <p>abc@gmail.com</p>
                             </div>
                         </div>
-                        <div className="contact d-flex">
+                        <div className="contact d-flex items-center justify-center">
                             <div className="contact_img">
                                 <img src={ContactLogo} alt="Contact" />
                             </div>
@@ -46,10 +46,10 @@ const NewContactPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="right_hero_section">
+                <div className="right_hero_section flex items-center justify-center px-6 ">
                     <div className="rightImg">
                         <img src={img} alt="Image" />
-                    </div>
+                    </div> 
                 </div>
             </div>
             <Contactform />

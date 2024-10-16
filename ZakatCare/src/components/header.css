@@ -1,17 +1,17 @@
 .bg-orange {
-    background-color: #F4B03E;
+    background-color: #6059C9;
 }
 
 .bg-hover-orange:hover {
-    background-color: #F4B03E;
+    background-color: #6059C9;
 }
 
 .navlists a {
-    color: #f9a922;
+    color: #6059C9;
 }
 
 .user {
-    background-color: #F4B03E;
+    background-color: #6059C9;
     height: 38px;
     width: 143px;
     display: flex;

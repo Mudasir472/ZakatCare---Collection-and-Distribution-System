@@ -2,13 +2,13 @@ import React from 'react'
 import "./NewContactPage.css";
 import Support from './Support';
 import WorkLoc from './WorkLoc';
-import img1 from '../../../public/support.png'
-import img2 from '../../../public/media.png'
-import img3 from '../../../public/payment.png'
-import img4 from '../../../public/workImg.png'
+import img1 from '/support.png'
+import img2 from '/media.png'
+import img3 from '/payment.png'
+import img4 from '/workImg.png'
 import Helpdesk from './Helpdesk';
-import helpDescImg from '../../../public/docs.png'
-import icon from '../../../public/suportIcon.png'
+import helpDescImg from '/docs.png'
+import icon from '/suportIcon.png'
 
 const Contactform = () => {
     return (
@@ -54,7 +54,7 @@ const Contactform = () => {
                 </div>
             </div>
             <br /><br />
-            <div className="question">
+            <div className="question flex flex-column justify-evenly items-center">
                 <div className="question_hero mb-12">
                     <h2>Got question?</h2>
                     <p>Contact one of department to solve your problem.
@@ -67,7 +67,7 @@ const Contactform = () => {
                 </div>
             </div>
             <br /><br />
-            <div className="about_work container d-flex justify-evenly">
+            <div className="about_work  d-flex justify-evenly">
                 <div className="rightSideImg d-flex justify-center items-center">
                     <img src={img4} alt="" />
                 </div>
@@ -90,17 +90,7 @@ const Contactform = () => {
                     30263" />
                 </div>
             </div>
-            <br /><br />
-            <div className="help container">
-                <Helpdesk img={helpDescImg} head="Documentation" desc="Find documents related to products and your account." />
-                <div>
-                    <button class="btn btn-primary" type="button">Find a tutorial</button>
-                </div>
-                <Helpdesk img={icon} head="Support Desk" desc="Contact our technical experts for customer support." />
-                <div>
-                    <button class="btn btn-primary" type="button">Create a tikcet</button>
-                </div>
-            </div>
+            
         </>
     )
 }

@@ -12,18 +12,20 @@ import ZakatCompaign from "./views/Zakat/ZakatCompaign";
 
 function Home() {
     return (<>
-        <TopComp/>
-        <ZakatCompaign/>
-        <ComunityStory/>
-        <Campaign/>
-        <Trusted/>
-        <GetStarted/>
+        <div className="Home">
+            <TopComp />
+            <ZakatCompaign />
+            <ComunityStory />
+            <Campaign />
+            <Trusted />
+            <GetStarted />
+        </div>
         {/* <MainSlider/> */}
         {/* <Programs/>
         <SaveChildren/>
         <Transparency/>
         <ComunityStory/> */}
-        
+
     </>);
 }
 

@@ -15,7 +15,16 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 895.49px;
-    margin-top: 7rem;
+
+}
+
+.herosection_contact {
+    height: 45rem;
+}
+
+.right_hero_section {
+    background-color: #F5EFE0;
+    height: 100%;
 }
 
 .contactHead {
@@ -38,6 +47,11 @@ form {
     flex-direction: column;
 }
 
+.left_hero_section {
+    width: 36%;
+    height: 71%;
+}
+
 form label {
     color: black;
     font-weight: 500;
@@ -51,13 +65,15 @@ textarea {
     border-radius: 12px !important;
 }
 
-
+.getTouch {
+    height: 23rem;
+}
 
 /* Question */
 .question {
     margin-top: 5rem;
     background-color: #FFFCF7;
-    ;
+    height: 42rem;
 }
 
 .question_hero {
@@ -92,13 +108,16 @@ textarea {
 /* About_Work */
 .about_work {
     height: 709px;
-    width: 1440px;
+    width: 100%;
     background-color: #F5EFE0;
 }
 
 .work_loc {
     height: 112px;
     width: 152px;
+}
+.rightSideImg img{
+    width: 87%;
 }
 
 .left_head {
@@ -111,11 +130,3 @@ textarea {
     font-weight: 650;
 }
 
-/*HelpDesk */
-.docs {
-    height: 303px;
-    width: 853px;
-    display: flex;
-    justify-content: space-evenly;
-    /* align-items: center; */
-}
