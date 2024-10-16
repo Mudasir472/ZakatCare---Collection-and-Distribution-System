@@ -56,6 +56,8 @@ textarea {
 /* Question */
 .question {
     margin-top: 5rem;
+    background-color: #FFFCF7;
+    ;
 }
 
 .question_hero {
@@ -86,10 +88,34 @@ textarea {
     font-weight: 500;
 }
 
-.support h2,
-p {
+
+/* About_Work */
+.about_work {
+    height: 709px;
+    width: 1440px;
+    background-color: #F5EFE0;
+}
+
+.work_loc {
+    height: 112px;
+    width: 152px;
+}
+
+.left_head {
+    height: 158px;
+    width: 481px;
+    margin-top: 5rem;
+}
+
+.left_head h2 {
+    font-weight: 650;
+}
+
+/*HelpDesk */
+.docs {
+    height: 303px;
+    width: 853px;
     display: flex;
-    justify-content: center;
-    padding: 2px;
-    margin: 2rem;
+    justify-content: space-evenly;
+    /* align-items: center; */
 }
