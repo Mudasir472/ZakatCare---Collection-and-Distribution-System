@@ -79,7 +79,7 @@ export default function Navbar() {
                             <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
                         </DisclosureButton>
                     </div>
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div className="flex flex-1 items-center justify-center  sm:justify-start">
                         <div className="flex flex-shrink-0 items-center">
                             <Link to={"/"}><img
                                 style={{ height: "39px" }}
@@ -108,10 +108,10 @@ export default function Navbar() {
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-                        <Link to={'/zakatcare/donate'}><button style={{ backgroundColor: "red", color: "white" }} className='btn'>Donate</button></Link>
+                        <Link to={'/zakatcare/donate'}><button style={{ backgroundColor: "#6059C9", color: "white" }} className='btn'>Donate</button></Link>
 
                         {/* Profile dropdown */}
-                        <Menu  as="div" className="user relative ml-3">
+                        {/* <Menu  as="div" className="user relative ml-3">
                             {isLoggedIn && user ? (
                                 <>
                                     <MenuButton  className="flex items-center rounded-full  text-sm focus:outline-none focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -153,7 +153,7 @@ export default function Navbar() {
                                     </Link>
                                 </div>
                             )}
-                        </Menu>
+                        </Menu> */}
                     </div>
                 </div>
             </div>

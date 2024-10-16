@@ -6,9 +6,6 @@ import img1 from '/support.png'
 import img2 from '/media.png'
 import img3 from '/payment.png'
 import img4 from '/workImg.png'
-import Helpdesk from './Helpdesk';
-import helpDescImg from '/docs.png'
-import icon from '/suportIcon.png'
 
 const Contactform = () => {
     return (
@@ -76,21 +73,15 @@ const Contactform = () => {
                         <h2>We work <br />worldwide.
                         </h2>
                     </div>
-                    <WorkLoc head="Bali" desc="508 Bridle Avenue
-                    Newnan, GA
-                    30263" />
-                    <WorkLoc head="London" desc="508 Bridle Avenue
-                    Newnan, GA
-                    30263" />
-                    <WorkLoc head="Moscow" desc="508 Bridle Avenue
-                    Newnan, GA
-                    30263" />
-                    <WorkLoc head="Paris" desc="508 Bridle Avenue
-                    Newnan, GA
-                    30263" />
+                    <div className="workLoc flex flex-wrap items-center justify-between">
+                        <WorkLoc country="Bali" address="508 Bridle Avenue" city="Newnan, GA" pin="30263" />
+                        <WorkLoc country="London" address="508 Bridle Avenue" city="Newnan, GA" pin="30263" />
+                        <WorkLoc country="Moscow" address="508 Bridle Avenue" city="Newnan, GA" pin="30263" />
+                        <WorkLoc country="Paris" address="508 Bridle Avenue" city="Newnan, GA" pin="30263" />
+                    </div>
                 </div>
             </div>
-            
+
         </>
     )
 }

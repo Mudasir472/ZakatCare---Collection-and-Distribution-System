@@ -112,21 +112,43 @@ textarea {
     background-color: #F5EFE0;
 }
 
+.leftSide {
+    width: 50%;
+}
+
 .work_loc {
     height: 112px;
-    width: 152px;
+    width: 48%;
 }
-.rightSideImg img{
-    width: 87%;
+
+.workLoc {
+    height: 30rem;
+}
+
+.rightSideImg img {
+    width: 80%;
 }
 
 .left_head {
-    height: 158px;
     width: 481px;
     margin-top: 5rem;
 }
 
 .left_head h2 {
     font-weight: 650;
+    font-size: 55px;
 }
 
+.work_loc_content {
+    height: 9rem;
+}
+
+.work_loc_content h3 {
+    font-weight: 650;
+    font-size: 18px;
+}
+
+.work_loc_content p {
+    font-weight: 500;
+    font-size: 16px;
+}
