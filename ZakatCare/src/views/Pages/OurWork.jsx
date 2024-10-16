@@ -1,6 +1,5 @@
 import "./contact.css"
 
-import help from "../../Images/help.png"
 function OurWork({ img, head, desc }) {
     return (<>
         <div className="ourWork mb-6">

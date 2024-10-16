@@ -81,12 +81,14 @@ export default function Navbar() {
                     </div>
                     <div className="flex flex-1 items-center justify-center  sm:justify-start">
                         <div className="flex flex-shrink-0 items-center">
-                            <Link to={"/"}><img
-                                style={{ height: "39px" }}
-                                alt="Zakatcare"
-                                src={logo}
-                                className="h-8 w-auto"
-                            /></Link>
+                            <Link to={"/"}>
+                                <img
+                                    style={{ height: "70px" }}
+                                    alt="Zakatcare"
+                                    src={logo}
+                                    className="h-8 w-auto"
+                                />
+                            </Link>
                         </div>
                         <div className="hidden ms-5 sm:ml-6 sm:block">
                             <div className="flex space-x-4 navlists">
@@ -111,49 +113,6 @@ export default function Navbar() {
                         <Link to={'/zakatcare/donate'}><button style={{ backgroundColor: "#6059C9", color: "white" }} className='btn'>Donate</button></Link>
 
                         {/* Profile dropdown */}
-                        {/* <Menu  as="div" className="user relative ml-3">
-                            {isLoggedIn && user ? (
-                                <>
-                                    <MenuButton  className="flex items-center rounded-full  text-sm focus:outline-none focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                        <img alt={user?.name} src={user?.image?.url} className="h-8 w-8 rounded-full" />
-                                        <span className="text-white ml-3">{user?.username}</span>
-                                    </MenuButton>
-                                    <MenuItems className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 z-50">
-
-                                        <MenuItem>
-                                            {({ active }) => (
-                                                <Link
-                                                    to="/zakatcare/userprofile"
-                                                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                >
-                                                    Your Profile
-                                                </Link>
-                                            )}
-                                        </MenuItem>
-
-                                        <MenuItem>
-                                            {({ active }) => (
-                                                <Link
-                                                    to="/zakatcare/logout"
-                                                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                >
-                                                    Sign out
-                                                </Link>
-                                            )}
-                                        </MenuItem>
-                                    </MenuItems>
-                                </>
-                            ) : (
-                                <div className="text-white w-full	 flex items-center justify-between">
-                                    <Link to="/zakatcare/login" className="text-white btn">
-                                        Login
-                                    </Link>
-                                    <Link to="/zakatcare/signup" className="text-white btn">
-                                        Signup
-                                    </Link>
-                                </div>
-                            )}
-                        </Menu> */}
                     </div>
                 </div>
             </div>
