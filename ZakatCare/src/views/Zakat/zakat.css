@@ -267,12 +267,17 @@ h5 {
     height: 40rem;
 }
 
+.imgg img {
+    height: 72px;
+    width: 72px;
+}
+
 .compaign-body {
     width: 100%;
 }
 
 .compaign-left {
-    height: 19rem;
+    height: 22rem;
 }
 
 .compaign-features .bdy {
@@ -419,4 +424,70 @@ h5 {
 .sign-1 p {
     font-weight: 400;
     font-size: 23px;
+}
+
+/* getStarted */
+.startComp1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 27%;
+    height: 17rem;
+    text-align: center;
+}
+
+.startComp1 h3 {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.startComp1 p {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.getstartedMain {
+    height: 63rem;
+}
+
+.startComp1 img {
+    height: 7rem;
+
+}
+
+.startToday {
+    border-radius: 16px;
+    background-color: #F5EFE0;
+}
+
+.todaysHead h2 {
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.todaysHead p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.todayLeft {
+    width: 41%;
+    height: 15rem;
+}
+
+.startToday .startLeft {
+    width: 34%;
+    height: 20rem;
+}
+
+.todayRight {
+    height: 23rem;
+}
+
+.todayRight img {
+    position: relative;
+    top: -52px;
+    height: 114%;
+
 }

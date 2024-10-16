@@ -2,6 +2,7 @@
 import ComunityStory from "./views/communityStroy/comunityStory";
 import MainSlider from "./views/MainSlider";
 import Campaign from "./views/Zakat/Compaign";
+import GetStarted from "./views/Zakat/GetStarted";
 import Programs from "./views/Zakat/Programs";
 import SaveChildren from "./views/Zakat/SaveChildren";
 import TopComp from "./views/Zakat/TopComp";
@@ -16,6 +17,7 @@ function Home() {
         <ComunityStory/>
         <Campaign/>
         <Trusted/>
+        <GetStarted/>
         {/* <MainSlider/> */}
         {/* <Programs/>
         <SaveChildren/>

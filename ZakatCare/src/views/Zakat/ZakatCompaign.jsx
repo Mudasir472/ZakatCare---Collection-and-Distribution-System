@@ -1,7 +1,7 @@
 import frame from '../../NewImages/compaign-Frame.png'
-import elipse1 from '../../NewImages/Ellipse1.png'
-import elipse2 from '../../NewImages/Ellipse2.png'
-import elipse3 from '../../NewImages/Ellipse3.png'
+import elipse1 from '../../NewImages/manage.png'
+import elipse2 from '../../NewImages/donation.png'
+import elipse3 from '../../NewImages/export.png'
 export default function ZakatCompaign() {
     return (
         <>
