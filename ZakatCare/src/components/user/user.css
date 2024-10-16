@@ -20,10 +20,6 @@ h4 {
 
 }
 
-.footerMain {
-    flex-direction: row;
-}
-
 .title li {
     color: white !important;
 }

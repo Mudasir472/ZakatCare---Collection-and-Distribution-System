@@ -2,8 +2,10 @@ import "../components/user/user.css"
 export default function footer() {
     return (
         <>
-            <div className=" mt-10" style={{ backgroundColor: '#1c1c1c' }} >
-                <footer class="container py-3">
+            <div className=" mt-10" style={{
+                backgroundColor: ' #22130C'
+            }} >
+                <footer class="container py-3" >
                     <div class="row text-white text-left flex footerMain">
                         <div class="col-6 col-md-3 mb-3 title">
                             <h3 className="mb-2">About Us</h3>
@@ -37,7 +39,7 @@ export default function footer() {
                             <form>
                                 <h3 className="mb-2">Contact Us</h3>
                                 <p>Email: abc@gmail.com</p>
-                                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <div class="d-flex flex-column  w-100 gap-2">
                                     <label for="newsletter1" class="visually-hidden">Email address</label>
                                     <input id="newsletter1" type="text" class="form-control" placeholder="Email address" />
                                     <button class="btn btn-primary" type="button">Subscribe</button>
@@ -54,8 +56,8 @@ export default function footer() {
                             <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook "></i></a></li>
                         </ul>
                     </div>
-                </footer>
-            </div>
+                </footer >
+            </div >
         </>
     );
 }
