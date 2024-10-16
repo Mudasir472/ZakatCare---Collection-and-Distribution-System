@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
 import Navbar from "./components/Navbar";
 import Home from "./Home";
-import OurProgram from "./views/Pages/OurProgram";
 import Zakat from "./views/Pages/Zakat";
 import About from "./views/Pages/About";
 import NewContactPage from "./views/Pages/newContactpage";
@@ -34,7 +33,6 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
 
-              <Route path="/zakatcare/ourprogram" element={<OurProgram />} />
               <Route path="/zakatcare/zakat" element={<Zakat />} />
               <Route path="/zakatcare/about" element={<About />} />
               <Route path="/zakatcare/contact" element={<NewContactPage />} />

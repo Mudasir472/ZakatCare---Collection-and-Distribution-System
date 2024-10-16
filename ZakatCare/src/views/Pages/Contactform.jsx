@@ -6,9 +6,7 @@ import img1 from '/support.png'
 import img2 from '/media.png'
 import img3 from '/payment.png'
 import img4 from '/workImg.png'
-import Helpdesk from './Helpdesk';
-import helpDescImg from '/docs.png'
-import icon from '/suportIcon.png'
+
 
 const Contactform = () => {
     return (

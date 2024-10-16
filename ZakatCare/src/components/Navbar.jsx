@@ -79,14 +79,16 @@ export default function Navbar() {
                             <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
                         </DisclosureButton>
                     </div>
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div className="flex flex-1 items-center justify-center sm:justify-start">
                         <div className="flex flex-shrink-0 items-center">
-                            <Link to={"/"}><img
-                                style={{ height: "39px" }}
-                                alt="Zakatcare"
-                                src={logo}
-                                className="h-8 w-auto"
-                            /></Link>
+                            <Link to={"/"}>
+                                <img
+                                    style={{ height: "70px" }}
+                                    alt="Zakatcare"
+                                    src={logo}
+                                    className="h-8 w-auto"
+                                />
+                            </Link>
                         </div>
                         <div className="hidden ms-5 sm:ml-6 sm:block">
                             <div className="flex space-x-4 navlists">
@@ -111,10 +113,10 @@ export default function Navbar() {
                         <Link to={'/zakatcare/donate'}><button style={{ backgroundColor: "red", color: "white" }} className='btn'>Donate</button></Link>
 
                         {/* Profile dropdown */}
-                        <Menu  as="div" className="user relative ml-3">
+                        <Menu as="div" className="user relative ml-3">
                             {isLoggedIn && user ? (
                                 <>
-                                    <MenuButton  className="flex items-center rounded-full  text-sm focus:outline-none focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                    <MenuButton className="flex items-center rounded-full  text-sm focus:outline-none focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                         <img alt={user?.name} src={user?.image?.url} className="h-8 w-8 rounded-full" />
                                         <span className="text-white ml-3">{user?.username}</span>
                                     </MenuButton>
