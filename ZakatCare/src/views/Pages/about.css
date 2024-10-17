@@ -4,9 +4,19 @@
 
 .platform-head {
     text-align: center;
-    width: 54%;
-    height: 10rem;
+    width: 65%;
+    height: 14rem;
     margin: 41px;
+}
+
+.platform-head h3 {
+    font-weight: 700;
+    font-size: 57px;
+}
+
+.platform-head p {
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .AboutBelieveComps {
@@ -33,9 +43,11 @@
     font-weight: 650;
     width: 73%;
 }
-h4{
-    padding-bottom: 0!important;
+
+h4 {
+    padding-bottom: 0 !important;
 }
+
 .believe-right {
     height: 35rem;
 }
@@ -51,5 +63,113 @@ h4{
 }
 
 .believe-Rights {
-    height: 41rem;
+    height: 47rem;
+}
+
+.voiceMain {
+    height: 49rem;
+}
+
+.voiceMain img {
+    width: 2148px;
+}
+
+.voiceH3 {
+    width: 100%;
+}
+
+.voiceH3 h3 {
+    font-weight: 700;
+    font-size: 49px;
+}
+
+.voiceMain p {
+    width: 40%;
+    font-weight: 400;
+    font-size: 17px;
+    color: #5F5F75;
+}
+
+.valuesMain {
+    height: 531px;
+    color: #6059C9;
+}
+
+.values {
+    margin-top: 5rem;
+}
+
+.valuesMainBody h3 {
+    font-size: 55px;
+    font-weight: 700;
+}
+
+.value1 {
+    width: 27%;
+    height: 20rem;
+}
+
+.value1 h4 {
+    font-size: 64px;
+    font-weight: 650;
+}
+
+.valuesMainBody {
+    height: 19rem;
+}
+
+.p1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.p2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* story-left */
+.storyMain {
+    height: 60rem;
+}
+
+.story-left {
+    width: 39%;
+    height: 50rem;
+}
+.story-left h3{
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.story-right {
+    width: 52%;
+}
+
+.story-part1 {
+    height: 46rem;
+}
+.story-paras{
+    color: #5F5F75;
+}
+.story-part2 {
+    height: 46rem;
+}
+
+/* Vision */
+.vivisonMain{
+    background-color: #F5EFE0;
+    height: 845px;
+}
+.visionHeading{
+    text-align: center;
+}
+.visionHeading h3{
+    font-size: 60px;
+    font-weight: 700;
+}
+.visionHeading p{
+    font-size: 24px;
+    font-weight: 400;
+    color: #5F5F75;
 }
