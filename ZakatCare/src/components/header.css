@@ -1,15 +1,14 @@
 .bg-orange {
-    background-color: #6059C9;
+    color: #6059C9;
 }
 
-.bg-hover-orange:hover {
-    background-color: #6059C9;
-}
 
 .navlists a {
     color: #6059C9;
 }
-
+.border-btm{
+    border-bottom: #6059C9 solid 2px;
+}
 .user {
     background-color: #6059C9;
     height: 38px;

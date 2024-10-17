@@ -1,0 +1,55 @@
+.platform {
+    background-color: #F5EFE0;
+}
+
+.platform-head {
+    text-align: center;
+    width: 54%;
+    height: 10rem;
+    margin: 41px;
+}
+
+.AboutBelieveComps {
+    width: 35%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: #6059C9;
+    color: white;
+    border-radius: 16px;
+}
+
+.believe-left p {
+    font-size: 24px;
+    font-weight: 400;
+    color: #5F5F75;
+}
+
+.believe-left-bdy {
+    width: 119%;
+}
+
+.believe-left h3 {
+    font-size: 37px;
+    font-weight: 650;
+    width: 73%;
+}
+h4{
+    padding-bottom: 0!important;
+}
+.believe-right {
+    height: 35rem;
+}
+
+.AboutBelieveCompsMain {
+    width: 81%;
+    height: 16rem;
+}
+
+.AboutBelieveCompsMain img {
+    height: 80px;
+    width: 80px;
+}
+
+.believe-Rights {
+    height: 41rem;
+}

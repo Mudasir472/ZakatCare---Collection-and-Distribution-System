@@ -16,11 +16,13 @@ const navigation = [
     { name: 'Contact', href: '/zakatcare/contact', current: false },
 ]
 
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 export default function Navbar() {
+    const [active, setActive] = useState(0);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -67,7 +69,7 @@ export default function Navbar() {
         getData();
     }, []);
     return (
-        <Disclosure style={{ backgroundColor: 'rgb(254, 247, 236)' }} as="nav">
+        <Disclosure  as="nav">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -92,15 +94,14 @@ export default function Navbar() {
                         </div>
                         <div className="hidden ms-5 sm:ml-6 sm:block">
                             <div className="flex space-x-4 navlists">
-                                {navigation.map((item) => (
+                                {navigation.map((item, index) => (
                                     <Link
                                         key={item.name}
                                         to={item.href}
                                         aria-current={item.current ? 'page' : undefined}
-                                        className={classNames(
-                                            item.current ? 'bg-orange text-white' : 'bg-hover-orange  hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium',
-                                        )}
+                                        className={` px-3 py-2 text-sm font-medium ${active === index ? 'border-btm border-orange' : ''
+                                            }`}
+                                        onClick={() => setActive(index)} // Update the active state
                                     >
                                         {item.name}
                                     </Link>
@@ -116,7 +117,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-
+            {/* Mobile view */}
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
                     {navigation.map((item) => (
