@@ -1,3 +1,7 @@
+import axios from "axios";
+import URL from "../../../env"
+import { useEffect, useState } from "react";
+
 import img from "../../NewImages/platform-img.png"
 import activist from "../../NewImages/activist.png"
 import decision from "../../NewImages/decision.png"
@@ -12,11 +16,33 @@ import story2 from "../../NewImages/story-2.png"
 import story3 from "../../NewImages/story-3.png"
 import story4 from "../../NewImages/story-4.png"
 
-import  visionFrame from '../../NewImages/visionFrame.png'
+import visionFrame from '../../NewImages/visionFrame.png'
 
 import "./about.css"
 import AboutBelieveComps from "./AboutBelieveComps"
 function About() {
+    const [data, setData] = useState([]);
+    const [loader, setLoader] = useState(true);
+    const [visibleItems, setVisibleItems] = useState(3);
+
+    useEffect(() => {
+        const fetchListingData = async () => {
+            try {
+                const response = await axios.get(`${URL}/zakatcare/teammembers`);
+                setData(response.data);
+                console.log(response.data)
+                setLoader(false);
+            } catch (error) {
+                console.error("Error fetching listing data:", error);
+            }
+        };
+
+        // Call the async function
+        fetchListingData();
+    }, []);
+    const showMoreItems = () => {
+        setVisibleItems(data.length); // Show all items when 'More' button is clicked
+    };
     return (<>
         <div className="about-us">
             <div className="aboutMain ">
@@ -143,6 +169,54 @@ function About() {
                         <div className="sign-1 flex flex-column items-center justify-center">
                             <h3>40,000</h3>
                             <p>Signature every hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="team-members">
+                    <div className="team-memsMain flex items-center justify-evenly">
+                        <div className="team-left flex flex-column items-start justify-between">
+                            <div className="team-left-bdy">
+                                <h3>Our team</h3>
+                                <p>We need talented, passionate people to changing the world</p>
+                            </div>
+                            <button onClick={showMoreItems} className="team-btn">See all members</button>
+                        </div>
+                        <div className="team-right">
+                            <div className="teamMems d-flex flex-wrap justify-content-between">
+                                {data.slice(0, visibleItems).map((item) => (
+                                    <div class=" teamImg" style={{ width: "18rem" }}>
+                                        <img src={item.imgLink} class="img-top" alt={item.name} />
+                                        <div class="team-body flex items-center flex-column justify-center">
+                                            <p><b>{item.name}</b></p>
+                                            <p class="card-text col-111">{item.speciality}</p>
+                                        </div>
+                                    </div>
+                                ))}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="fresh">
+                    <div className="freshMain  flex items-center justify-evenly">
+                        <div className="fresh-left">
+                            <h3>Try something fresh and new right now</h3>
+                        </div>
+                        <div className="fresh-right ">
+                            <div className="formDetails flex flex-column items-start justify-evenly">
+                                <div>
+                                    <form>
+                                        <input type="email"
+                                            placeholder="Enter email"
+                                            required
+                                        />
+                                        <span><button>Subscribe</button></span>
+                                    </form>
+                                </div>
+                                <p>Get latest update from us. You can cancel any time.</p>
+                                </div>
                         </div>
                     </div>
                 </div>

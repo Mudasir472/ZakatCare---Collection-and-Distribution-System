@@ -46,7 +46,7 @@ const Contactform = () => {
                             rows="10"
                         ></textarea>
                     </form>
-                    <div class="d-grid gap-2 mt-4">
+                    <div class="d-grid gap-2 ">
                         <button class="btn btn-primary" type="button">Submit</button>
                     </div>
                 </div>

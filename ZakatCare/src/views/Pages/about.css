@@ -137,7 +137,8 @@ h4 {
     width: 39%;
     height: 50rem;
 }
-.story-left h3{
+
+.story-left h3 {
     font-size: 60px;
     font-weight: 700;
 }
@@ -149,27 +150,112 @@ h4 {
 .story-part1 {
     height: 46rem;
 }
-.story-paras{
+
+.story-paras {
     color: #5F5F75;
 }
+
 .story-part2 {
     height: 46rem;
 }
 
 /* Vision */
-.vivisonMain{
+.vivisonMain {
     background-color: #F5EFE0;
     height: 845px;
 }
-.visionHeading{
+
+.visionHeading {
     text-align: center;
 }
-.visionHeading h3{
+
+.visionHeading h3 {
     font-size: 60px;
     font-weight: 700;
 }
-.visionHeading p{
+
+.visionHeading p {
     font-size: 24px;
     font-weight: 400;
     color: #5F5F75;
+}
+
+/* Team */
+.teamImg img {
+    height: 273px;
+    width: 235px;
+}
+
+.team-left {
+    width: 24%;
+    height: 13rem;
+}
+
+.team-left p {
+    width: 76%;
+}
+
+.team-memsMain {
+    height: 34rem;
+}
+
+.team-body {
+    width: 190px;
+    height: 77px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: #0000000D 3px 3px 3px 3px;
+    position: relative;
+    top: -44px;
+    left: 23px;
+}
+
+.team-btn {
+    height: 48px;
+    width: 209px;
+    background-color: #6059C9;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    tab-size: 18px;
+}
+
+.team-left-bdy h3 {
+    font-weight: 650;
+    tab-size: 60px;
+}
+
+.team-left-bdy p {
+    font-weight: 400;
+    tab-size: 18px;
+    color: #5F5F75;
+}
+
+/* Form */
+
+.fresh-left{
+    width: 43%;
+}
+.fresh-left h3{
+    width: 86%;
+    font-size: 40px;
+    font-weight: 700;
+}
+.freshMain{
+    background-color: #6059C9;
+    color: white;
+    height: 19rem;
+}
+.formDetails input{
+    height: 56px;
+    width: 354px;
+    border-radius: 10px;
+    margin-right: 11px;
+}
+.formDetails button{
+    height: 56px;
+    width: 159px;
+    background-color: #FFC20E;
+    color: white;
+    border-radius: 10px;
 }
