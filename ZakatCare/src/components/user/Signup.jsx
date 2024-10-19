@@ -65,7 +65,7 @@ export default function Signup() {
                         className="mx-auto h-10 w-auto"
                     />
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                        Sign Up to ZakatCare
+                        Sign Up 
                     </h2>
                 </div>
 
