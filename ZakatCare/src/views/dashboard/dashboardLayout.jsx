@@ -1,18 +1,27 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Dashboard from './dashboard'
-import DonorList from './donorList'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./dashboard.css"
+import Dashboard from "./dashboard";
+import Headbar from "./Headbar";
+import Sidebar from "./Sidebar";
+import Footer from "../../components/Footer";
+import DonorList from "./donorList";
+import ContactLists from "./ContactLists";
+import Messages from "./Messages";
 
-const DashboardLayout = () => {
-  return (
-    <div>
-        <h1>Sidebar</h1>
+function DashboardLayout() {
+  return (<>
+    <div className="routes">
+      <Headbar />
+      <Sidebar />
+      <div className="dashboard-content ">
         <Routes>
-            <Route path='/' element={<Dashboard/>}/>
-            <Route path='/donor-list' element={<DonorList/>}/>
+          <Route path="" element={<Dashboard />} />
+          <Route path="donor-list" element={<DonorList />} />
+          <Route path="contact-list" element={<ContactLists />} />
+          <Route path="messages" element={<Messages />} />
         </Routes>
+      </div>
     </div>
-  )
+  </>);
 }
-
-export default DashboardLayout
+export default DashboardLayout;

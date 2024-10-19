@@ -208,7 +208,7 @@ function About() {
                             <div className="formDetails flex flex-column items-start justify-evenly">
                                 <div>
                                     <form>
-                                        <input type="email"
+                                        <input style={{color:"black"}} type="email"
                                             placeholder="Enter email"
                                             required
                                         />

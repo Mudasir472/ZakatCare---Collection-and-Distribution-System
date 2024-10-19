@@ -1,0 +1,120 @@
+.routes {
+    background-color: #F5F6FA;
+    color: black;
+}
+
+.sidebar {
+    position: fixed;
+    margin-top: 70px;
+    color: black;
+}
+
+.headbar {
+    position: fixed;
+    width: 100%;
+}
+
+.headbar,
+.sidebar-main {
+    background-color: white;
+}
+.sidebar-main ul{
+    border-bottom: 1px solid #E0E0E0;
+}
+
+h4 {
+    margin-bottom: 0 !important;
+}
+
+.admin-logo {
+    height: 70px;
+}
+
+.admin {
+    width: 13%;
+}
+
+.admin img {
+    height: 44px;
+    width: 44px;
+}
+
+.adminBdy h4 {
+    font-size: 17px;
+}
+
+.adminBdy p {
+    font-size: 15px;
+    color: #565656;
+}
+
+.admin span {
+    border-radius: 50%;
+    border: 1px solid #5C5C5C;
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar-main {
+    width: 240px;
+    height: 1070px;
+}
+
+.sidebar-lists {
+    height: 28rem;
+}
+
+.sidebar-lists a {
+    width: 100%;
+    color: black;
+}
+
+.sidebar-lists li {
+    width: 84%;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+.bg-color-sidebar{
+    background-color: #6059C9;
+}
+.color-white{
+    color: white;
+}
+
+.sidebar-lists span i {
+    font-size: 22px;
+}
+
+
+.dashboard-content {
+
+    margin-left: 240px;
+    padding: 92px 0 0 31px;
+    overflow-y: auto;
+}
+
+.totalMain {
+    height: 6rem;
+    width: 16rem;
+    background-color: #FFFFFF;
+    border-radius: 14px;
+}
+
+.dashboard-total {
+    width: 97%;
+}
+
+.totalLogo img {
+    height: 60px;
+    width: 60px;
+}
+
+.product-details {
+    padding: 39px;
+    background-color: white;
+    border-radius: 14px;
+    width: 97%;
+}

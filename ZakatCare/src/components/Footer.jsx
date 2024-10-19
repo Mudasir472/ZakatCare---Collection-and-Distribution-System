@@ -1,6 +1,6 @@
 // import "../components/user/user.css"
 import "./header.css"
-export default function footer() {
+export default function Footer() {
     return (
         <>
             <div  style={{
