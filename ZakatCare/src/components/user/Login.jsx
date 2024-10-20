@@ -33,8 +33,8 @@ export default function Login() {
                 const data = resp.data;
                 console.log('Message:', data.message);
                 toast.success("Login Success");
-                // navigate(data.redirectUrl);
-                window.location.href = resp.data.redirectUrl;
+                navigate("/dashboard");
+                
             } else {
                 console.error('Login failed');
                 toast.error('Login failed. Please try again.');
