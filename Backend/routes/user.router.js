@@ -17,7 +17,7 @@ router.post("/zakatcare/login", passport.authenticate('local'), wrapAsync(async 
         const sessionId = req.sessionID;
         const user = req.user;
         // console.log(user)
-        res.status(200).json({ message: "Login successful", redirectUrl: "/", user: req.user, sessionId });
+        res.status(200).json({ message: "Login successful",  user: req.user, sessionId });
 
     } catch (e) {
         console.error(e.message);
@@ -46,7 +46,7 @@ router.get("/login/success", (req, res) => {
 router.post("/zakatcare/signup", async (req, res) => {
     try {
 
-        const { name, email, username, password } = req.body;
+        const { name, email, username, password,role } = req.body;
         // Define a regex pattern to ensure the password contains at least one special character, one letter, and one number
         const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
@@ -57,7 +57,7 @@ router.post("/zakatcare/signup", async (req, res) => {
                 redirectUrl: "/zakatcare/signup"
             });
         }
-        const newUser = new User({ name, username, email });
+        const newUser = new User({ name, username, email,role });
         const registeredUser = await User.register(newUser, password);
         req.login(registeredUser, (err) => {
             if (err) {
@@ -85,11 +85,38 @@ router.post("/zakatcare/logout", (req, res) => {
     })
 })
 
-router.get("/zakatcare/profile", isAuthenticated, (req, res) => {
-    res.status(200).json({ message: "user profile", user: req.user })
+router.get("/zakatcare/profile", isAuthenticated, async(req, res) => {
+    // By Hbbn
+    try{
+        const userId=req.user._id;
+        if(!userId){
+            return res.status(401).json({
+                success:false,
+                message:"Unauthorized or userId not found"
+            })
+        }
+        const user=await User.findById(userId);
+        if(!user){
+            return res.status(400).json({
+                success:false,
+                message:"User not found"
+            })
+        }
+        return res.status(200).json({
+            success:true,
+            message:"User found",
+            data:user
+        })
+    }catch(error){
+        return res.status(500).json({
+            success:false,
+            message:error.message
+        })
+    }
 })
-router.get("/zakatcare/detail", (req, res) => {
+router.get("/zakatcare/userdetails", isAuthenticated, (req, res) => {
     res.status(200).json({ message: "user detail", user: req.user })
+    console.log(req.user)
 })
 router.put("/zakatcare/updateuser/:id", isAuthenticated, async (req, res) => {
     // const {name,username,body}=req.body;

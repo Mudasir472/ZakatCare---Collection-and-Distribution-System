@@ -2,18 +2,19 @@ import { useState } from "react";
 import axios from 'axios';
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-import URL from "../../../env"
+import URL from "../../../env";
 import logo from "/Logo.png";
-import "./user.css"
+import "./user.css";
 
 export default function Signup() {
     const [formData, setFormData] = useState({
         name: "",
         username: "",
         email: "",
-        password: ""
+        password: "",
+        role: "" // Initialize role
     });
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         setFormData((currData) => ({
@@ -23,21 +24,18 @@ export default function Signup() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
 
         try {
             const resp = await axios.post(`${URL}/zakatcare/signup`, formData, { withCredentials: true });
 
-            if (resp.status === 200) { // Check for successful response
+            if (resp.status === 200) {
                 const sessionId = resp.data.sessionId;
                 if (sessionId) {
                     localStorage.setItem('sessionID', sessionId);
                 }
-                // navigate(resp.data.redirectUrl); // Redirect to home page
                 window.location.href = resp.data.redirectUrl;
-                // toast.success("Registered Success");
-            }
-            else if (resp.status === 400) {
+            } else if (resp.status === 400) {
                 toast.error(resp.data.message);
             } else {
                 console.error('Signup failed');
@@ -45,16 +43,17 @@ export default function Signup() {
         } catch (error) {
             console.error('Error:', error);
             toast.error(error.response.data.message);
-
         }
 
         setFormData({
             name: "",
             username: "",
             email: "",
-            password: ""
+            password: "",
+            role: ""
         });
     };
+
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -65,7 +64,7 @@ export default function Signup() {
                         className="mx-auto h-10 w-auto"
                     />
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                        Sign Up 
+                        Sign Up
                     </h2>
                 </div>
 
@@ -85,47 +84,64 @@ export default function Signup() {
                             />
                         </div>
 
-                        <div>
-                            <div className="mt-2">
-                                <label htmlFor="username" className="form-label">Username</label>
-                                <input
-                                    type="text"
-                                    value={formData.username}
-                                    onChange={handleInputChange}
-                                    className="form-control"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Enter username"
-                                    required
-                                />
-                            </div>
-                            <div className="mt-2">
-                                <label htmlFor="email" className="form-label">Email address</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    className="form-control"
-                                    id="email"
-                                    placeholder="example@gmail.com"
-                                    aria-describedby="emailHelp"
-                                    required
-                                />
-                            </div>
-                            <div className="mt-2">
-                                <label htmlFor="password" className="form-label">Password</label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    value={formData.password}
-                                    onChange={handleInputChange}
-                                    className="form-control"
-                                    placeholder="password"
-                                    id="password"
-                                    required
-                                />
-                            </div>
+                        <div className="mt-2">
+                            <label htmlFor="username" className="form-label">Username</label>
+                            <input
+                                type="text"
+                                value={formData.username}
+                                onChange={handleInputChange}
+                                className="form-control"
+                                id="username"
+                                name="username"
+                                placeholder="Enter username"
+                                required
+                            />
+                        </div>
+
+                        <div className="mt-2">
+                            <label htmlFor="email" className="form-label">Email address</label>
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                className="form-control"
+                                id="email"
+                                placeholder="example@gmail.com"
+                                aria-describedby="emailHelp"
+                                required
+                            />
+                        </div>
+
+                        <div className="mt-2">
+                            <label htmlFor="password" className="form-label">Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleInputChange}
+                                className="form-control"
+                                placeholder="password"
+                                id="password"
+                                required
+                            />
+                        </div>
+
+                        <div className="mt-2">
+                            <label htmlFor="role" className="form-label">Role</label>
+                            <select
+                                name="role"
+                                value={formData.role}
+                                onChange={handleInputChange}
+                                className="form-control"
+                                id="role"
+                                required
+                            >
+                                <option value="" disabled>Select Role</option>
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                                <option value="moderator">Moderator</option>
+                            </select>
                         </div>
 
                         <div>
@@ -147,5 +163,5 @@ export default function Signup() {
                 </div>
             </div>
         </>
-    )
+    );
 }

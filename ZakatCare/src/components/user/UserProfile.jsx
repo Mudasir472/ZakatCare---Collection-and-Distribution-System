@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"
@@ -6,23 +8,26 @@ import "./user.css"
 import URL from "../../../env"
 
 function UserProfile() {
+    // const { user, status, error } = useSelector((state) => state.client);
+    // console.log("newsuser",user)
+
     const fileInputRef = useRef(null);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate()
-
+    const fetchUser = async () => {
+        try {
+            const response = await axios.get(`${URL}/zakatcare/profile`, { withCredentials: true });
+            setUser(response.data.data);
+            console.log(response.data.data)
+            setLoading(false);
+        } catch (error) {
+            console.error('Error fetching profile:', error);
+            setLoading(false);
+        }
+    };
     useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const response = await axios.get(`${URL}/zakatcare/profile`, { withCredentials: true });
-                setUser(response.data.user);
-                console.log(response.data.user)
-                setLoading(false);
-            } catch (error) {
-                console.error('Error fetching profile:', error);
-                setLoading(false);
-            }
-        };
+
         fetchUser();
     }, []);
 
@@ -50,7 +55,7 @@ function UserProfile() {
                 // Assuming the response contains the updated user info
                 console.log('File uploaded successfully:', response.data);
                 toast.success("file uploaded successfully")
-                setUser(response.data.user); // Update state with the new user data
+                // setUser(response.data.user); 
             } catch (error) {
                 console.error('Error uploading the file:', error);
                 // Handle errors appropriately (e.g., display error message to user)

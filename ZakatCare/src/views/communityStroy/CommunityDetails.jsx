@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { toast } from "react-toastify";
 import axios from 'axios';
 import URL from "../../../env";
-import InputForm from './inputForm';
 
 function CommunityDtails() {
     const navigate = useNavigate();
@@ -90,7 +89,7 @@ function CommunityDtails() {
     }
 
     if (!Community) {
-        return <div>Community not found or data is still loading.</div>;
+        return <div>Something wents wrong...</div>;
     }
 
     return (

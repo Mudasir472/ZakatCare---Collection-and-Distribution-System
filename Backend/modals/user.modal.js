@@ -13,6 +13,12 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    role: {
+        type: String,
+        enum: ["admin", "user", "moderator"],
+        default: "user"
+    }
+    ,
     image: {
         imgName: String,
         url: {

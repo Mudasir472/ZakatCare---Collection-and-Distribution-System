@@ -12,7 +12,6 @@ function UpdateProfile() {
         username: "",
         email: "",
     });
-    console.log("suer", user._id)
     useEffect(() => {
         if (location.state?.user) {
             const { name, username, email } = location.state.user;
@@ -25,7 +24,7 @@ function UpdateProfile() {
         e.preventDefault();
         try {
             const resp = await axios.put(`${URL}/zakatcare/updateuser/${user._id}`, formData, { withCredentials: true });
-            console.log("resp", resp)
+            // console.log("resp", resp)
             if (resp.status === 200) {
                 toast.success('User Update Successfull')
                 navigate("/zakatcare/userprofile");
