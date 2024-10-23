@@ -37,14 +37,20 @@ const Contactform = () => {
         setLoading(true); // Start loading
 
         try {
-            
+
             const resp = await axios.post(`${URL}/zakatcare/contact`, formData, { withCredentials: true });
             if (resp.status === 200) {
                 console.log(resp.data);
                 toast.success("Form submitted successfully!");
                 setSent(true); // Mark as sent
             }
+            
         } catch (error) {
+            if (error.status === 403) {
+                toast.error("Phone number exists");
+                setLoading(false)
+                return
+            }
             console.error('Error:', error);
             toast.error("Failed to submit the form. Please try again.");
         }

@@ -74,11 +74,16 @@ router.get('/zakatcare/donations', async (req, res) => {
             month: monthName,
             totalAmount: formattedData.find(d => d.month === monthName)?.totalAmount || 0
         }));
-
+        // Calculate the total amount of all donations
+        const totalAmountOfDonations = allDonations.reduce((acc, donation) => acc + donation.amount, 0);
+        // Find the total number of unique donors
+        const totalUniqueDonors = await Donation.distinct("donorId").countDocuments();
         res.status(200).json({
             message: "fetch success",
             allMonthsData,
-            allDonations
+            allDonations,
+            totalAmountOfDonations,
+            totalUniqueDonors
         });
     } catch (error) {
         console.error('Error fetching monthly donations:', error);

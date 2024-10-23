@@ -23,6 +23,15 @@ function Sidebar() {
                                     Dashboard
                                 </li>
                             </Link>
+                            <Link to="donor-list">
+                                <li
+                                    className={`flex items-center justify-evenly ${selectedItem === 4 ? 'bg-color-sidebar color-white' : ''}`}
+                                    onClick={() => handleItemClick(4)}
+                                >
+                                    <span><i className="bi bi-card-checklist"></i></span>
+                                    Donor-List
+                                </li>
+                            </Link>
                             <Link to="contact-list">
                                 <li
                                     className={`flex items-center justify-evenly ${selectedItem === 1 ? 'bg-color-sidebar color-white' : ''}`}
@@ -50,15 +59,7 @@ function Sidebar() {
                                     Messages
                                 </li>
                             </Link>
-                            <Link to="donor-list">
-                                <li
-                                    className={`flex items-center justify-evenly ${selectedItem === 4 ? 'bg-color-sidebar color-white' : ''}`}
-                                    onClick={() => handleItemClick(4)}
-                                >
-                                    <span><i className="bi bi-card-checklist"></i></span>
-                                    Donor-List
-                                </li>
-                            </Link>
+
                         </ul>
                     </nav>
                 </div>

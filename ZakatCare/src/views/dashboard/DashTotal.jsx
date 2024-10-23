@@ -1,6 +1,6 @@
 import "./dashboard.css"
 
-function DashTotal({head ,desc,img}) {
+function DashTotal({head ,desc,img,}) {
     return (<  >
         <div className="dashtotal">
             <div className="totalMain flex items-center justify-evenly">

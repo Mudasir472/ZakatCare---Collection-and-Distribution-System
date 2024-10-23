@@ -22,15 +22,26 @@ const Dashboard = () => {
   const [monthlyData, setMonthlyData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [categoryData, setCategoryData] = useState({});
+  const [totalDonation, setTotalDonation] = useState(0);
+  const [totalDonors, setTotalDonors] = useState(0);
+  const [totalContacts, setTotalContacts] = useState(0);
+
+
 
   useEffect(() => {
     const fetchDonations = async () => {
       try {
         const response = await axios.get(`${URL}/zakatcare/donations`, { withCredentials: true });
         const donations = response.data.allDonations;
+        setTotalDonation(response.data.totalAmountOfDonations);
+        setTotalDonors(response.data.totalUniqueDonors);
+
+        const contacts = await axios.get(`${URL}/zakatcare/contact`);
+        setTotalContacts(contacts.data.allContacts)
+
         const categories = {};
         const monthlyTotals = {};
-
+        
         // Process donations to sum amounts by category and month
         donations.forEach(donation => {
           const { category, amount, date } = donation;
@@ -60,6 +71,9 @@ const Dashboard = () => {
 
     fetchDonations();
   }, []);
+  // Total Users
+  const totalusers = totalContacts.length + totalDonors;
+ 
 
   const barChartData = {
     labels: Object.keys(categoryData), // Categories as labels
@@ -72,7 +86,7 @@ const Dashboard = () => {
           "#36A2EB",
           "#FFCE56",
           "#4BC0C0",
-          "#FF9F40" // Add more colors if necessary
+          "#FF9F40"
         ],
       },
     ],
@@ -88,9 +102,9 @@ const Dashboard = () => {
           ) : (
             <>
               <div className="dashboard-total flex items-center justify-between">
-                <DashTotal head="Total Users" desc="190" img={dashUser1} />
-                <DashTotal head="Total Donation" desc="34,809" img={donate} />
-                <DashTotal head="Total Donors" desc="120" img={donor} />
+                  <DashTotal head="Total Users" desc={totalusers.toLocaleString('en-IN')} img={dashUser1} />
+                <DashTotal head="Total Donation" desc={'₹' + totalDonation.toLocaleString('en-IN')} img={donate} />
+                <DashTotal head="Total Donors" desc={totalDonors.toLocaleString('en-IN')} img={donor} />
                 <DashTotal head="Total Recievers" desc="56" img={reciever} />
               </div>
               <div className="chartMain">

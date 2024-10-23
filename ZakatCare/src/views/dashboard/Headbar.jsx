@@ -3,7 +3,7 @@ import axios from 'axios';
 import URL from '../../../env';
 import logo from '/Logo.png';
 import './dashboard.css';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Headbar() {
     const navigate = useNavigate();
@@ -14,8 +14,8 @@ function Headbar() {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get(`${URL}/zakatcare/userdetails`, { withCredentials: true });
-                setData(response.data?.user);
+                const response = await axios.get(`${URL}/zakatcare/profile`, { withCredentials: true });
+                setData(response.data?.data);
             } catch (error) {
                 console.error('Error fetching listing data:', error);
             }
@@ -40,7 +40,7 @@ function Headbar() {
         navigate("/zakatcare/logout");
         // window.location.href = '/zakatcare/login';
     };
-console.log(data)
+    console.log(data)
     return (
         <>
             <div className="headbar">
@@ -49,7 +49,6 @@ console.log(data)
                         <img className="admin-logo" src={logo} alt="Logo" />
                         <div className="admin flex items-center justify-between">
                             <img src={data.image?.url} alt="User" />
-                            {console.log(data.image?.url)}
                             <div className="adminBdy flex flex-column items-start justify-center">
                                 <h4>{data.username}</h4>
                                 <p>{data.role}</p>

@@ -10,10 +10,14 @@ router.post("/zakatcare/contact", wrapAsync(async (req, res) => {
     if (!name || !email || !phone || !message) {
         return res.status(400).json({ msg: "All fields are required." });
     }
-
-    const contactData = new Contact({ name, email, phone, message });
-
+    const existingContact = await Contact.findOne({ phone: phone });
+    if (existingContact) { 
+        return res.status(403).json({
+            msg: "Phone number already exists"
+        });
+    }
     try {
+        const contactData = new Contact({ name, email, phone, message });
         await contactData.save(); // Wait for the save operation
         res.status(200).json({ msg: "Success" });
     } catch (error) {
@@ -24,8 +28,9 @@ router.post("/zakatcare/contact", wrapAsync(async (req, res) => {
 
 router.get("/zakatcare/contact", wrapAsync(async (req, res) => {
     try {
+        const allContacts = await Contact.distinct("phone");
         const contacts = await Contact.find({});
-        res.status(200).json({ contacts });
+        res.status(200).json({ contacts, allContacts });
     } catch (error) {
         console.error('Error fetching contact data:', error);
         res.status(500).json({ msg: "Internal Server Error" });

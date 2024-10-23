@@ -38,6 +38,7 @@ h4 {
 .admin img {
     height: 44px;
     width: 44px;
+    border-radius: 15px;
 }
 
 .adminBdy h4 {
