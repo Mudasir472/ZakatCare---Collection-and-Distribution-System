@@ -32,7 +32,6 @@ export default function Navbar() {
             try {
                 const response = await axios.get(`${URL}/zakatcare/getuser`, { withCredentials: true });
                 setUser(response.data.user);
-                console.log(response.data.user)
                 setIsLoggedIn(!!localStorage.getItem('sessionID'));
             } catch (error) {
                 console.error('Error fetching profile:', error);

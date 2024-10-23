@@ -19,6 +19,7 @@ const commRouter = require("./routes/community.router")
 const reviewComunity = require("./routes/communityReview.router")
 const auth = require("./routes/auth.router")
 const contact = require("./routes/contact.router")
+const donations = require("./routes/donations.router")
 // const listingRouter = require('./routes/listing.router');
 
 // Middleware setup
@@ -123,6 +124,7 @@ app.use("/", commRouter)
 app.use("/", reviewComunity)
 app.use("/", auth)
 app.use("/", contact)
+app.use("/",donations)
 
 
 const port = process.env.PORT

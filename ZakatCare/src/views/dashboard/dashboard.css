@@ -99,6 +99,18 @@ h4 {
     overflow-y: auto;
 }
 
+.chartMain,.category-chart {
+    width: 1138px;
+    height: 444px;
+    margin: 41px 0 40px 0;
+    background-color: white;
+    border-radius: 14px;
+    padding: 2rem;
+}
+.category-chart{
+
+}
+
 .totalMain {
     height: 6rem;
     width: 16rem;

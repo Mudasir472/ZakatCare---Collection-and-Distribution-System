@@ -116,7 +116,6 @@ router.get("/zakatcare/profile", isAuthenticated, async(req, res) => {
 })
 router.get("/zakatcare/userdetails", isAuthenticated, (req, res) => {
     res.status(200).json({ message: "user detail", user: req.user })
-    console.log(req.user)
 })
 router.put("/zakatcare/updateuser/:id", isAuthenticated, async (req, res) => {
     // const {name,username,body}=req.body;
