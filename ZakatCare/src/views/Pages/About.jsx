@@ -48,8 +48,8 @@ function About() {
             <div className="aboutMain ">
                 <div className="platform  flex flex-column items-center justify-evenly">
                     <div className="platform-head flex flex-column items-center justify-evenly">
-                        <h3>World’s Petition Platform</h3>
-                        <p>We started in 2016 with the radical idea that anyone, anywhere, should be able to easily and securely to start their own petition. Today, we offer a trusted and easy-to-use platform for social movement accross the world.</p>
+                        <h3>What We Stand For</h3>
+                        <p>We connect donors with communities in need, ensuring Zakat contributions reach impactful causes like education and poverty alleviation. Our mission is to promote transparency and make a meaningful difference in lives worldwide.</p>
                     </div>
                     <div className="platform-img">
                         <img src={img} alt="" />
@@ -64,10 +64,10 @@ function About() {
                     </div>
                     <div className="believe-Rights flex items-center">
                         <div className="believe-right flex flex-wrap items-center justify-center" >
-                            <AboutBelieveComps head="Activists" desc="Social activists can start a social movements and connect supporters in their communities." img={activist} />
-                            <AboutBelieveComps head="Legislators" desc="Decision makers at the highest levels of government are engaging with their constituents." img={decision} />
+                            <AboutBelieveComps head="Donors" desc="Generous individuals who contribute their Zakat to support various causes and make a positive impact in the community." img={activist} />
+                            <AboutBelieveComps head="Beneficiaries" desc="Individuals and families in need who receive support through donations, helping them overcome challenges and improve their lives." img={decision} />
                             <AboutBelieveComps head="Organizations" desc="Leading organizations are advancing their causes and mobilizing new supporters." img={groups} />
-                            <AboutBelieveComps head="Reporters" desc="Journalists are sourcing powerful stories and covering campaigns hundreds of times a day." img={report} />
+                            <AboutBelieveComps head="Volunteers" desc="Community members who support our mission by assisting with outreach, awareness, and helping manage donation efforts." img={report} />
                         </div>
                     </div>
 

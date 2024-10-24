@@ -130,7 +130,7 @@ const Contactform = () => {
                             </button>
                         </div>
                     </form>
-                    {loading && <div className="loader"></div>} {/* Show loader when loading */}
+                     {/* Show loader when loading */}
                 </div>
             </div>
             <br /><br />
@@ -155,9 +155,9 @@ const Contactform = () => {
                         <h2>We work <br />worldwide.</h2>
                     </div>
                     <div className="workLoc flex flex-wrap items-center justify-between">
-                        <WorkLoc country="Bali" address="508 Bridle Avenue" city="Newnan, GA" pin="30263" />
-                        <WorkLoc country="London" address="508 Bridle Avenue" city="Newnan, GA" pin="30263" />
-                        <WorkLoc country="Moscow" address="508 Bridle Avenue" city="Newnan, GA" pin="30263" />
+                        <WorkLoc country="India " address="Gachibowli" city="Hyderabad" pin="500032" />
+                        <WorkLoc country="London" address="508 Oxford Street" city="United Kingdom" pin="10022" />
+                        <WorkLoc country="India " address="Bangalore " city="Karnataka" pin="560001" />
                         <WorkLoc country="Paris" address="508 Bridle Avenue" city="Newnan, GA" pin="30263" />
                     </div>
                 </div>

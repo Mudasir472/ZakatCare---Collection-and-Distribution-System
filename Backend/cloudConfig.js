@@ -16,8 +16,8 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-        folder: 'ReactWanderlust',
-        allowedFormats: ['png', 'jpg', 'jpeg']
+        folder: 'ZakatCare',
+        allowedFormats: ['png', 'jpg', 'jpeg', 'pdf']
     }
 });
 

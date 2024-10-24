@@ -23,10 +23,10 @@ const DonorList = () => {
   return (
     <div className="contactList">
       <div className="contactListMain">
-        <h3>All Contacts</h3>
+        <h3>All Donors</h3>
         <div className="allLists">
           <div className="product-details mt-2">
-            <h4 className="mb-4">Contact Details</h4>
+            <h4 className="mb-4">Donor Details</h4>
             <div className="grid grid-cols-4 gap-4  border-gray-300 mt-3">
               {/* Header */}
               <div className="font-bold">Name</div>

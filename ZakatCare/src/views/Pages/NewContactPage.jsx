@@ -12,8 +12,8 @@ const NewContactPage = () => {
             <div className='herosection_contact  d-flex justify-evenly items-center'>
                 <div className="left_hero_section container">
                     <div className="hero_intro">
-                        <h1>Hola,Whats Up?</h1>
-                        <p>Conikal build the Powerful Platform base on WordPress with latest technology. We offers the fastest way for Webmaster start their Platforms.</p>
+                        <h1>Hello,Whats Up?</h1>
+                        <p>We're here to assist you with any questions, concerns, or feedback. Whether you’re a donor, a beneficiary, or simply interested in learning more about our programs, feel free to reach out. Together, we can make a difference.</p>
                     </div>
                     <br /><br /><br />
                     <div className="getTouch flex flex-column items-start justify-evenly">
@@ -23,7 +23,7 @@ const NewContactPage = () => {
                             </div>
                             <div className="get_info">
                                 <h2>Address</h2>
-                                <p>17224 S. Figueroa Street, Gardena, CA 90248, USA</p>
+                                <p>MANUU Gachibowli Hyderabad 500032 , INDIA</p>
                             </div>
                         </div>
                         <div className="email d-flex items-center justify-center">
@@ -32,7 +32,7 @@ const NewContactPage = () => {
                             </div>
                             <div className="get_info">
                                 <h2>Email</h2>
-                                <p>abc@gmail.com</p>
+                                <p><a href="mailto:zakatcare@gmail.com">zakatcare@gmail.com</a></p>
                             </div>
                         </div>
                         <div className="contact d-flex items-center justify-center">
@@ -41,7 +41,8 @@ const NewContactPage = () => {
                             </div>
                             <div className="get_info">
                                 <h2>Contact Us</h2>
-                                <p>+1 415 800-3128</p>
+                                <p><a href="tel:+916006189840">+91 6006189840</a></p>
+
                             </div>
                         </div>
                     </div>

@@ -41,13 +41,13 @@ function Sidebar() {
                                     Contact-List
                                 </li>
                             </Link>
-                            <Link to="">
+                            <Link to="reciever-list">
                                 <li
                                     className={`flex items-center justify-evenly ${selectedItem === 2 ? 'bg-color-sidebar color-white' : ''}`}
                                     onClick={() => handleItemClick(2)}
                                 >
                                     <span><i className="bi bi-heart"></i></span>
-                                    Favourites
+                                    Reciever-list
                                 </li>
                             </Link>
                             <Link to="messages">

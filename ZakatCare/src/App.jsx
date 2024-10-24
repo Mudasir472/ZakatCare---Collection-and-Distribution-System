@@ -20,6 +20,7 @@ import UserProfile from "./components/user/UserProfile";
 import UpdateProfile from "./components/user/UpdateProfile";
 import DashboardLayout from "./views/dashboard/dashboardLayout";
 import ProtectedRoute from "../src/ProtectedRoute"
+import RecieverDetailsForm from "./views/Pages/RecieverDetailsForm";
 
 function App() {
   return (
@@ -54,6 +55,9 @@ function AppWrapper() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/zakatcare/:id" element={<CommunityDetails />} />
+
+          <Route path="/reciever-details/:token" element={<RecieverDetailsForm />} />
+
           <Route path="/dashboard/*" element={<ProtectedRoute element={DashboardLayout} />} />
           {/* Page not found */}
           <Route path="*" element={<PageNotFound />} />

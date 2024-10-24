@@ -7,6 +7,7 @@ import Footer from "../../components/Footer";
 import ContactLists from "./ContactLists";
 import Messages from "./Messages";
 import DonorList from "./donorList";
+import Reciever from "./Reciever";
 function DashboardLayout() {
   return (<>
     <div className="routes">
@@ -17,6 +18,7 @@ function DashboardLayout() {
           <Route path="" element={<Dashboard />} />
           <Route path="donor-list" element={<DonorList />} />
           <Route path="contact-list" element={<ContactLists />} />
+          <Route path="reciever-list" element={<Reciever />} />
           <Route path="messages" element={<Messages />} />
         </Routes>
       </div>
