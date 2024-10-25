@@ -2,6 +2,7 @@ import victory from "../../NewImages/victory.png"
 import viral from "../../NewImages/viral.png"
 import launch from "../../NewImages/launch.png"
 import startFrame from "../../NewImages/startFrame.png"
+import { Link } from "react-router-dom"
 
 function GetStarted() {
     return (<>
@@ -15,17 +16,17 @@ function GetStarted() {
                     <div className="startComp1">
                         <img src={launch} alt="" />
                         <h3>Launch</h3>
-                        <p>People and organizations can launch a campaign for free.</p>
+                        <p>PIndividuals and organizations can easily start their Zakat campaigns without any fees</p>
                     </div>
                     <div className="startComp1">
                         <img src={viral} alt="" />
                         <h3>Viral</h3>
-                        <p>Sharing with friends, family and supporters builds momentum.</p>
+                        <p>Sharing your campaign with friends, family, and supporters creates momentum for your cause</p>
                     </div>
                     <div className="startComp1">
                         <img src={victory} alt="" />
                         <h3>Victory</h3>
-                        <p>Decision make have the opportunity to respond your petition.</p>
+                        <p>Decision-makers have the opportunity to respond to your Zakat petition, amplifying your voice</p>
                     </div>
                 </div>
                 <div className="startToday flex  items-center justify-evenly">
@@ -35,7 +36,9 @@ function GetStarted() {
                             <p>People everywhere are empowered to start campaigns, mobilize supporters, and work with Decision Makers to drive solutions.</p>
 
                         </div>
-                        <button className="btn btn-sky">Start a campaign</button>
+                        <Link to="/zakatcare/donate">
+                            <button className="btn btn-sky">Start a campaign</button>
+                        </Link>
                     </div>
                     <div className="todayRight">
                         <img src={startFrame} alt="" />

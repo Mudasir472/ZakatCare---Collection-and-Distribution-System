@@ -6,8 +6,8 @@ function TopComp() {
         <div className="top-comp">
             <div className="top-main">
                 <div className="top-head flex flex-column items-center justify-center">
-                    <h2>Make an impact to the world.</h2>
-                    <p>We’re offer complete solution to launch your social movements.</p>
+                    <h2>Empowering Through Zakat</h2>
+                    <p>Connect your Zakat to those in need and support education, hunger relief, emergencies, and more</p>
                 </div>
                 <div className="Images">
                     <div className="img1 flex items-center justify-center">

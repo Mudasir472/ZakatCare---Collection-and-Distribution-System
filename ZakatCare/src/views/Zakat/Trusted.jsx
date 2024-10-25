@@ -13,25 +13,25 @@ function Trusted() {
                     <p>Here are a few reasons why you should choose Campoal</p>
                 </div>
                 <div className="trustedBdy flex items-center justify-between">
-                    <TrustedBdy img={trusted1} head="Influence decision makers" desc="We help people reach the business and government leaders whose decisions impact their lives, giving them the power they deserve." />
-                    <TrustedBdy img={trusted2} head="Expert campaign advice" desc="Our staff provide advice for mobilizing support, generating media interest and lobbying elected officials." />
-                    <TrustedBdy img={trusted3} head="Better activism technology" desc="We have big ideas for the future, but we need your financial support to fuel new technological development." />
+                    <TrustedBdy img={trusted1} head="Influence decision makers" desc="Empower communities to reach organizations and leaders who can make a difference in their lives, driving real impact" />
+                    <TrustedBdy img={trusted2} head="Expert campaign advice" desc="Our team offers guidance on rallying support, raising awareness, and connecting with the right people to maximize your campaign's success" />
+                    <TrustedBdy img={trusted3} head="Better activism technology" desc="We’re committed to developing cutting-edge features for better activism, and your support helps us continue to innovate" />
                 </div>
                 
             </div>
             <div className="signatures  flex items-center justify-between">
                 <div className="signatureMain container flex items-center justify-between">
                     <div className="sign-1 flex flex-column items-center justify-center">
-                        <h3>40,000</h3>
+                        <h3>40</h3>
                         <p>Signature every hours</p>
                     </div>
                     <div className="sign-1 flex flex-column items-center justify-center">
-                        <h3>40,000</h3>
-                        <p>Signature every hours</p>
+                        <h3>103</h3>
+                        <p>Supporters joining campaigns daily</p>
                     </div>
                     <div className="sign-1 flex flex-column items-center justify-center">
-                        <h3>40,000</h3>
-                        <p>Signature every hours</p>
+                        <h3>93</h3>
+                        <p>Commitments to change recorded every hour</p>
                     </div>
                 </div>
             </div>

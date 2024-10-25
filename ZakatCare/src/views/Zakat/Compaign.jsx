@@ -1,6 +1,7 @@
 import logo1 from "../../NewImages/compaign-logo1.png"
 import logo2 from "../../NewImages/compaign-logo2.png"
 import "./zakat.css"
+import { Link } from "react-router-dom";
 function Campaign() {
     return (<>
         <div className="compaign">
@@ -9,15 +10,17 @@ function Campaign() {
                     <div className="compaign-bdy  flex flex-column items-center justify-center">
                         <img className="mb-3" src={logo1} alt="" />
                         <h4>Activists</h4>
-                        <p className="mb-4">We help you easy start your campaign, collect donations, signatures. You can manage your campaign updates and your supporters on dashboard.</p>
-                        <button  className="btn btn-light">Start a campaign</button>
+                        <p className="my-4">Kickstart your campaign effortlessly with ZakatCare. Collect donations and signatures, and keep your supporters updated—all from one convenient dashboard</p>
+                        <Link to="/zakatcare/donate">
+                            <button className="btn btn-light">Start a campaign</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="compaign-right">
                     <div className="compaign-bdy flex flex-column items-center justify-center">
                         <img className="mb-3" src={logo2} alt="" />
                         <h4>Supporters</h4>
-                        <p className="mb-4">Help the campaigns achieve their goals. Make the world better by signing, sharing and donating to spread good values to the community.</p>
+                        <p className="my-4">Be a force for change. Help campaigns reach their goals by signing, sharing, and donating to spread positive values in the community</p>
                         <button className="btn btn-sky">Sign the petition</button>
                     </div>
                 </div>

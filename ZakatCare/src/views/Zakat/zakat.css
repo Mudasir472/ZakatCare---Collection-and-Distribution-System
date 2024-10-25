@@ -254,7 +254,7 @@ h5 {
 
 .top-head h2 {
     font-weight: 600;
-    font-size: 63px;
+    font-size: 50px;
 }
 
 .top-head p {
@@ -413,8 +413,9 @@ h5 {
 }
 
 .signatureMain {
-    width: 74%;
+    width: 88%;
 }
+
 
 .sign-1 h3 {
     font-weight: 600;

@@ -16,11 +16,6 @@ function Home() {
             <Trusted />
             <GetStarted />
         </div>
-        {/* <Programs/>
-        <SaveChildren/>
-        <Transparency/>
-         */}
-
     </>);
 }
 

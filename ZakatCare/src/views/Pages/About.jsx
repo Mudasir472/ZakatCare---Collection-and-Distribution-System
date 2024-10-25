@@ -16,7 +16,7 @@ import story2 from "../../NewImages/story-2.png"
 import story3 from "../../NewImages/story-3.png"
 import story4 from "../../NewImages/story-4.png"
 
-import visionFrame from '../../NewImages/visionFrame.png'
+import visionFrame from '../../assets/images/Frame.svg';
 
 import "./about.css"
 import AboutBelieveComps from "./AboutBelieveComps"
@@ -208,7 +208,7 @@ function About() {
                             <div className="formDetails flex flex-column items-start justify-evenly">
                                 <div>
                                     <form>
-                                        <input style={{color:"black"}} type="email"
+                                        <input style={{ color: "black" }} type="email"
                                             placeholder="Enter email"
                                             required
                                         />
@@ -216,7 +216,7 @@ function About() {
                                     </form>
                                 </div>
                                 <p>Get latest update from us. You can cancel any time.</p>
-                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

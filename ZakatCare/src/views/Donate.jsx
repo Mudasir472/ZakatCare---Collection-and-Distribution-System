@@ -101,7 +101,7 @@ export default function Donate() {
                             </div>
                         </div>
 
-                        <div className="sm:col-span-4">
+                        <div className="sm:col-span-3">
                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                                 Email address
                             </label>
@@ -118,7 +118,7 @@ export default function Donate() {
                                 />
                             </div>
                         </div>
-                        <div className="sm:col-span-2 ">
+                        <div className="sm:col-span-3 ">
                             <label htmlFor="amount" className="block text-sm font-medium leading-6 text-gray-900">
                                 Amount
                             </label>
@@ -148,7 +148,7 @@ export default function Donate() {
                                     name="category"
                                     required
                                     autoComplete="category"
-                                    className="block w-full rounded-md  py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-md  py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 >
                                     <option value="" disabled>Select a category</option>
                                     <option value="Education">Education</option>
