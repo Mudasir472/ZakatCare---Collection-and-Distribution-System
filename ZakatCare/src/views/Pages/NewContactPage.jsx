@@ -2,7 +2,7 @@ import React from 'react'
 import Addlogo from "/Addimg.png";
 import Emaillogo from "/Emailimg.png";
 import ContactLogo from "/contactImg.png";
-import img from "/rightSectionImg.png";
+import img from "../../assets/images/rightSectionImg.svg";
 import "./NewContactPage.css";
 import Contactform from './Contactform';
 

@@ -1,4 +1,4 @@
-import topimg from "../../NewImages/topImg.png"
+import topimg from "../../assets/images/topImg.svg"
 import rectangle from "../../NewImages/Rectangle56.png"
 import "./zakat.css"
 function TopComp() {

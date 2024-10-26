@@ -7,7 +7,7 @@ import WorkLoc from './WorkLoc';
 import img1 from '/support.png';
 import img2 from '/media.png';
 import img3 from '/payment.png';
-import img4 from '/workImg.png';
+import img4 from '../../assets/images/workImg.svg';
 import URL from '../../../env';
 
 const Contactform = () => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from 'axios';
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,6 +7,9 @@ import URL from "../../env";
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 
 export default function Donate() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const [formData, setFormData] = useState({
         firstname: "",
         lastname: "",

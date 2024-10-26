@@ -1,7 +1,7 @@
 import victory from "../../NewImages/victory.png"
 import viral from "../../NewImages/viral.png"
 import launch from "../../NewImages/launch.png"
-import startFrame from "../../NewImages/startFrame.png"
+import startFrame from "../../assets/images/startFrame.svg"
 import { Link } from "react-router-dom"
 
 function GetStarted() {

@@ -2,7 +2,7 @@ import axios from "axios";
 import URL from "../../../env"
 import { useEffect, useState } from "react";
 
-import img from "../../NewImages/platform-img.png"
+import img from "../../assets/images/platform-img.svg"
 import activist from "../../NewImages/activist.png"
 import decision from "../../NewImages/decision.png"
 import groups from "../../NewImages/groups.png"

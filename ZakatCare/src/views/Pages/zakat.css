@@ -1,0 +1,132 @@
+.zakat-part1-left {
+    width: 50%;
+    height: 675px;
+    background-color: #6059C9;
+    color: white;
+}
+
+.zakat-part1-right {
+    width: 50%;
+    height: 675px;
+    background-color: #F5EFE0;
+}
+
+.zakat-page h4 {
+    font-size: 57px;
+    font-weight: 700;
+    width: 61%;
+}
+
+.zakat-page p {
+    width: 61%;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.zakatPart-2 {
+    height: 85vh;
+}
+
+.zakatPart2Head {
+    width: 100%;
+}
+
+.zakatPart2Head h3 {
+    font-size: 57px;
+    font-weight: 700;
+    width: 42%;
+}
+
+/* questions */
+.faq-container {
+    width: 750px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 44%;
+}
+
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
+}
+
+.faq-question img {
+    height: 32px;
+    width: 20px;
+    margin-right: 12px;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer.active {
+    max-height: 100px;
+    /* Adjust based on content length */
+    /* padding: 10px; */
+    /* background: #f1f3f5; */
+}
+
+/* zakat-part 3 */
+
+.zakatPart-3 {
+    height: 759px;
+    background-color: #F5EFE0;
+}
+
+.zakat-3-left {
+    width: 71%;
+}
+
+.zakatPart3Head h3 {
+    font-size: 48px;
+    font-weight: 700;
+    width: 100%;
+}
+
+
+/* Zakat part 5 */
+.zakat-part5{
+    height: 35rem;
+}
+.part5-main {
+    background-color: #F5EFE0;
+    width: 1127px;
+    height: 384px;
+    border-radius: 16px;
+}
+
+.part5-left {
+    padding: 3px 0px 2px 52px;
+    height: 100%;
+
+}
+.part5-right{
+    padding-right: 40px;
+}
+
+.zakat5-btn {
+    width: 186px;
+    height: 48px;
+    background-color: #6059C9;
+    color: white;
+    border-radius: 10px;
+}
+.part5-head h3{
+font-size: 36px;
+font-weight:700;
+}
+.part5-head p{
+font-size: 18px;
+font-weight: 400;
+color: #5F5F75;
+}
