@@ -10,7 +10,7 @@ export default function Footer() {
                     <div style={{ height:'19rem'}} class="row text-white text-left items-center flex footerMain">
                         <div class="col-6 col-md-3 mb-3 title">
                             <h3 className="mb-4">About Us</h3>
-                            <p style={{ width:'80%'}}> At ZakatCare:-Collection and Distribution System,connects zakat donations to those in need, ensuring transparency and impact. Join us in making a difference in our community.</p>
+                            <p > At ZakatCare:-Collection and Distribution System,connects zakat donations to those in need, ensuring transparency and impact. Join us in making a difference in our community.</p>
                         </div>
 
                         <div class="col-6 col-md-3 mb-3 title">
