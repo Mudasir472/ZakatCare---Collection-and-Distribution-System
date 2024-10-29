@@ -45,14 +45,34 @@ router.post("/zakatcare/recieve-details", upload.fields([{ name: 'fileAadhar' },
     }
 });
 
-router.get('/zakatcare/recieve-details',async(req,res)=>{
+router.get('/zakatcare/recieve-details', async (req, res) => {
     try {
         const recieverData = await Reciever.find({})
         res.status(200).json({
             recieverData,
-            success:true
+            success: true
         })
     } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: error.message
+        })
+    }
+})
+
+router.post('/zakatcare/update-status', async (req, res) => {
+    try {
+        const {id,status} = req.body;
+        const updateStatus = await Reciever.findByIdAndUpdate(id,{status:status})
+        if (updateStatus) {
+            res.status(200).json({ message: 'Status updated successfully', updateStatus });
+        } else {
+            res.status(404).json({ message: 'Reciever not found' });
+        }
+        console.log(updateStatus)
+        
+    } catch (error) {
+        console.log(error)
         return res.status(500).json({
             success: false,
             message: error.message

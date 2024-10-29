@@ -59,11 +59,12 @@ const recieverSchema = new Schema({
         type: String,
         // required:true
     },
-    action: {
+    status: {
         type: String,
         enum: {
-            values: ['Pending', 'Approved', 'Rejected', ''],
+            values: ['Pending', 'Approved', 'Rejected'],
         },
+        default: 'Pending'
     },
     date: {
         type: Date,

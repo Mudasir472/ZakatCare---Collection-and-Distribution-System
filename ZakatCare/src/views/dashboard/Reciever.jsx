@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from "axios";
 import download from "../../assets/images/download.png"
+import approve from "../../assets/images/approve.svg"
+import reject from "../../assets/images/reject.svg"
 import URL from "../../../env"
 import { useEffect, useState } from "react";
 
@@ -9,7 +11,34 @@ const Reciever = () => {
     const [data, setData] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [approved, setApproved] = useState(false)
+    const [rejected, setRejected] = useState(false)
+
+    const handleStatusChange = async (userId, status) => {
+        try {
+            if (status === 'Approved') {
+                setApproved(true)
+            }
+            if (status === 'Rejected') {
+                setRejected(true)
+            }
+            await axios.post(`${URL}/zakatcare/update-status`, {
+                id: userId,
+                status
+            });
+
+            setData((prevData) =>
+                prevData.map((user) =>
+                    user._id === userId ? { ...user, status } : user
+                )
+            );
+        } catch (error) {
+            console.error(`Error updating status to ${status}:`, error);
+        }
+    };
     useEffect(() => {
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
         const fetchContactData = async () => {
             try {
                 const response = await axios.get(`${URL}/zakatcare/recieve-details`);
@@ -33,6 +62,8 @@ const Reciever = () => {
         setIsModalOpen(false);
         setSelectedUser(null);
     }
+
+    console.log("data", data)
     return (
         <div className="contactList">
             <div className="contactListMain">
@@ -52,7 +83,23 @@ const Reciever = () => {
                                     <div style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={() => handleDetails(product)} className="link-underline-primary border-b border-gray-300 p-2" data-bs-toggle="modal" data-bs-target="#detailsModal">{product.fullname}</div>
                                     <div className="border-b border-gray-300 p-2">{product.email}</div>
                                     <div className="border-b border-gray-300 p-2">{product.aadhar}</div>
-                                    <div className="border-b border-gray-300 p-2"><span>{product.category}</span></div>
+                                    <div className="border-b border-gray-300 p-2 flex items-center justify-between status">
+                                        {product.status === 'Approved' ? (
+                                            <><p className='alert alert-success'>Approved</p></>
+                                        ) : product.status === 'Rejected' ? (
+                                            <><p className='alert alert-danger'>Rejected</p></>
+
+                                        ) : (
+                                            <>
+                                                <p className='cursor-pointer' title="Approve" onClick={() => handleStatusChange(product._id, 'Approved')}>
+                                                    <img src={approve} alt="Approve" />
+                                                </p>
+                                                <p className='cursor-pointer' title="Reject" onClick={() => handleStatusChange(product._id, 'Rejected')}>
+                                                    <img src={reject} alt="Reject" />
+                                                </p>
+                                            </>
+                                        )}
+                                    </div>
                                 </React.Fragment>
                             ))}
                         </div>
@@ -129,15 +176,11 @@ const Reciever = () => {
                                         <div className="p-2">
                                             {selectedUser.category}
                                         </div>
-
-
-                                        {/* Add any other details you want to display here */}
                                     </div>
                                 )}
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>

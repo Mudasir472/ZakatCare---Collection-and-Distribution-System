@@ -157,3 +157,13 @@ h4 {
     background-color: #f0f0f0;
     /* Change background on hover */
 }
+.status{
+    width: 34%;
+}
+
+.status img{
+    height: 26px;
+}
+.alert{
+    padding: 7px!important;
+}

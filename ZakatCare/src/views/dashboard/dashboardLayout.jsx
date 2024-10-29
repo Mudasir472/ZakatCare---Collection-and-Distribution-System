@@ -5,9 +5,9 @@ import Headbar from "./Headbar";
 import Sidebar from "./Sidebar";
 import Footer from "../../components/Footer";
 import ContactLists from "./ContactLists";
-import Messages from "./Messages";
 import DonorList from "./donorList";
 import Reciever from "./Reciever";
+import Approved from "./Approved";
 function DashboardLayout() {
   return (<>
     <div className="routes">
@@ -19,7 +19,7 @@ function DashboardLayout() {
           <Route path="donor-list" element={<DonorList />} />
           <Route path="contact-list" element={<ContactLists />} />
           <Route path="reciever-list" element={<Reciever />} />
-          <Route path="messages" element={<Messages />} />
+          <Route path="approved-list" element={<Approved />} />
         </Routes>
       </div>
     </div>

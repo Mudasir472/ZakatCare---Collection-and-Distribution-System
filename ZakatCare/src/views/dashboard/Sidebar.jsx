@@ -50,13 +50,13 @@ function Sidebar() {
                                     Reciever-list
                                 </li>
                             </Link>
-                            <Link to="messages">
+                            <Link to="approved-list">
                                 <li
                                     className={`flex items-center justify-evenly ${selectedItem === 3 ? 'bg-color-sidebar color-white' : ''}`}
                                     onClick={() => handleItemClick(3)}
                                 >
                                     <span><i className="bi bi-chat-dots"></i></span>
-                                    Messages
+                                    Approve List
                                 </li>
                             </Link>
 
