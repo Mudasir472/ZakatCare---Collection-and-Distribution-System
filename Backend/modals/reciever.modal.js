@@ -52,6 +52,26 @@ const recieverSchema = new Schema({
         type: Number,
         required: [true, 'Aadhar number is required'],
     },
+    bankOwner: {
+        type: String,
+        required: true
+    },
+    account: {
+        type: Number,
+        required: true
+    },
+    bankName: {
+        type: String,
+        required: true
+    },
+    branch: {
+        type: String,
+        required: true
+    },
+    ifsc: {
+        type: Number,
+        required: true
+    },
     certificates: [{
         type: String,
     }],
@@ -63,6 +83,14 @@ const recieverSchema = new Schema({
         type: String,
         enum: {
             values: ['Pending', 'Approved', 'Rejected'],
+        },
+        default: 'Pending'
+    },
+    paymentStatus: {
+        type: String,
+        enum: {
+            values: ['Done', 'Pending'],
+            default: 'Pending'
         },
         default: 'Pending'
     },

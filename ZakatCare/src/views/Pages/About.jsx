@@ -30,7 +30,6 @@ function About() {
             try {
                 const response = await axios.get(`${URL}/zakatcare/teammembers`);
                 setData(response.data);
-                console.log(response.data)
                 setLoader(false);
             } catch (error) {
                 console.error("Error fetching listing data:", error);
@@ -184,12 +183,12 @@ function About() {
                         </div>
                         <div className="team-right">
                             <div className="teamMems d-flex flex-wrap justify-content-between">
-                                {data.slice(0, visibleItems).map((item) => (
-                                    <div class=" teamImg" style={{ width: "18rem" }}>
-                                        <img src={item.imgLink} class="img-top" alt={item.name} />
-                                        <div class="team-body flex items-center flex-column justify-center">
+                                {data.slice(0, visibleItems).map((item,key) => (
+                                    <div key={key} className="teamImg" style={{ width: "18rem" }}>
+                                        <img src={item.imgLink} className="img-top" alt={item.name} />
+                                        <div className="team-body flex items-center flex-column justify-center">
                                             <p><b>{item.name}</b></p>
-                                            <p class="card-text col-111">{item.speciality}</p>
+                                            <p className="card-text col-111">{item.speciality}</p>
                                         </div>
                                     </div>
                                 ))}

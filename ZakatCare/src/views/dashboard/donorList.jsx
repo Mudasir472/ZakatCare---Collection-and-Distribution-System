@@ -11,7 +11,6 @@ const DonorList = () => {
       try {
         const response = await axios.get(`${URL}/zakatcare/donations`);
         setData(response.data?.allDonations);
-        console.log(response.data?.allDonations)
       } catch (error) {
         console.error("Error fetching listing data:", error);
       }

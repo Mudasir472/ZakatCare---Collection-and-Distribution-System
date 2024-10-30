@@ -50,11 +50,9 @@ function CommunityDtails() {
         if (selectedCommunity) {
             setCommOwner(selectedCommunity?.owner);
             setReviews(selectedCommunity?.commreview || []);
-            console.log(selectedCommunity)
 
         }
     }, [data, id]);
-    console.log("rev", reviews)
 
     //for form deatils
     const handleReviewChange = (e) => {
@@ -76,12 +74,10 @@ function CommunityDtails() {
 
         } catch (error) {
             if (error.status === 401) {
-                console.log(error)
                 toast.error("Please Login First")
             }
         }
     };
-    console.log("data", reviewData)
 
     // Handle loading and error states
     if (loading) {
@@ -152,7 +148,7 @@ function CommunityDtails() {
                             </div>
 
                             <div className="reviewForm">
-                                <div class="col-md-7 col-lg-8">
+                                <div className="col-md-7 col-lg-8">
                                     <form onSubmit={submitReview}>
                                         <div className="mb-3">
                                             <label htmlFor="comment" className="form-label">Comment</label>
@@ -168,13 +164,13 @@ function CommunityDtails() {
                                                 required
                                             ></textarea>
                                         </div>
-                                        <div class="col-12 mb-3">
-                                            <label for="username" class="form-label">Username</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text">@</span>
+                                        <div className="col-12 mb-3">
+                                            <label htmlFor="username" className="form-label">Username</label>
+                                            <div className="input-group">
+                                                <span className="input-group-text">@</span>
                                                 <input
                                                     type="text"
-                                                    class="form-control"
+                                                    className="form-control"
                                                     id="username"
                                                     placeholder="Username"
                                                     name='username'
@@ -188,11 +184,11 @@ function CommunityDtails() {
                                             </div>
                                         </div>
 
-                                        <div class="col-12 mb-3">
-                                            <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
+                                        <div className="col-12 mb-3">
+                                            <label htmlFor="email" className="form-label">Email <span className="text-body-secondary">(Optional)</span></label>
                                             <input
                                                 type="email"
-                                                class="form-control"
+                                                className="form-control"
                                                 id="email"
                                                 name='email'
                                                 onChange={handleReviewChange}

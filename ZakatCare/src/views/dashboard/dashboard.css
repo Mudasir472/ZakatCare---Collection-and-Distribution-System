@@ -161,9 +161,15 @@ h4 {
     width: 34%;
 }
 
+.changeWidth{
+    width: 58%;
+}
 .status img{
     height: 26px;
 }
 .alert{
     padding: 7px!important;
+}
+.allLists{
+    height: 100vh;
 }

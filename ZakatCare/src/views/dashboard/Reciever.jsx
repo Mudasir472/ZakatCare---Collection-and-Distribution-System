@@ -7,7 +7,6 @@ import URL from "../../../env"
 import { useEffect, useState } from "react";
 
 const Reciever = () => {
-
     const [data, setData] = useState([]);
     const [selectedUser, setSelectedUser] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -43,7 +42,6 @@ const Reciever = () => {
             try {
                 const response = await axios.get(`${URL}/zakatcare/recieve-details`);
                 setData(response.data?.recieverData);
-                console.log(response.data?.recieverData)
             } catch (error) {
                 console.error("Error fetching recieverData data:", error);
             }
@@ -63,7 +61,6 @@ const Reciever = () => {
         setSelectedUser(null);
     }
 
-    console.log("data", data)
     return (
         <div className="contactList">
             <div className="contactListMain">
@@ -80,7 +77,7 @@ const Reciever = () => {
                             {/* Product Rows */}
                             {data.map((product, index) => (
                                 <React.Fragment key={index}>
-                                    <div style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={() => handleDetails(product)} className="link-underline-primary border-b border-gray-300 p-2" data-bs-toggle="modal" data-bs-target="#detailsModal">{product.fullname}</div>
+                                    <div style={{ cursor: 'pointer' }} onClick={() => handleDetails(product)} className="link-underline-primary border-b border-gray-300 p-2" data-bs-toggle="modal" data-bs-target="#detailsModal">{product.fullname}</div>
                                     <div className="border-b border-gray-300 p-2">{product.email}</div>
                                     <div className="border-b border-gray-300 p-2">{product.aadhar}</div>
                                     <div className="border-b border-gray-300 p-2 flex items-center justify-between status">

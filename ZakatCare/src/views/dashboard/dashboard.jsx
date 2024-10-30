@@ -21,6 +21,7 @@ import DashTotal from './DashTotal';
 const Dashboard = () => {
   const [monthlyData, setMonthlyData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [totalRecievers, setRecievers] = useState(true);
   const [categoryData, setCategoryData] = useState({});
   const [totalDonation, setTotalDonation] = useState(0);
   const [totalDonors, setTotalDonors] = useState(0);
@@ -39,9 +40,12 @@ const Dashboard = () => {
         const contacts = await axios.get(`${URL}/zakatcare/contact`);
         setTotalContacts(contacts.data.allContacts)
 
+        const recievers = await axios.get(`${URL}/zakatcare/recieve-details`);
+        setRecievers(recievers.data?.totalRecievers)
+
         const categories = {};
         const monthlyTotals = {};
-        
+
         // Process donations to sum amounts by category and month
         donations.forEach(donation => {
           const { category, amount, date } = donation;
@@ -73,7 +77,7 @@ const Dashboard = () => {
   }, []);
   // Total Users
   const totalusers = totalContacts.length + totalDonors;
- 
+
 
   const barChartData = {
     labels: Object.keys(categoryData), // Categories as labels
@@ -102,10 +106,10 @@ const Dashboard = () => {
           ) : (
             <>
               <div className="dashboard-total flex items-center justify-between">
-                  <DashTotal head="Total Users" desc={totalusers.toLocaleString('en-IN')} img={dashUser1} />
+                <DashTotal head="Total Users" desc={totalusers.toLocaleString('en-IN')} img={dashUser1} />
                 <DashTotal head="Total Donation" desc={'₹' + totalDonation.toLocaleString('en-IN')} img={donate} />
                 <DashTotal head="Total Donors" desc={totalDonors.toLocaleString('en-IN')} img={donor} />
-                <DashTotal head="Total Recievers" desc="56" img={reciever} />
+                <DashTotal head="Total Recievers" desc={totalRecievers.toLocaleString('en-IN')} img={reciever} />
               </div>
               <div className="chartMain">
                 <Line

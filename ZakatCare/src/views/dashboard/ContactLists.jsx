@@ -11,7 +11,6 @@ const ContactLists = () => {
             try {
                 const response = await axios.get(`${URL}/zakatcare/contact`);
                 setData(response.data?.contacts);
-                console.log(response.data?.contacts)
             } catch (error) {
                 console.error("Error fetching listing data:", error);
             }

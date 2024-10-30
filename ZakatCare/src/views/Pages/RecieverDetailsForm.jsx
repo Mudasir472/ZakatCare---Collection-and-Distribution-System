@@ -16,6 +16,11 @@ function RecieverDetailsForm() {
         pincode: "",
         aadhar: "",
         category: "",
+        bankOwner: "",
+        account: "",
+        bankName: "",
+        branch: "",
+        ifsc: "",
         certificate: null,
         fileAadhar: null
     });
@@ -72,7 +77,7 @@ function RecieverDetailsForm() {
         // Validate Aadhar number
         if (formData.aadhar.length !== 12) {
             toast.error("Aadhar number must be exactly 12 digits.");
-            return; 
+            return;
         }
         // Validate Pincode
         if (formData.pincode.length !== 6) {
@@ -85,7 +90,6 @@ function RecieverDetailsForm() {
         for (const key in formData) {
             dataToSend.append(key, formData[key]);
         }
-
         try {
             const resp = await axios.post(`${URL}/zakatcare/recieve-details`, dataToSend, {
                 withCredentials: true,
@@ -106,6 +110,8 @@ function RecieverDetailsForm() {
             resetFormData();
         }
         setLoading(false);
+        console.log(dataToSend)
+
     };
 
     const resetFormData = () => {
@@ -119,8 +125,13 @@ function RecieverDetailsForm() {
             pincode: "",
             aadhar: "",
             category: "",
+            bankOwner: "",
+            account: "",
+            bankName: "",
+            branch: "",
+            ifsc: "",
             certificate: null,
-            fileAadhar: null,
+            fileAadhar: null
         });
     };
 
@@ -207,6 +218,23 @@ function RecieverDetailsForm() {
                                     </select>
                                 </div>
                             </div>
+                            <div className="sm:col-span-3">
+                                <label htmlFor="aadhar" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Aadhar Number
+                                </label>
+                                <div className="mt-2">
+                                    <input
+                                        value={formData.aadhar}
+                                        onChange={handleInputChange}
+                                        id="aadhar"
+                                        name="aadhar"
+                                        type="text"
+                                        autoComplete="off"
+                                        className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
+                                    />
+                                </div>
+                            </div>
 
                             <div className="col-span-full">
                                 <label htmlFor="address" className="block text-sm font-medium leading-6 text-gray-900">
@@ -280,23 +308,7 @@ function RecieverDetailsForm() {
                                 </div>
                             </div>
 
-                            <div className="sm:col-span-3">
-                                <label htmlFor="aadhar" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Aadhar Number
-                                </label>
-                                <div className="mt-2">
-                                    <input
-                                        value={formData.aadhar}
-                                        onChange={handleInputChange}
-                                        id="aadhar"
-                                        name="aadhar"
-                                        type="text"
-                                        autoComplete="off"
-                                        className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        required
-                                    />
-                                </div>
-                            </div>
+
 
                             <div className="sm:col-span-6">
                                 <label htmlFor="fileAadhar" className="block text-sm font-medium leading-6 text-gray-900">
@@ -327,6 +339,94 @@ function RecieverDetailsForm() {
                                         name="certificate"
                                         onChange={handleFileChange}
                                         className="block w-full text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                            </div>
+                            <h2 className="mt-4 col-span-full text-base font-semibold leading-7 text-gray-900">Account Details</h2>
+
+                            <div className="sm:col-span-3">
+                                <label htmlFor="bankOwner" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Account Holder's Full Name
+                                </label>
+                                <div className="mt-2">
+                                    <input
+                                        value={formData.bankOwner}
+                                        onChange={handleInputChange}
+                                        id="bankOwner"
+                                        name="bankOwner"
+                                        type="text"
+                                        autoComplete="bankOwner"
+                                        className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div className="sm:col-span-3">
+                                <label htmlFor="account" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Bank Account Number
+                                </label>
+                                <div className="mt-2">
+                                    <input
+                                        value={formData.account}
+                                        onChange={handleInputChange}
+                                        id="account"
+                                        name="account"
+                                        type="text"
+                                        autoComplete="account"
+                                        className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div className="sm:col-span-2 sm:col-start-1">
+                                <label htmlFor="bankName" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Bank Name
+                                </label>
+                                <div className="mt-2">
+                                    <input
+                                        value={formData.bankName}
+                                        onChange={handleInputChange}
+                                        id="bankName"
+                                        name="bankName"
+                                        type="text"
+                                        autoComplete="bankName"
+                                        className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="sm:col-span-2">
+                                <label htmlFor="branch" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Branch Name
+                                </label>
+                                <div className="mt-2">
+                                    <input
+                                        value={formData.branch}
+                                        onChange={handleInputChange}
+                                        id="branch"
+                                        name="branch"
+                                        type="text"
+                                        className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="sm:col-span-2">
+                                <label htmlFor="ifsc" className="block text-sm font-medium leading-6 text-gray-900">
+                                    IFSC Code
+                                </label>
+                                <div className="mt-2">
+                                    <input
+                                        value={formData.ifsc}
+                                        onChange={handleInputChange}
+                                        id="ifsc"
+                                        name="ifsc"
+                                        type="text"
+                                        autoComplete="ifsc"
+                                        className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
                                     />
                                 </div>
                             </div>

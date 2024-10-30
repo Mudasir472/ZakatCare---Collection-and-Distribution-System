@@ -40,7 +40,6 @@ function Headbar() {
         navigate("/zakatcare/logout");
         // window.location.href = '/zakatcare/login';
     };
-    console.log(data)
     return (
         <>
             <div className="headbar">
