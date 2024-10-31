@@ -126,7 +126,7 @@ export default function Login() {
                             Sign Up
                         </Link>
                     </p>
-                    <div style={{ margin: '10px 0', position: 'relative' }}>
+                    {/* <div style={{ margin: '10px 0', position: 'relative' }}>
                         <hr style={{ border: 'none', borderTop: '1px solid #000', margin: '0' }} />
                         <span
                             style={{
@@ -140,10 +140,10 @@ export default function Login() {
                         >
                             OR
                         </span>
-                    </div>
-                    <div className="mt-5 google-auth flex items-center justify-center">
+                    </div> */}
+                    {/* <div className="mt-5 google-auth flex items-center justify-center">
                         <div onClick={loginGoogle} className="btn btn-success">Login with <i class="bi bi-google"></i>oogle</div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

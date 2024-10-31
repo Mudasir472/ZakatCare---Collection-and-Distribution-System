@@ -140,7 +140,6 @@ export default function Signup() {
                                 <option value="" disabled>Select Role</option>
                                 <option value="user">User</option>
                                 <option value="admin">Admin</option>
-                                <option value="moderator">Moderator</option>
                             </select>
                         </div>
 

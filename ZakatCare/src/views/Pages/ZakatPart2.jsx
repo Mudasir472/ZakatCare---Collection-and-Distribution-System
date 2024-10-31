@@ -10,8 +10,8 @@ function ZakatPart2() {
     };
     const faqData = [
         {
-            question: "What is Zakat?",
-            answer: "Zakat is a form of almsgiving in Islam, considered as a religious obligation for Muslims. It involves giving a portion of one's wealth to the needy."
+            question: "What is Zakat, and why is it important?",
+            answer: "Zakat is one of the Five Pillars of Islam and is a form of charity. It is mandatory for all eligible Muslims to donate a portion of their wealth to those in need, fostering economic equality and social welfare in the community."
         },
         {
             question: "How much Zakat should I give?",
@@ -24,6 +24,10 @@ function ZakatPart2() {
         {
             question: "How can I calculate my Zakat?",
             answer: "You can calculate your Zakat using our Zakat Calculator, which takes into account your savings, investments, and other assets."
+        },
+        {
+            question: "How does ZakatCare help facilitate Zakat payments?",
+            answer: "ZakatCare provides a streamlined platform where donors can select causes, calculate their Zakat, and directly contribute to impactful programs. We ensure transparency and effective distribution to qualified recipients."
         }
         // Add more questions and answers as needed
     ];

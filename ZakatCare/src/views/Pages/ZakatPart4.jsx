@@ -10,27 +10,23 @@ function ZakatPart4() {
     };
     const faqData = [
         {
-            question: "What is Zakat?",
-            answer: "Zakat is a form of almsgiving in Islam, considered as a religious obligation for Muslims. It involves giving a portion of one's wealth to the needy."
+            question: "How does ZakatCare ensure transparency in fund allocation?",
+            answer: "ZakatCare partners with verified organizations and provides regular updates on fund utilization. Donors can track their contributions and see impact reports to know how their funds are being used."
         },
         {
-            question: "How much Zakat should I give?",
-            answer: "The standard rate for Zakat is 2.5% of an individual's total savings and wealth above the Nisab threshold."
+            question: "Can I choose where my Zakat goes?",
+            answer: "Yes, ZakatCare allows donors to select specific categories such as education, feeding programs, or relief funds. Your contributions will be directed to your chosen category."
         },
         {
-            question: "Who is eligible to receive Zakat?",
-            answer: "Zakat is given to individuals in need, such as the poor, the needy, those in debt, and for other charitable causes as specified in Islamic law."
+            question: "What percentage of donations goes directly to the causes?",
+            answer: " A high percentage of donations is allocated directly to the selected causes. ZakatCare strives to minimize administrative costs and maximizes the amount reaching beneficiaries."
         },
-        {
-            question: "How can I calculate my Zakat?",
-            answer: "You can calculate your Zakat using our Zakat Calculator, which takes into account your savings, investments, and other assets."
-        }
-        // Add more questions and answers as needed
+
     ];
     return (<>
         <div className="zakatPart-2 flex flex-column items-center justify-center">
             <div className="zakatPart2Head flex justify-center items-center">
-                <h3 className="mb-5">General question</h3>
+                <h3 className="mb-5">Allocation of Zakat Funds</h3>
             </div>
             {faqData.map((item, index) => (
                 <div key={index} className="faq-item">

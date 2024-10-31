@@ -10,20 +10,16 @@ function ZakatPart3() {
     };
     const faqData = [
         {
-            question: "What is Zakat?",
-            answer: "Zakat is a form of almsgiving in Islam, considered as a religious obligation for Muslims. It involves giving a portion of one's wealth to the needy."
+            question: "How can I make a donation through ZakatCare?",
+            answer: "Donations can be made by selecting a cause on the ZakatCare platform, filling out the donation form, and completing payment. You’ll receive a confirmation email along with your donation details."
         },
         {
-            question: "How much Zakat should I give?",
-            answer: "The standard rate for Zakat is 2.5% of an individual's total savings and wealth above the Nisab threshold."
+            question: "Can I donate anonymously?",
+            answer: "Yes, ZakatCare allows donors the option to remain anonymous if they prefer. During the donation process, simply select the anonymous donation option."
         },
         {
-            question: "Who is eligible to receive Zakat?",
-            answer: "Zakat is given to individuals in need, such as the poor, the needy, those in debt, and for other charitable causes as specified in Islamic law."
-        },
-        {
-            question: "How can I calculate my Zakat?",
-            answer: "You can calculate your Zakat using our Zakat Calculator, which takes into account your savings, investments, and other assets."
+            question: "Is there a minimum amount required for donations?",
+            answer: "There is no minimum amount for general donations. However, for Zakat contributions, it’s advised to calculate the amount based on your assets, which ZakatCare’s calculator can help with."
         }]
     return (<>
         <div className="zakatPart-3 flex items-center justify-center">
@@ -33,7 +29,7 @@ function ZakatPart3() {
             <div className="zakat-3-right">
                 <div className="zakatPart-2 flex flex-column items-start justify-center">
                     <div className="zakatPart3Head flex justify-center items-start">
-                        <h3 className="mb-4">General question</h3>
+                        <h3 className="mb-4">Donation Process</h3>
                     </div>
                     {faqData.map((item, index) => (
                         <div key={index} className="faq-item">
