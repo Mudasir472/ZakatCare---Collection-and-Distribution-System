@@ -9,6 +9,8 @@ const Approve = () => {
 
     const [data, setData] = useState([]);
     const [done, setDone] = useState(false)
+    const [searchTerm, setSearchTerm] = useState("");
+
 
     const [selectedUser, setSelectedUser] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,6 +30,10 @@ const Approve = () => {
         // Call the async function
         fetchContactData();
     }, []);
+    // Filtered data based on the search term
+    const filteredData = data.filter((product) =>
+        product.fullname.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     const handleDetails = (user) => {
         setSelectedUser(user);
         setIsModalOpen(true);
@@ -56,7 +62,17 @@ const Approve = () => {
     return (
         <div className="contactList">
             <div className="contactListMain">
-                <h3>Payment Approve List</h3>
+                <div style={{ marginBottom: "11px", height: "4rem" }} className="contactListHead w-1/2 flex items-center justify-between">
+                    <h3>Payment Approve List</h3>
+                    {/* Search Bar */}
+                    <input
+                        type="text"
+                        placeholder="Search by name..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="p-2 border w-1/2 border-gray-300 rounded "
+                    />
+                </div>
                 <div className="allLists">
                     <div className="product-details mt-2">
                         <div className="grid grid-cols-4 gap-4  border-gray-300 mt-3">
@@ -66,24 +82,28 @@ const Approve = () => {
                             <div className="font-bold">State</div>
                             <div className="font-bold">Payment Status</div>
                             {/* Product Rows */}
-                            {data.map((product, index) => (
-                                <React.Fragment key={index}>
-                                    <div style={{ cursor: 'pointer' }} onClick={() => handleDetails(product)} className="link-underline-primary border-b border-gray-300 p-2" data-bs-toggle="modal" data-bs-target="#detailsModal">{product.fullname}</div>
-                                    <div className="border-b border-gray-300 p-2">{product.email}</div>
-                                    <div className="border-b border-gray-300 p-2">{product.state}</div>
-                                    <div className="border-b border-gray-300 p-2 flex items-center justify-between status changeWidth">
-                                        {product.paymentStatus === 'Done' ? (
-                                            <><p className='alert alert-success'>Payment Done</p></>
-                                        ) : (
-                                            <>
-                                                <p className='cursor-pointer' title="Approve" onClick={() => handleStatusChange(product._id, 'Done')}>
-                                                    <img src={approve} alt="Approve" />
-                                                </p>
-                                            </>
-                                        )}
-                                    </div>
-                                </React.Fragment>
-                            ))}
+                            {filteredData.length > 0 ? (
+                                filteredData.map((product, index) => (
+                                    <React.Fragment key={index}>
+                                        <div style={{ cursor: 'pointer' }} onClick={() => handleDetails(product)} className="link-underline-primary border-b border-gray-300 p-2" data-bs-toggle="modal" data-bs-target="#detailsModal">{product.fullname}</div>
+                                        <div className="border-b border-gray-300 p-2">{product.email}</div>
+                                        <div className="border-b border-gray-300 p-2">{product.state}</div>
+                                        <div className="border-b border-gray-300 p-2 flex items-center justify-between status changeWidth">
+                                            {product.paymentStatus === 'Done' ? (
+                                                <><p className='alert alert-success'>Payment Done</p></>
+                                            ) : (
+                                                <>
+                                                    <p className='cursor-pointer' title="Approve" onClick={() => handleStatusChange(product._id, 'Done')}>
+                                                        <img src={approve} alt="Approve" />
+                                                    </p>
+                                                </>
+                                            )}
+                                        </div>
+                                    </React.Fragment>
+                                ))
+                            ) : (
+                                <div className="border-b border-gray-300 p-2 text-gray-500">No results found</div>
+                            )}
                         </div>
                     </div>
                 </div>
