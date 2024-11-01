@@ -13,7 +13,7 @@ function DashboardLayout() {
     <div className="routes">
       <Headbar />
       <Sidebar />
-      <div className="dashboard-content ">
+      <div style={{overflow:"hidden"}} className="dashboard-content ">
         <Routes>
           <Route path="" element={<Dashboard />} />
           <Route path="donor-list" element={<DonorList />} />

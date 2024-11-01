@@ -15,7 +15,7 @@ function Headbar() {
         const fetchUserData = async () => {
             try {
                 const response = await axios.get(`${URL}/zakatcare/profile`, { withCredentials: true });
-                setData(response.data?.data);
+                setData(response.data?.user);
             } catch (error) {
                 console.error('Error fetching listing data:', error);
             }

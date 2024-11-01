@@ -78,7 +78,7 @@ module.exports.profile = async (req, res) => {
         return res.status(200).json({
             success: true,
             message: "User found",
-            data: user
+            user
         })
     } catch (error) {
         return res.status(500).json({

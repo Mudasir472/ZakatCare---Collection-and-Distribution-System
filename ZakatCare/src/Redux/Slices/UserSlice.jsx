@@ -11,7 +11,7 @@ export const UserFetch = createAsyncThunk(
     "client/UserFetch",
     async () => {
         const response = await axios.get(`${URL}/zakatcare/profile`);
-        return response.data.user;
+        return response.data;
     }
 );
 

@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
+import { UserFetch } from '../../Redux/Slices/UserSlice';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"
@@ -8,8 +8,10 @@ import "./user.css"
 import URL from "../../../env"
 
 function UserProfile() {
+    const dispatch = useDispatch();
+    const { status, error } = useSelector(state => state.client);
     // const { user, status, error } = useSelector((state) => state.client);
-    // console.log("newsuser",user)
+    console.log("newstatus", error)
 
     const fileInputRef = useRef(null);
     const [user, setUser] = useState(null);
@@ -18,8 +20,7 @@ function UserProfile() {
     const fetchUser = async () => {
         try {
             const response = await axios.get(`${URL}/zakatcare/profile`, { withCredentials: true });
-            setUser(response.data.data);
-            console.log(response.data.data)
+            setUser(response.data?.user);
             setLoading(false);
         } catch (error) {
             console.error('Error fetching profile:', error);
@@ -43,7 +44,6 @@ function UserProfile() {
         if (file) {
             const formData = new FormData();
             formData.append('profilePic', file);
-
             try {
                 const response = await axios.post(`${URL}/zakatcare/changeprofile`, formData, {
                     headers: {
