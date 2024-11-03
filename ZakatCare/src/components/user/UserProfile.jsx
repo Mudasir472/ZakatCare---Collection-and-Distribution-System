@@ -23,7 +23,13 @@ function UserProfile() {
             setUser(response.data?.user);
             setLoading(false);
         } catch (error) {
+            if (error.status === 401) {
+                toast.error(error.response?.data?.message)
+                console.log(error.response.data)
+                navigate("/zakatcare/login")
+            }
             console.error('Error fetching profile:', error);
+
             setLoading(false);
         }
     };

@@ -28,6 +28,7 @@ router.get('/auth/google/callback',
     }));
 router.get("/login/success", (req, res) => {
     const sessionId = req.sessionID;
+
     res.status(200).json({ message: "Login successful", redirectUrl: "/", user: req.user, sessionId })
 })
 
@@ -37,20 +38,20 @@ router.post("/zakatcare/logout", userController.logout)
 
 router.get("/zakatcare/profile", isAuthenticated, userController.profile)
 
-router.get("/zakatcare/userdetails", isAuthenticated, (req, res) => {
+router.get("/zakatcare/userdetails", isAuthenticated, wrapAsync((req, res) => {
     res.status(200).json({ message: "user detail", user: req.user })
-})
+}))
 
 router.put("/zakatcare/updateuser/:id", isAuthenticated, userController.updateUser)
 
-router.post("/zakatcare/changeprofile", isAuthenticated, upload.single("profilePic"), userController.changeProfile);
+router.post("/zakatcare/changeprofile", isAuthenticated, upload.single("profilePic"), wrapAsync(userController.changeProfile));
 
-router.get("/zakatcare/teammembers",async(req,res)=>{
+router.get("/zakatcare/teammembers", wrapAsync(async (req, res) => {
     const indexData = await Team.find({});
     res.send(indexData);
-})
+}))
 
-router.get("/zakatcare/getuser",(req,res)=>{
+router.get("/zakatcare/getuser", (req, res) => {
     res.status(200).json({ message: "user", user: req.user })
 })
 module.exports = router;

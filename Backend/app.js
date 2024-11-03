@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 // const Listing = require("./modals/data.modal");
 const { connectdb } = require("./config/MongoDB")
+const customError = require("./utils/customErrorHandle")
 
 const passport = require("passport")
 const LocalStrategy = require("passport-local");
@@ -114,7 +115,6 @@ passport.deserializeUser((user, done) => {
     done(null, user); // Save user ID to session
 });
 
-
 // Routes
 app.get("/", (req, res) => {
     res.send("i am at root")
@@ -128,8 +128,13 @@ app.use("/", contact)
 app.use("/", donations)
 app.use("/", reciever)
 
+app.use((err, req, res, next) => {
+    // console.log("------ERROR------");
+    let { status = 500, message, success } = err;
+    res.status(status).json({ message, success })
+});
 
 const port = process.env.PORT
 app.listen(port, () => {
     console.log(`server listening at port ${port}`);
-})
+});
