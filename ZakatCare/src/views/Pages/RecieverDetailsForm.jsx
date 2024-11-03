@@ -104,7 +104,7 @@ function RecieverDetailsForm() {
             }
         } catch (error) {
             console.error('Error:', error);
-            toast.error("Failed to submit the form. Please try again.");
+            toast.error(error.response.data.err);
         }
         finally {
             resetFormData();

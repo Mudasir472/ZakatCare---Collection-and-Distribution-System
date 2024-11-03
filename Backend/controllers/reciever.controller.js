@@ -1,29 +1,24 @@
 const Reciever = require("../modals/reciever.modal");
-
+const {recieverValidationSchema} = require("../SchemaValidation");
+const ExpressError = require("../utils/customErrorHandle");
 module.exports.recieverDetailsPost = async (req, res) => {
     try {
-        const { fullname, email, about, address, city, state, pincode, category, aadhar, bankOwner, account, bankName, branch, ifsc } = req.body;
-
+        // Extract and validate data from request body
+        const { error } = recieverValidationSchema.validate(req.body);
+        if (error) {
+            console.log(error)
+            // return res.status(400).json({ message: error.details[0].message, success: false });
+            throw new ExpressError(400, error.details[0].message, false)
+        }
         // Get the file information if uploaded
         const uploadAdhaar = req.files['fileAadhar'] ? req.files['fileAadhar'][0].path : null;
         const certificates = req.files['certificate'] ? req.files['certificate'][0].path : null;
-
+        // const res = recieverValidationSchema.validate(req.body);
+        console.log(res)
         // Create the new receiver record
+        recieverValidationSchema.validate(req.body)
         const recieverData = new Reciever({
-            fullname,
-            email,
-            about,
-            address,
-            city,
-            state,
-            pincode,
-            aadhar,
-            category,
-            bankOwner,
-            account,
-            bankName,
-            branch,
-            ifsc,
+            ...req.body,
             certificates,// Store the aadhar file path
             uploadAdhaar, // Store the aadhar file path
         });
