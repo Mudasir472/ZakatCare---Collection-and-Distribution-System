@@ -49,7 +49,7 @@ module.exports.profile = wrapAsync(async (req, res) => {
     }
     const user = await User.findById(userId);
     if (!user) {
-        throw ExpressError(402, "User not found", false)
+        throw ExpressError(404, "User not found", false)
     }
     return res.status(200).json({
         success: true,
