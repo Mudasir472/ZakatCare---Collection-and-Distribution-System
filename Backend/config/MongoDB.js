@@ -5,11 +5,7 @@ const connectdb = (url) => {
         .catch(err => console.log(err))
 
     async function main() {
-        await mongoose.connect(url, {
-            // useNewUrlParser: true,
-            // useUnifiedTopology: true,            no effect for them
-        });
-
+        await mongoose.connect(url);
     }
 }
 module.exports = {

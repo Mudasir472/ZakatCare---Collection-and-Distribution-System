@@ -10,7 +10,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
     { name: 'Home', href: '/', current: true },
-    { name: 'Our Programs', href: '/zakatcare/ourprogram', current: false },
+    // { name: 'Our Programs', href: '/zakatcare/ourprogram', current: false },
     { name: 'Zakat', href: '/zakatcare/zakat', current: false },
     { name: 'About', href: '/zakatcare/about', current: false },
     { name: 'Contact', href: '/zakatcare/contact', current: false },
@@ -68,7 +68,7 @@ export default function Navbar() {
         getData();
     }, []);
     return (
-        <Disclosure  as="nav">
+        <Disclosure as="nav">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -110,7 +110,7 @@ export default function Navbar() {
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-                        <Link to={'/zakatcare/donate'}><button onClick={()=>{setActive(null)}} style={{ backgroundColor: "#6059C9", color: "white" }} className='btn'>Donate</button></Link>
+                        <Link to={'/zakatcare/donate'}><button onClick={() => { setActive(null) }} style={{ backgroundColor: "#6059C9", color: "white" }} className='btn'>Donate</button></Link>
 
                         {/* Profile dropdown */}
                     </div>

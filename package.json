@@ -1,0 +1,12 @@
+{
+  "name": "zakatcare",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">ZakatCare: Connection & Distribution System</h1>\r <h3 align=\"center\">A platform facilitating Zakat donations and connecting donors with meaningful causes.</h3>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
