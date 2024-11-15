@@ -36,7 +36,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Mongo connection
-connectdb('mongodb://127.0.0.1:27017/ZakatCare');
+connectdb(process.env.MONGO_URI);
 const clientId = process.env.CLIENT_ID
 const clientSecret = process.env.SECRET_KEY
 

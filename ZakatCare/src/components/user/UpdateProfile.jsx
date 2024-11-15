@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import URL from "../../../env"
 function UpdateProfile() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,7 +22,7 @@ function UpdateProfile() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const resp = await axios.put(`${URL}/zakatcare/updateuser/${user._id}`, formData, { withCredentials: true });
+            const resp = await axios.put(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/updateuser/${user._id}`, formData, { withCredentials: true });
             // console.log("resp", resp)
             if (resp.status === 200) {
                 toast.success('User Update Successfull')

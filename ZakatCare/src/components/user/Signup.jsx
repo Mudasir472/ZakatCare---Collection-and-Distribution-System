@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-import URL from "../../../env";
+
 import logo from "/Logo.png";
 import "./user.css";
 
@@ -27,7 +27,7 @@ export default function Signup() {
         e.preventDefault();
 
         try {
-            const resp = await axios.post(`${URL}/zakatcare/signup`, formData, { withCredentials: true });
+            const resp = await axios.post(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/signup`, formData, { withCredentials: true });
 
             if (resp.status === 200) {
                 const sessionId = resp.data.sessionId;

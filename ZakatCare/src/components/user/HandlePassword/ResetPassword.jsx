@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import URI from "../../../../env"
 import { toast } from 'react-toastify';
 
 

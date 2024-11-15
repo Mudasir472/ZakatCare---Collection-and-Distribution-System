@@ -1,6 +1,6 @@
 import "./community.css"
 import axios from "axios";
-import URL from "../../../env"
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ function ComunityStory() {
     useEffect(() => {
         const fetchListingData = async () => {
             try {
-                const response = await axios.get(`${URL}/zakatcare/community`);
+                const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/community`);
                 setData(response.data?.comunity);
                 setLoader(false);
             } catch (error) {
@@ -31,7 +31,7 @@ function ComunityStory() {
     return (
         <>
             <div className="community">
-                <div style={{ marginTop:'7rem'}} className="commMain container">
+                <div style={{ marginTop: '7rem' }} className="commMain container">
                     <div className="communityHead flex flex-column items-center justify-evenly">
                         <h3 style={{ color: '#6059C9' }}>Transforming Communities. One Story at a Time.</h3>
                         <p className=" text-center">We believe in the power of every donation to make a lasting impact. Through targeted programs and heartfelt stories, we transform lives, one community at a time, fostering hope and change for those in need.</p>
@@ -42,7 +42,7 @@ function ComunityStory() {
                             data.slice(0, visibleItems).map((item) => (
                                 <div key={item._id} className="comComponents ">
                                     <div style={{ height: "30rem" }} className="comCompsMain">
-                                        <div  className="card  justify-between rem-border">
+                                        <div className="card  justify-between rem-border">
                                             <img style={{ height: '18rem' }} src={item.imgLink} className="card-img-top" alt="..." />
                                             <div className="card-body p-0">
                                                 <Link to={`/zakatcare/${item._id}`}><p style={{ color: '#6059C9' }} className="font-bold text-xl my-4">{item.heading.toUpperCase()}</p></Link>

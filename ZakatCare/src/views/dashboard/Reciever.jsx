@@ -3,7 +3,7 @@ import axios from "axios";
 import download from "../../assets/images/download.png"
 import approve from "../../assets/images/approve.svg"
 import reject from "../../assets/images/reject.svg"
-import URL from "../../../env"
+
 import { useEffect, useState } from "react";
 
 const Reciever = () => {
@@ -23,7 +23,7 @@ const Reciever = () => {
             if (status === 'Rejected') {
                 setRejected(true)
             }
-            await axios.post(`${URL}/zakatcare/update-status`, {
+            await axios.post(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/update-status`, {
                 id: userId,
                 status
             });
@@ -42,7 +42,7 @@ const Reciever = () => {
         const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
         const fetchContactData = async () => {
             try {
-                const response = await axios.get(`${URL}/zakatcare/recieve-details`);
+                const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/recieve-details`);
                 setData(response.data?.recieverData);
             } catch (error) {
                 console.error("Error fetching recieverData data:", error);

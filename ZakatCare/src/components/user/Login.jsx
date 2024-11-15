@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
-import URL from "../../../env"
 import logo from "/Logo.png"
 import "./user.css"
 
@@ -24,7 +23,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const resp = await axios.post(`${URL}/zakatcare/login`, formData, { withCredentials: true });
+            const resp = await axios.post(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/login`, formData, { withCredentials: true });
             if (resp.status === 200) {
                 const sessionId = resp.data.sessionId;
                 if (sessionId) {

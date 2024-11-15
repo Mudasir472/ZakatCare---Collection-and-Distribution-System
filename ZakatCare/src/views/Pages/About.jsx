@@ -1,5 +1,5 @@
 import axios from "axios";
-import URL from "../../../env"
+
 import { useEffect, useState } from "react";
 
 import img from "../../assets/images/platform-img.svg"
@@ -28,7 +28,7 @@ function About() {
     useEffect(() => {
         const fetchListingData = async () => {
             try {
-                const response = await axios.get(`${URL}/zakatcare/teammembers`);
+                const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/teammembers`);
                 setData(response.data);
                 setLoader(false);
             } catch (error) {
@@ -183,7 +183,7 @@ function About() {
                         </div>
                         <div className="team-right">
                             <div className="teamMems d-flex flex-wrap justify-content-between">
-                                {data.slice(0, visibleItems).map((item,key) => (
+                                {data.slice(0, visibleItems).map((item, key) => (
                                     <div key={key} className="teamImg" style={{ width: "18rem" }}>
                                         <img src={item.imgLink} className="img-top" alt={item.name} />
                                         <div className="team-body flex items-center flex-column justify-center">

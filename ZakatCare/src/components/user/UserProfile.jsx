@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"
 import "./user.css"
-import URL from "../../../env"
+
 
 function UserProfile() {
     const dispatch = useDispatch();
@@ -19,7 +19,7 @@ function UserProfile() {
     const navigate = useNavigate()
     const fetchUser = async () => {
         try {
-            const response = await axios.get(`${URL}/zakatcare/profile`, { withCredentials: true });
+            const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/profile`, { withCredentials: true });
             setUser(response.data?.user);
             setLoading(false);
         } catch (error) {
@@ -51,7 +51,7 @@ function UserProfile() {
             const formData = new FormData();
             formData.append('profilePic', file);
             try {
-                const response = await axios.post(`${URL}/zakatcare/changeprofile`, formData, {
+                const response = await axios.post(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/changeprofile`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },

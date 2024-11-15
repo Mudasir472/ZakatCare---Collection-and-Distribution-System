@@ -2,7 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { toast } from "react-toastify";
 import axios from 'axios';
-import URL from "../../../env";
+
 
 function CommunityDtails() {
     const navigate = useNavigate();
@@ -26,7 +26,7 @@ function CommunityDtails() {
     useEffect(() => {
         const fetchZakatcareCommData = async () => {
             try {
-                const response = await axios.get(`${URL}/zakatcare/community`, { withCredentials: true });
+                const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/community`, { withCredentials: true });
                 setCurrUser(response?.data?.user);
                 setData(response?.data?.comunity);
             } catch (error) {
@@ -66,7 +66,7 @@ function CommunityDtails() {
     const submitReview = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`${URL}/commreview/${id}`, reviewData, { withCredentials: true });
+            const res = await axios.post(`${import.meta.env.VITE_LOCAL_HOST}/commreview/${id}`, reviewData, { withCredentials: true });
             // window.location.href = `/listing/${id}`
             setReviewData({ comment: '', username: '', email: '' })
             toast.success("Review Success")
@@ -93,10 +93,10 @@ function CommunityDtails() {
             <div className="container">
                 <div className='d-flex flex-column justify-content-center align-items-center'>
                     <div className="card  listInd border-0 mb-3 ms-4">
-                        
+
 
                         <img
-                            style={{ width: '74rem',height:"30rem" }}
+                            style={{ width: '74rem', height: "30rem" }}
                             className='h-96 w-full mb-4 card-img-top'
                             src={Community.imgLink}
                             alt={Community.heading}

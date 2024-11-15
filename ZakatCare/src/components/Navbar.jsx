@@ -3,7 +3,6 @@ import logo from "/Logo.png"
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import URL from "../../env";
 
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -30,7 +29,7 @@ export default function Navbar() {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await axios.get(`${URL}/zakatcare/getuser`, { withCredentials: true });
+                const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/getuser`, { withCredentials: true });
                 setUser(response.data.user);
                 setIsLoggedIn(!!localStorage.getItem('sessionID'));
             } catch (error) {
@@ -45,7 +44,7 @@ export default function Navbar() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const loginData = await axios.get(`${URL}/login/success`, { withCredentials: true });
+                const loginData = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/login/success`, { withCredentials: true });
 
                 // Set user state
                 setUser(loginData.data.user);

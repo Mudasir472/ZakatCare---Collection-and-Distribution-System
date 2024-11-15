@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios";
-import URL from "../../../env"
+
 const initialState = {
     user: null,
     status: null,
@@ -10,7 +10,7 @@ const initialState = {
 export const UserFetch = createAsyncThunk(
     "client/UserFetch",
     async () => {
-        const response = await axios.get(`${URL}/zakatcare/profile`);
+        const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/profile`);
         return response.data;
     }
 );

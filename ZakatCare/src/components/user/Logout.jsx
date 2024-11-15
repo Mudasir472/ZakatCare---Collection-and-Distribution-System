@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { toast } from "react-toastify"
 import { useNavigate } from "react-router-dom";
-import URL from "../../../env"
 import { useEffect } from 'react';
 
 export default function Logout() {
@@ -10,7 +9,7 @@ export default function Logout() {
         console.log("called")
         const loggout = async () => {
             try {
-                const response = await axios.post(`${URL}/zakatcare/logout`, {}, { withCredentials: true });
+                const response = await axios.post(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/logout`, {}, { withCredentials: true });
 
                 if (response.status === 200) {
                     console.log(response.data.message); // "Logout successful"

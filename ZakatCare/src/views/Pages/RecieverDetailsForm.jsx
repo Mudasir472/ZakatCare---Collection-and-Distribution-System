@@ -1,6 +1,5 @@
 import { PhotoIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
-import URL from '../../../env';
 import { toast } from "react-toastify";
 import axios from 'axios';
 
@@ -91,7 +90,7 @@ function RecieverDetailsForm() {
             dataToSend.append(key, formData[key]);
         }
         try {
-            const resp = await axios.post(`${URL}/zakatcare/recieve-details`, dataToSend, {
+            const resp = await axios.post(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/recieve-details`, dataToSend, {
                 withCredentials: true,
                 headers: {
                     "Content-Type": "multipart/form-data",

@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from "axios";
-import URL from "../../../env"
+
 import { useEffect, useState } from "react";
 
 const ContactLists = () => {
@@ -11,7 +11,7 @@ const ContactLists = () => {
     useEffect(() => {
         const fetchContactData = async () => {
             try {
-                const response = await axios.get(`${URL}/zakatcare/contact`);
+                const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/contact`);
                 setData(response.data?.contacts);
             } catch (error) {
                 console.error("Error fetching listing data:", error);

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import URL from '../../../env';
 import logo from '/Logo.png';
 import './dashboard.css';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +13,7 @@ function Headbar() {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get(`${URL}/zakatcare/profile`, { withCredentials: true });
+                const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/profile`, { withCredentials: true });
                 setData(response.data?.user);
             } catch (error) {
                 console.error('Error fetching listing data:', error);

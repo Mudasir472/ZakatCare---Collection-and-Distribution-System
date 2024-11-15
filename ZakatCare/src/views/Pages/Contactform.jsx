@@ -8,7 +8,6 @@ import img1 from '/support.png';
 import img2 from '/media.png';
 import img3 from '/payment.png';
 import img4 from '../../assets/images/workImg.svg';
-import URL from '../../../env';
 
 const Contactform = () => {
     const [formData, setFormData] = useState({
@@ -38,13 +37,13 @@ const Contactform = () => {
 
         try {
 
-            const resp = await axios.post(`${URL}/zakatcare/contact`, formData, { withCredentials: true });
+            const resp = await axios.post(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/contact`, formData, { withCredentials: true });
             if (resp.status === 200) {
                 console.log(resp.data);
                 toast.success("Form submitted successfully!");
                 setSent(true); // Mark as sent
             }
-            
+
         } catch (error) {
             if (error.status === 403) {
                 toast.error("Phone number exists");
@@ -130,7 +129,7 @@ const Contactform = () => {
                             </button>
                         </div>
                     </form>
-                     {/* Show loader when loading */}
+                    {/* Show loader when loading */}
                 </div>
             </div>
             <br /><br />

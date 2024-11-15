@@ -12,6 +12,7 @@ const Team = require("../modals/team.modal");
 // const zakatcare = require("../modals/data.modal");
 const upload = multer({ storage });
 
+//user router
 router.post("/zakatcare/login", passport.authenticate('local'), wrapAsync(userController.login));
 
 router.get('/auth/google',

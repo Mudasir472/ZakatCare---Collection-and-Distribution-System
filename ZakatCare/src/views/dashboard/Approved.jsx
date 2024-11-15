@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from "axios";
-import URL from "../../../env"
+
 import approve from "../../assets/images/approve.svg"
 
 import { useEffect, useState } from "react";
@@ -17,7 +17,7 @@ const Approve = () => {
     useEffect(() => {
         const fetchContactData = async () => {
             try {
-                const response = await axios.get(`${URL}/zakatcare/recieve-details`);
+                const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/recieve-details`);
                 const approvedData = response.data?.recieverData?.filter(item => item.status === 'Approved');
 
                 setData(approvedData);
@@ -44,7 +44,7 @@ const Approve = () => {
             if (paymentStatus === 'Done') {
                 setDone(true)
             }
-            await axios.post(`${URL}/zakatcare/payment-status`, {
+            await axios.post(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/payment-status`, {
                 id: userId,
                 paymentStatus
             });

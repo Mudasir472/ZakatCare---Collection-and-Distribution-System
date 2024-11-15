@@ -2,7 +2,7 @@ import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Bar, Line } from "react-chartjs-2";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import URL from "../../../env";
+
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 defaults.plugins.title.display = true;
@@ -32,15 +32,15 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchDonations = async () => {
       try {
-        const response = await axios.get(`${URL}/zakatcare/donations`, { withCredentials: true });
+        const response = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/donations`, { withCredentials: true });
         const donations = response.data.allDonations;
         setTotalDonation(response.data.totalAmountOfDonations);
         setTotalDonors(response.data.totalUniqueDonors);
 
-        const contacts = await axios.get(`${URL}/zakatcare/contact`);
+        const contacts = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/contact`);
         setTotalContacts(contacts.data.allContacts)
 
-        const recievers = await axios.get(`${URL}/zakatcare/recieve-details`);
+        const recievers = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/zakatcare/recieve-details`);
         setRecievers(recievers.data?.totalRecievers)
 
         const categories = {};

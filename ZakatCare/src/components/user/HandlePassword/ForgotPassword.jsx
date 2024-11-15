@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import URI from "../../../../env";
 import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
