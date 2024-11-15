@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from 'axios';
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-
 import logo from "/Logo.png";
 import "./user.css";
 

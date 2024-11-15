@@ -38,7 +38,7 @@ function ComunityStory() {
                         <span className="separators"></span>
                     </div>
                     <div className="commComponents flex flex-wrap items-center justify-evenly">
-                        {
+                        {data &&
                             data.slice(0, visibleItems).map((item) => (
                                 <div key={item._id} className="comComponents ">
                                     <div style={{ height: "30rem" }} className="comCompsMain">
@@ -54,7 +54,7 @@ function ComunityStory() {
                             ))
                         }
                     </div>
-                    {visibleItems < data.length && (
+                    { data && visibleItems < data.length && (
                         <div className="flex justify-center my-4 moreBtn">
                             <button onClick={showMoreItems}>More<span><i class="bi bi-arrow-right"></i></span></button>
                         </div>
