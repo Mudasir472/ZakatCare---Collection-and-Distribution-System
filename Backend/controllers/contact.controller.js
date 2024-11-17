@@ -38,7 +38,7 @@ module.exports.contactPost = async (req, res) => {
             text: `
                 You are receiving this because you have contacted ZakatCare for assistance.\n\n
                 Please click on the following link, or paste it into your browser to complete the process of providing detailed information and uploading the required documents: \n\n
-                http://localhost:5173/reciever-details/${uniqueToken}\n\n
+                https://zakat-care-collection-and-distribution-system.vercel.app/reciever-details/${uniqueToken}\n\n
                 If you did not request this, please ignore this email.\n
                 Thank you for reaching out to ZakatCare.
 `
