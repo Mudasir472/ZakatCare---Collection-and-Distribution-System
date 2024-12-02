@@ -44,28 +44,34 @@ export default function Navbar() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const loginData = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/login/success`, { withCredentials: true });
+                const { data } = await axios.get(`${import.meta.env.VITE_LOCAL_HOST}/login/success`, { withCredentials: true });
 
-                // Set user state
-                setUser(loginData.data.user);
+                // Check if user exists
+                if (data?.user) {
+                    // Set user state
+                    setUser(data.user);
 
-                // Check if user is not undefined
-                if (loginData.data.user !== undefined) {
-                    // If sessionId exists, set it in local storage
-                    if (loginData?.data?.sessionId) {
-                        localStorage.setItem('sessionID', loginData?.data?.sessionId);
+                    // Store session ID in localStorage if it exists
+                    if (data.sessionId) {
+                        localStorage.setItem('sessionID', data.sessionId);
                     }
 
-                    // Update login status
-                    setIsLoggedIn(!!localStorage.getItem('sessionID'));
+                    // Update login status based on session ID presence
+                    setIsLoggedIn(true);
+                } else {
+                    // Handle scenario where user is undefined
+                    setIsLoggedIn(false);
+                    console.warn("User data is undefined.");
                 }
             } catch (error) {
                 console.error('Error fetching login data:', error);
+                setIsLoggedIn(false); // Ensure login status is updated on error
             }
         };
 
         getData();
     }, []);
+
     return (
         <Disclosure as="nav">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

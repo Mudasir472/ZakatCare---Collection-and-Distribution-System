@@ -28,10 +28,17 @@ router.get('/auth/google/callback',
 
     }));
 router.get("/login/success", (req, res) => {
-    const sessionId = req.sessionID;
-
-    res.status(200).json({ message: "Login successful", redirectUrl: "/", user: req.user, sessionId })
-})
+    if (!req.user) {
+        return res.status(401).json({ message: "Unauthorized: No user session found" });
+    }
+    
+    res.status(200).json({
+        message: "Login successful",
+        redirectUrl: "/",
+        user: req.user,
+        sessionId: req.sessionID
+    });
+});
 
 router.post("/zakatcare/signup", userController.signup)
 
